@@ -1,0 +1,84 @@
+<%- model_class = Book -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1>
+</div>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th><%= model_class.human_attribute_name(:id) %></th>
+      <th><%= model_class.human_attribute_name(:booktype) %></th>
+      <th><%= model_class.human_attribute_name(:filetype) %></th>
+      <th><%= model_class.human_attribute_name(:bookid) %></th>
+      <th><%= model_class.human_attribute_name(:identifier) %></th>
+      <th><%= model_class.human_attribute_name(:identifiertype) %></th>
+      <th><%= model_class.human_attribute_name(:title) %></th>
+      <th><%= model_class.human_attribute_name(:publicationdate) %></th>
+      <th><%= model_class.human_attribute_name(:publishername) %></th>
+      <th><%= model_class.human_attribute_name(:maindescription) %></th>
+      <th><%= model_class.human_attribute_name(:digitalprotection) %></th>
+      <th><%= model_class.human_attribute_name(:price) %></th>
+      <th><%= model_class.human_attribute_name(:contributor_id) %></th>
+      <th><%= model_class.human_attribute_name(:contributor_content) %></th>
+      <th><%= model_class.human_attribute_name(:contributorrolecode) %></th>
+      <th><%= model_class.human_attribute_name(:namesbeforekey) %></th>
+      <th><%= model_class.human_attribute_name(:keynames) %></th>
+      <th><%= model_class.human_attribute_name(:contributorrolename) %></th>
+      <th><%= model_class.human_attribute_name(:numberofpages) %></th>
+      <th><%= model_class.human_attribute_name(:filesize) %></th>
+      <th><%= model_class.human_attribute_name(:authors) %></th>
+      <th><%= model_class.human_attribute_name(:rightlist) %></th>
+      <th><%= model_class.human_attribute_name(:subjects) %></th>
+      <th><%= model_class.human_attribute_name(:images) %></th>
+      <th><%= model_class.human_attribute_name(:authorpid) %></th>
+      <th><%= model_class.human_attribute_name(:creationdate) %></th>
+      <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <th><%=t '.actions', :default => t("helpers.actions") %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @books.each do |book| %>
+      <tr>
+        <td><%= link_to book.id, book_path(book) %></td>
+        <td><%= book.booktype %></td>
+        <td><%= book.filetype %></td>
+        <td><%= book.bookid %></td>
+        <td><%= book.identifier %></td>
+        <td><%= book.identifiertype %></td>
+        <td><%= book.title %></td>
+        <td><%= book.publicationdate %></td>
+        <td><%= book.publishername %></td>
+        <td><%= book.maindescription %></td>
+        <td><%= book.digitalprotection %></td>
+        <td><%= book.price %></td>
+        <td><%= book.contributor_id %></td>
+        <td><%= book.contributor_content %></td>
+        <td><%= book.contributorrolecode %></td>
+        <td><%= book.namesbeforekey %></td>
+        <td><%= book.keynames %></td>
+        <td><%= book.contributorrolename %></td>
+        <td><%= book.numberofpages %></td>
+        <td><%= book.filesize %></td>
+        <td><%= book.authors %></td>
+        <td><%= book.rightlist %></td>
+        <td><%= book.subjects %></td>
+        <td><%= book.images %></td>
+        <td><%= book.authorpid %></td>
+        <td><%= book.creationdate %></td>
+        <td><%=l book.created_at %></td>
+        <td>
+          <%= link_to t('.edit', :default => t("helpers.links.edit")),
+                      edit_book_path(book), :class => 'btn btn-mini' %>
+          <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+                      book_path(book),
+                      :method => :delete,
+                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+                      :class => 'btn btn-mini btn-danger' %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to t('.new', :default => t("helpers.links.new")),
+            new_book_path,
+            :class => 'btn btn-primary' %>
