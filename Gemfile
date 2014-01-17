@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
-gem 'rails', '3.2.14'
-gem 'hydra'
+gem 'rails', '3.2.15'
+gem 'hydra', '6.1.0'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
@@ -45,4 +45,7 @@ gem "bootstrap-sass"
 group :development, :test do
   gem "rspec-rails"
   gem "jettywrapper"
+end
+
+group :development, :test do
 end
