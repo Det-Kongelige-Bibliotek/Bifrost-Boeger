@@ -16,3 +16,6 @@
 
 # Ignore jetty directory (from hydra-jetty)
 /jetty
+
+# No github for this folder
+/data-classified
