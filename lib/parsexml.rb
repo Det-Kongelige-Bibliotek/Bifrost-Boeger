@@ -1,7 +1,6 @@
 require "rexml/document"
 
 
-
 # Extracts the field/value elements into a Hash for a book record in Primo XML.
 # @param root The root of the 'raw.xml' document where the field/value elements should be extracted into a hash.
 def make_hash_for_record(root_record)
@@ -49,28 +48,6 @@ def make_hash_for_record(root_record)
   return extracted_elements
 end
 
-
-
-# parse a file primo PNX file
-print "Starting"
-xml = File.read('primo_harvest_test_10_records.xml')
-
-doc = REXML::Document.new(xml)
-
-
-
-
-
-doc.elements.each('sear:SEGMENTS/sear:JAGROOT/sear:RESULT/sear:DOCSET/sear:DOC/PrimoNMBib/record/') do |p|
-  record = Hash.new
-
-  puts "#   Parsing a new record"
-  record = make_hash_for_record(p)
-  puts record
-  puts "#   Done Parsing a new record"
-
-
-end
 
 
 
