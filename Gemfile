@@ -20,6 +20,8 @@ group :assets do
 
   gem 'uglifier', '>= 1.0.3'
   gem 'twitter-bootstrap-rails'
+  gem "therubyracer"
+  gem "less-rails"
 
 end
 
@@ -44,10 +46,11 @@ gem "unicode", :platforms => [:mri_18, :mri_19]
 gem "devise"
 gem "devise-guests", "~> 0.3"
 gem "bootstrap-sass"
+gem "bunny"
+
+
 group :development, :test do
   gem "rspec-rails"
   gem "jettywrapper"
 end
 
-group :development, :test do
-end
