@@ -80,4 +80,20 @@ class BooksController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+
+  def parseXMLfile(filename)
+    doc = REXML::Document.new File.new(filename)
+
+    doc.root.elements.each('PrimoNMBib/record') do |element|
+      print element
+
+      if element.attributes['name'] == 'record_id'
+        print element.text
+      end
+    end
+
+
+  end
+
 end
