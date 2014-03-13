@@ -1,7 +1,11 @@
 source 'https://rubygems.org'
+ruby '2.0.0'
+gem 'rails', '4.0.3'
 
-gem 'rails', '3.2.15'
-gem 'hydra', '6.1.0'
+
+gem "devise", "~> 3.2.2"
+gem "blacklight", '~> 4.7.0'
+gem 'hydra-head', '6.5.0'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
@@ -9,21 +13,18 @@ gem 'hydra', '6.1.0'
 gem 'sqlite3'
 
 
-# Gems used only for assets and not required
-# in production environments by default.
-group :assets do
-  gem 'sass-rails',   '~> 3.2.3'
-  gem 'coffee-rails', '~> 3.2.1'
 
-  # See https://github.com/sstephenson/execjs#readme for more supported runtimes
-  # gem 'therubyracer', :platforms => :ruby
+gem 'sass-rails'
+gem 'coffee-rails', '~> 4.0.1'
 
-  gem 'uglifier', '>= 1.0.3'
-  gem 'twitter-bootstrap-rails'
-  gem "therubyracer"
-  gem "less-rails"
+# See https://github.com/sstephenson/execjs#readme for more supported runtimes
+# gem 'therubyracer', :platforms => :ruby
 
-end
+gem 'uglifier', '>= 1.0.3'
+gem 'twitter-bootstrap-rails'
+gem "therubyracer"
+gem "less-rails"
+
 
 gem 'jquery-rails'
 
@@ -43,8 +44,6 @@ gem 'jquery-rails'
 # gem 'debugger'
 
 gem "unicode", :platforms => [:mri_18, :mri_19]
-gem "devise"
-gem "devise-guests", "~> 0.3"
 gem "bootstrap-sass"
 gem "bunny"
 
