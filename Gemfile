@@ -3,7 +3,7 @@ ruby '2.0.0'
 gem 'rails', '4.0.3'
 
 
-gem "devise", "~> 3.2.2"
+gem "devise", "~> 3.2.3"
 gem "blacklight", '~> 4.7.0'
 gem 'hydra-head', '6.5.0'
 
@@ -51,5 +51,6 @@ gem "bunny"
 group :development, :test do
   gem "rspec-rails"
   gem "jettywrapper"
+  gem 'thin'
 end
 
