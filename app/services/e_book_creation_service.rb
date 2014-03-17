@@ -6,8 +6,11 @@ class EBookCreationService
     book.datastreams['descMetadata'].content = message_h['MODS']
     book.uuid = message_h['UUID']
     book.url = message_h['files'].values
-    book.save
-    book
+    if book.save
+      book
+    else
+      nil
+    end
   end
 
 end
