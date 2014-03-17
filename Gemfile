@@ -45,12 +45,16 @@ gem 'jquery-rails'
 
 gem "unicode", :platforms => [:mri_18, :mri_19]
 gem "bootstrap-sass"
-gem "bunny"
+
+gem 'bunny', '~> 1.1.0'
+gem 'amq-protocol', '>= 1.9.2'
+
 
 
 group :development, :test do
   gem "rspec-rails"
   gem "jettywrapper"
   gem 'thin'
+  #gem 'passenger', '~> 4.0.35' #uncomment if want to run passenger as your rails server locally
 end
 

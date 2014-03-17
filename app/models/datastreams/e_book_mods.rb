@@ -6,7 +6,7 @@ module Datastreams
       t.genre()
       t.typeOfResource()
       t.location do
-        t.shelfLocator()
+        t.physicalLocation()
         t.url()
       end
       t.titleInfo do
@@ -22,6 +22,12 @@ module Datastreams
         end
         t.dateIssued()
       end
+
+      t.language do
+        t.languageISO(:path=>"languageTerm[@authority='iso639-2b']")
+        t.languageText(:path=>"languageTerm[@type='text']")
+      end
+
       t.subject(:path=>"subject[@authority='lcsh']") do
         t.topic()
       end
@@ -34,7 +40,7 @@ module Datastreams
 
       t.note()
 
-      t.titleNonSort(:proxy => [:titleInfo])
+      t.titleNonSort(:proxy => [:titleInfo, :nonSort])
       t.title(:proxy => [:titleInfo, :title])
       t.subTitle(:proxy => [:titleInfo, :subTitle])
       t.publisher(:proxy => [:originInfo, :publisher])
@@ -44,9 +50,9 @@ module Datastreams
       t.languageText(:proxy => [:language, :languageText])
       t.subjectTopic(:proxy => [:subject, :topic])
       t.physicalExtent(:proxy => [:physicalDescription, :extent])
-      t.shelfLocator(:proxy => [:location, :shelfLocator])
+      t.physicalLocation(:proxy => [:location, :physicalLocation])
       t.url(:proxy => [:location, :url])
-      t.name(:proxy => [:name, :namePart])
+      t.author(:proxy => [:name, :namePart])
     end
 
     def self.xml_template
