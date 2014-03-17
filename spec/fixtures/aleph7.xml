@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mods xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.loc.gov/mods/v3" version="3.5" xsi:schemaLocation="http://www.loc.gov/mods/v3 http://www.loc.gov/standards/mods/v3/mods-3-5.xsd">
+  <titleInfo>
+    <title>Billed-bog til Moerskab og Underholdning for Børn som begynde at læse</title>
+  </titleInfo>
+  <name type="personal" usage="primary">
+    <namePart>Bergsøe, Johan Frederik</namePart>
+  </name>
+  <typeOfResource>software, multimedia</typeOfResource>
+  <originInfo>
+    <place>
+      <placeTerm type="text">Kiøbenhavn</placeTerm>
+    </place>
+    <publisher>Fr. Brummer</publisher>
+    <dateIssued>[efter 1804]</dateIssued>
+    <edition>3. opl.</edition>
+    <issuance/>
+  </originInfo>
+  <physicalDescription>
+    <form authority="marcform">electronic</form>
+    <extent>52 s.</extent>
+  </physicalDescription>
+  <note type="statement of responsibility" altRepGroup="00">/ udgivet af J. F. Bergsøe</note>
+  <location>
+    <physicalLocation>15,-234 8°</physicalLocation>
+  </location>
+  <location>
+    <url displayLabel="electronic resource" note="cover image">http://images.kb.dk/bibliotheca_danica/supplab0093.jpg</url>
+  </location>
+  <location>
+    <url displayLabel="electronic resource" usage="primary display">http://example.com/mock-file.pdf</url>
+  </location>
+  <recordInfo>
+    <recordOrigin>Converted from MARCXML to MODS version 3.4 using MARC21slim2MODS3-4.xsl
+				(Revision 1.94 2014/02/21)</recordOrigin>
+  </recordInfo>
+</mods>

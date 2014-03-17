@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mods xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.loc.gov/mods/v3" version="3.5" xsi:schemaLocation="http://www.loc.gov/mods/v3 http://www.loc.gov/standards/mods/v3/mods-3-5.xsd">
+  <titleInfo>
+    <nonSort>Den </nonSort>
+    <title>danske Tilskuer</title>
+    <partNumber>No. 78, 89-90, 100-101, 25, 29-30, 47, 94-95</partNumber>
+  </titleInfo>
+  <name type="personal" usage="primary">
+    <namePart>Rahbek, K. L.</namePart>
+  </name>
+  <name type="personal">
+    <namePart>Schiller, Friedrich</namePart>
+  </name>
+  <name type="personal">
+    <namePart>Oehlenschläger, Adam</namePart>
+  </name>
+  <typeOfResource>software, multimedia</typeOfResource>
+  <originInfo>
+    <place>
+      <placeTerm type="text">Kiøbenhavn</placeTerm>
+    </place>
+    <publisher>Johan Frederik Schultz</publisher>
+    <dateIssued>1800-1801</dateIssued>
+    <issuance/>
+  </originInfo>
+  <physicalDescription>
+    <form authority="marcform">electronic</form>
+    <extent>1 bd.</extent>
+  </physicalDescription>
+  <note type="statement of responsibility" altRepGroup="00">/ K. L. Rahbek</note>
+  <note type="additional physical form">Hermed indbundet Hymne til Glæden af Schiller ; oversat af A. Oehlenschlæger, med Musik af Kuhlau Kjøbenhavn : C. A. Bording, [efter 1813]. - [8] s.</note>
+  <note type="additional physical form">Hermed indbundet Hymne til Glæden af Schiller ; oversat af A. Oehlenschlæger, med Musik af Kuhlau ; opført første Gang i det harmoniske Selskab den 26 Januarii 1814 Kiøbenhavn : J. Irgens, [1814]. - [8] s.</note>
+  <note type="additional physical form">Hermed indbundet Hymne til Glæden af Schiller ; oversat af A. Oehlenschläger, med Musik af Kuhlau ; afsjungen i det Venskabelige Selskab d. 1ste Januar 1828 Kjøbenhavn : det Poppske Bogtrykkerie, [1828]. - [8] s.</note>
+  <location>
+    <physicalLocation>54,-249 8°</physicalLocation>
+  </location>
+  <location>
+    <url displayLabel="electronic resource" note="cover image">http://images.kb.dk/bibliotheca_danica/bind%2040141.jpg</url>
+  </location>
+  <location>
+    <url displayLabel="electronic resource" usage="primary display">http://example.com/mock-file.pdf</url>
+  </location>
+  <recordInfo>
+    <recordOrigin>Converted from MARCXML to MODS version 3.4 using MARC21slim2MODS3-4.xsl
+				(Revision 1.94 2014/02/21)</recordOrigin>
+  </recordInfo>
+</mods>

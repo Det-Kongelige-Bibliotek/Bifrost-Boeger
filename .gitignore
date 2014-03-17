@@ -21,4 +21,4 @@
 /data-classified
 
 # no intelliJ folder to github
-.idea
+/.idea
