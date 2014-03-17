@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 ruby '2.0.0'
-gem 'rails', '4.0.3'
+gem 'rails', '~> 4.0.3'
 
 
 gem "devise", "~> 3.2.3"
@@ -49,12 +49,14 @@ gem "bootstrap-sass"
 gem 'bunny', '~> 1.1.0'
 gem 'amq-protocol', '>= 1.9.2'
 
-
+#logging
+gem 'log4r', '~> 1.1.10'
 
 group :development, :test do
   gem "rspec-rails"
   gem "jettywrapper"
   gem 'thin'
-  #gem 'passenger', '~> 4.0.35' #uncomment if want to run passenger as your rails server locally
+  #gem 'passenger', '~> 4.0.38' #uncomment if want to run passenger as your rails server locally
+  #gem 'passenger-rails', '~> 0.0.2'
 end
 
