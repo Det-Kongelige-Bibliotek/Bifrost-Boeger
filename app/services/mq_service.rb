@@ -48,6 +48,7 @@ module MQService
       logger.warn "Invalid DOD eBook input message: #{message}"
     end
 
-    create_from_message(message)
+    e_book_creation_service = EBookCreationService.new
+    e_book_creation_service.create_from_message(message)
   end
 end
