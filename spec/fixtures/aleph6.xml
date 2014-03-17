@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mods xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.loc.gov/mods/v3" version="3.5" xsi:schemaLocation="http://www.loc.gov/mods/v3 http://www.loc.gov/standards/mods/v3/mods-3-5.xsd">
+  <titleInfo>
+    <nonSort>Den </nonSort>
+    <title>fiirdobbelte Morderske Maria Christine Frandsen's Levnetsbeskrivelse, der har qvalt sin Mand Snedkersvend Voss, skaaret halsen over paa sin Kjæreste, en Malermester N. N. samt dræbt to af sine kjødelige Børn, ved at indgive dem et Qvantum Qviksølv og Kampferdraaber samt denne Forbryderskes veltrufne Portrait (iført hendes Fængselsdragt)</title>
+  </titleInfo>
+  <name type="personal" usage="primary">
+    <namePart>Petersen, M.</namePart>
+  </name>
+  <typeOfResource>software, multimedia</typeOfResource>
+  <originInfo>
+    <place>
+      <placeTerm type="text">Kjøbenhavn</placeTerm>
+    </place>
+    <publisher>Berg</publisher>
+    <dateIssued>[18--?]</dateIssued>
+    <issuance/>
+  </originInfo>
+  <physicalDescription>
+    <form authority="marcform">electronic</form>
+    <extent>8 s.</extent>
+  </physicalDescription>
+  <note type="statement of responsibility" altRepGroup="00">/ udgivet af M. Petersen</note>
+  <location>
+    <physicalLocation>43,-117 8°</physicalLocation>
+  </location>
+  <location>
+    <url displayLabel="electronic resource" usage="primary display">http://example.com/mock-file.pdf</url>
+  </location>
+  <recordInfo>
+    <recordOrigin>Converted from MARCXML to MODS version 3.4 using MARC21slim2MODS3-4.xsl
+				(Revision 1.94 2014/02/21)</recordOrigin>
+  </recordInfo>
+</mods>
