@@ -6,12 +6,11 @@ BifrostBoeger::Application.configure do
   # since you don't have to restart the web server when you make code changes.
   config.cache_classes = false
 
-<<<<<<< HEAD
   # Log error messages when you accidentally call methods on nil.
   #config.whiny_nils = true
-=======
+
   config.eager_load = false
->>>>>>> c75d022a84d66dc6d4625f73dcd87d82a999a994
+
 
   # Show full error reports and disable caching
   config.consider_all_requests_local       = true
