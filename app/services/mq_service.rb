@@ -32,7 +32,7 @@ module MQService
     q.subscribe do |delivery_info, metadata, payload|
       begin
         logger.debug "Received the following DOD eBook message: #{payload}"
-        handle_digitisation_dod_ebook(JSON.parse(payload))
+        handle_digitisation_dod_ebook(payload)
       rescue => e
         logger.error "Tried to handle DOD eBook message: #{payload}\nCaught error: #{e}"
       end
