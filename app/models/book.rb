@@ -53,9 +53,9 @@ class Book  < ActiveFedora::Base
     self.license_description = '<a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/3.0/deed.da"><img alt="Creative Commons licens" src="http://i.creativecommons.org/l/by-nc-nd/3.0/80x15.png"/></a>'
   end
 
-  def add_user_to_rights_meta_data_stream(username, pid)
-    self.edit_access_human_text = username + " & Administrators can edit this object"
-    self.rightsMetadata.update_permissions({ "person"=>{pid=>"edit"}})
+  def add_user_to_rights_meta_data_stream
+    self.edit_access_human_text = "Administrators can edit this object"
+    #self.rightsMetadata.update_permissions({ "person"=>{pid=>"edit"}})
     self.rightsMetadata.update_permissions({"group"=>{"public"=>"read","admin"=>"edit"}})
   end
 

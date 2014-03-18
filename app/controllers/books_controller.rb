@@ -25,7 +25,7 @@ class BooksController < ApplicationController
 
     ## adding CC license
     @book.add_default_license
-    @book.add_user_to_rights_meta_data_stream('ADMINISTRATOR', 1)
+    @book.add_user_to_rights_meta_data_stream
 
     if @book.save
       redirect_to @book, notice: 'Book was successfully created.'
