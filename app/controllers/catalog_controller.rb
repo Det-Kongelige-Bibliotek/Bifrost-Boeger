@@ -15,17 +15,20 @@ class CatalogController < ApplicationController
 
   configure_blacklight do |config|
     config.default_solr_params = {
-      :qt => 'search',
-      :rows => 10
+        :qf => 'title_tesim title_ssm author_tesim description_tesim local_tesim imagetype_tesim category_tesim fileidentifier_tesim keywords_tesim id copyright_tesim',
+        :qt => 'search',
+        :rows => 10
     }
 
+
+
     # solr field configuration for search results/index views
-    config.index.show_link = 'title_tesim'
-    config.index.record_display_type = 'has_model_ssim'
+    config.index.show_link = 'title_ssm'
+    config.index.record_tsim_type = 'has_model_ssim'
 
     # solr field configuration for document/show views
-    config.show.html_title = 'title_tesim'
-    config.show.heading = 'title_tesim'
+    config.show.html_title = 'title_ssm'
+    config.show.heading = 'title_ssm'
     config.show.display_type = 'has_model_ssim'
 
     # solr fields that will be treated as facets by the blacklight application
@@ -65,15 +68,16 @@ class CatalogController < ApplicationController
 
     # solr fields to be displayed in the index (search results) view
     #   The ordering of the field names is the order of the display
-    config.add_index_field solr_name('title', :stored_searchable, type: :string), :label => 'Title:'
-    config.add_index_field solr_name('title_vern', :stored_searchable, type: :string), :label => 'Title:'
-    config.add_index_field solr_name('author', :stored_searchable, type: :string), :label => 'Author:'
-    config.add_index_field solr_name('author_vern', :stored_searchable, type: :string), :label => 'Author:'
-    config.add_index_field solr_name('format', :symbol), :label => 'Format:'
-    config.add_index_field solr_name('language', :stored_searchable, type: :string), :label => 'Language:'
-    config.add_index_field solr_name('published', :stored_searchable, type: :string), :label => 'Published:'
-    config.add_index_field solr_name('published_vern', :stored_searchable, type: :string), :label => 'Published:'
-    config.add_index_field solr_name('lc_callnum', :stored_searchable, type: :string), :label => 'Call number:'
+    config.add_index_field solr_name('title', :stored_searchable, type: :string), :label => 'Titel:'
+    config.add_index_field solr_name('author', :stored_searchable, type: :string), :label => 'Forfatter'
+    config.add_index_field solr_name('person', :stored_searchable, type: :string), :label => 'Person'
+    config.add_index_field solr_name('fileidentifier', :stored_searchable, type: :string), :label => 'Fileidentifier'
+    config.add_index_field solr_name('category', :stored_searchable, type: :string), :label => 'Kategori:'
+    config.add_index_field solr_name('genre', :stored_searchable, type: :string), :label => 'Genre:'
+    config.add_index_field solr_name('local', :stored_searchable, type: :string), :label => 'Område:'
+    config.add_index_field solr_name('description', :stored_searchable, type: :string), :label => 'Beskrivelse:'
+    config.add_index_field solr_name('imagetype', :stored_searchable, type: :string), :label => 'Type:'
+    config.add_index_field solr_name('copyright', :stored_searchable, type: :string), :label => 'License:'
 
     # solr fields to be displayed in the show (single result) view
     #   The ordering of the field names is the order of the display
