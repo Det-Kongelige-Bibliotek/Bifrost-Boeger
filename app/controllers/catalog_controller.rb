@@ -52,6 +52,8 @@ class CatalogController < ApplicationController
     # :show may be set to false if you don't want the facet to be drawn in the
     # facet bar
     config.add_facet_field solr_name('author', :facetable), :label => 'Author'
+    config.add_facet_field solr_name('languageISO', :facetable), :label => 'Languange'
+    config.add_facet_field solr_name('dateIssued', :facetable), :label => 'Creationdate'
     #config.add_facet_field solr_name('object_type', :facetable), :label => 'Format'
     #config.add_facet_field solr_name('pub_date', :facetable), :label => 'Publication Year'
     #config.add_facet_field solr_name('subject_topic', :facetable), :label => 'Topic', :limit => 20
@@ -87,7 +89,7 @@ class CatalogController < ApplicationController
     config.add_show_field solr_name('subtitle', :stored_searchable, type: :string), :label => 'Subtitle'
     config.add_show_field solr_name('author', :stored_searchable, type: :string), :label => 'Creator'
     config.add_show_field solr_name('edition', :displayable, type: :string), :label => 'Edition'
-    config.add_show_field solr_name('subjectTopic', :stored_searchable, type: :string), :label => 'Edition'
+    config.add_show_field solr_name('subjectTopic', :stored_searchable, type: :string), :label => 'Subject'
     config.add_show_field solr_name('dateIssued', :stored_searchable, type: :string), :label => 'Creationdate'
     config.add_show_field solr_name('description', :stored_searchable, type: :string), :label => 'Description'
     config.add_show_field solr_name('languageISO', :stored_searchable, type: :string), :label => 'Language'
