@@ -23,6 +23,10 @@ class BooksController < ApplicationController
   def create
     @book = Book.new(book_params)
 
+    ## adding CC license
+    @book.add_default_license
+    @book.add_user_to_rights_meta_data_stream('ADMINISTRATOR', 1)
+
     if @book.save
       redirect_to @book, notice: 'Book was successfully created.'
     else
