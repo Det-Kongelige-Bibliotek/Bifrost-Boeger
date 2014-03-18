@@ -4,7 +4,7 @@ module Datastreams
       t.root(:path=>'mods', :xmlns=>"http://www.loc.gov/mods/v3")
       t.uuid(:path=>"identifier[@type='uri']", :index_as=>[:displayable])
       t.barcode(:path=>"identifier[@type='barcode']",  :index_as=>[:displayable])
-      t.genre(:path=>"genre[@type='Matrialetype']",  :index_as=>[:displayable])
+      t.genre(:path=>"genre[@type='Materialetype']",  :index_as=>[:displayable])
 
       t.typeOfResource()
       t.location do
