@@ -4,17 +4,22 @@ module MQService
   require 'e_book_creation_service'
   # Connect to the RabbitMQ broker, and initialize the listeners
   def initialize_listener
-    uri = MQ_CONFIG["mq_uri"]
-    logger.debug "Using MQ URI #{uri}"
-    conn = Bunny.new(uri)
-    conn.start
-    ch = conn.create_channel
+    begin
+      uri = MQ_CONFIG["mq_uri"]
+      logger.debug "Using MQ URI #{uri}"
+      conn = Bunny.new(uri)
+      conn.start
+      ch = conn.create_channel
 
-    logger.debug 'Subscription to MQ successfully started'
-    subscribe_to_dod_digitisation(ch)
-    logger.debug 'Closing MQ connection...'
-    conn.close
-    logger.debug 'MQ Connection closed'
+      logger.debug 'Subscription to MQ successfully started'
+      subscribe_to_dod_digitisation(ch)
+      logger.debug 'Closing MQ connection...'
+      conn.close
+      logger.debug 'MQ Connection closed'
+    rescue Bunny::TCPConnectionFailed => e
+      logger.error 'Connection to RabbitMQ failed'
+      logger.error e.to_s
+    end
   end
 
   #Subscribe to the DOD Digitisation Workflow queue
