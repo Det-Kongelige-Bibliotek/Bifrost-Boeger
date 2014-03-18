@@ -11,6 +11,20 @@ class EBook < ActiveFedora::Base
   has_attributes :url, datastream: 'descMetadata', :multiple => true
 
   def get_display_title
-    return self.titleNonsort + self.title+", "+self.subTitle
+    if (self.titleNonSort.nil?)
+      self.title
+    end
+    if (self.title.nil?)
+      self.titleNonsort
+    end
+    self.titleNonSort + self.title
   end
+
+
+    def to_solr(solr_doc={})
+      super
+      Solrizer.insert_field(solr_doc,'title', self.get_display_title,:stored_searchable, :displayable, :sortable)
+      solr_doc
+    end
+
 end
