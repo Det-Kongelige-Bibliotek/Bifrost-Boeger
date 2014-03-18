@@ -26,17 +26,18 @@ def start_listener_thread
       sleep polling_interval.minutes
     end
   end
+  logger.debug "num_of_threads = #{t.group.list.size}"
   #I've read here: https://www.agileplannerapp.com/blog/building-agile-planner/rails-background-jobs-in-threads
   #that each thread started in a Rails app gets its own database connection so when the thread terminates we need
   #to close any database connections too.
   ActiveRecord::Base.connection.close
-  #at_exit { t.join }
 end
 
 if defined?(PhusionPassenger)
+  logger.debug 'PhusionPassenger is defined...'
   PhusionPassenger.on_event(:starting_worker_process) do |forked|
     if forked
-      logger.debug "Forked"
+      logger.debug 'Forked'
       # We’re in a smart spawning mode
       # Now is a good time to connect to RabbitMQ
       start_listener_thread
@@ -44,6 +45,7 @@ if defined?(PhusionPassenger)
   end
 else
   if Rails.env.upcase != 'TEST'
+    logger.debug 'Not running in Passenger server...'
     start_listener_thread
   end
 # We're in direct spawning mode. We don't need to do anything.
