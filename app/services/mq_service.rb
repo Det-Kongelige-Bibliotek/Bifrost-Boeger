@@ -48,6 +48,8 @@ module MQService
   # of the book in Aleph and where the actual file containing the eBook is stored in KB's digital infrastructure.  If
   # anything is invalid in the message then we just log a warning message as we don't want to interrupt the normal
   # operation of Valhal by raising an error.
+  #@param message JSON object read from queue
+  #@return book a Book object
   def handle_digitisation_dod_ebook(message)
     if message['UUID'].blank? || message['Dissemination_type'].blank? || message['Type'].nil? || message['MODS'].blank?
       logger.warn "Invalid DOD eBook input message: #{message}"
