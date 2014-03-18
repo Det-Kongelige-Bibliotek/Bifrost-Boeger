@@ -23,21 +23,12 @@ describe BooksController do
   # This should return the minimal set of attributes required to create a valid
   # Book. As you add validations to Book, be sure to
   # adjust the attributes here as well.
-  let(:valid_attributes) { { "booktype" => "MyString" } }
+  let(:valid_attributes) { { "uuid" => "MyString" } }
 
   # This should return the minimal set of values that should be in the session
   # in order to pass any filters (e.g. authentication) defined in
   # BooksController. Be sure to keep this updated too.
   let(:valid_session) { {} }
-
-  describe "Parse Primo XML file" do
-    it "parses the primo xml" do
-      controller = new BooksController.new
-      assert_not_nil controller.parseXMLfile('primo_harvest_1.xml')
-
-    end
-  end
-
 
   describe "GET index" do
     it "assigns all books as @books" do
@@ -94,14 +85,14 @@ describe BooksController do
       it "assigns a newly created but unsaved book as @book" do
         # Trigger the behavior that occurs when invalid params are submitted
         Book.any_instance.stub(:save).and_return(false)
-        post :create, {:book => { "booktype" => "invalid value" }}, valid_session
+        post :create, {:book => { "uuid" => "invalid value" }}, valid_session
         assigns(:book).should be_a_new(Book)
       end
 
       it "re-renders the 'new' template" do
         # Trigger the behavior that occurs when invalid params are submitted
         Book.any_instance.stub(:save).and_return(false)
-        post :create, {:book => { "booktype" => "invalid value" }}, valid_session
+        post :create, {:book => { "uuid" => "invalid value" }}, valid_session
         response.should render_template("new")
       end
     end
@@ -115,8 +106,8 @@ describe BooksController do
         # specifies that the Book created on the previous line
         # receives the :update_attributes message with whatever params are
         # submitted in the request.
-        Book.any_instance.should_receive(:update_attributes).with({ "booktype" => "MyString" })
-        put :update, {:id => book.to_param, :book => { "booktype" => "MyString" }}, valid_session
+        Book.any_instance.should_receive(:update).with({ "uuid" => "MyString" })
+        put :update, {:id => book.to_param, :book => { "uuid" => "MyString" }}, valid_session
       end
 
       it "assigns the requested book as @book" do
@@ -137,7 +128,7 @@ describe BooksController do
         book = Book.create! valid_attributes
         # Trigger the behavior that occurs when invalid params are submitted
         Book.any_instance.stub(:save).and_return(false)
-        put :update, {:id => book.to_param, :book => { "booktype" => "invalid value" }}, valid_session
+        put :update, {:id => book.to_param, :book => { "uuid" => "invalid value" }}, valid_session
         assigns(:book).should eq(book)
       end
 
@@ -145,7 +136,7 @@ describe BooksController do
         book = Book.create! valid_attributes
         # Trigger the behavior that occurs when invalid params are submitted
         Book.any_instance.stub(:save).and_return(false)
-        put :update, {:id => book.to_param, :book => { "booktype" => "invalid value" }}, valid_session
+        put :update, {:id => book.to_param, :book => { "uuid" => "invalid value" }}, valid_session
         response.should render_template("edit")
       end
     end
