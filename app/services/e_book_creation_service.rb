@@ -3,6 +3,10 @@ class EBookCreationService
   def create_from_message(message_string)
     message_h = JSON.parse(message_string)
     book = Book.new
+    ## adding CC license
+    book.add_default_license
+    book.add_user_to_rights_meta_data_stream('IMPORTER', 2)
+
     book.datastreams['descMetadata'].content = message_h['MODS']
     book.uuid = message_h['UUID']
     book.url = message_h['files'].values
