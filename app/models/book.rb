@@ -24,6 +24,8 @@ class Book  < ActiveFedora::Base
   def to_solr(solr_doc = {})
     super
     Solrizer.insert_field(solr_doc,'title',self.get_display_title,:stored_searchable, :displayable)
+
+
     solr_doc
   end
 

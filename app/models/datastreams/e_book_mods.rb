@@ -44,19 +44,19 @@ module Datastreams
 
       t.titleNonSort(:proxy => [:titleInfo, :nonSort])
       t.title(:proxy => [:titleInfo, :title])
-      t.subtitle(:proxy => [:titleInfo, :subTitle])
+      t.subtitle(:proxy => [:titleInfo, :subTitle], :index_as=>[:stored_searchable])
       t.category(:proxy => [:genre], :index_as=>[:stored_searchable, :facetable])
       t.publisher(:proxy => [:originInfo, :publisher],:index_as=>[:stored_searchable, :facetable])
       t.originPlace(:proxy => [:originInfo, :place, :placeTerm],:index_as=>[:stored_searchable, :facetable])
-      t.dateIssued(:proxy => [:originInfo, :dateIssued],:index_as=>[:stored_searchable, :facetable])
+      t.dateIssued(:proxy => [:originInfo, :dateIssued],:index_as=>[:stored_searchable,  :facetable])
       t.languageISO(:proxy => [:language, :languageISO],:index_as=>[:stored_searchable, :facetable])
       t.languageText(:proxy => [:language, :languageText],:index_as=>[:stored_searchable, :facetable])
       #t.topic(:proxy => [:subject, :topic])
       t.subjectTopic(:proxy => [:subject, :topic],:index_as=>[:stored_searchable, :facetable])
       t.physicalExtent(:proxy => [:physicalDescription, :extent])
       t.physicalLocation(:proxy => [:location, :physicalLocation])
-      t.url(:proxy => [:location, :url])
-      t.author(:proxy => [:name, :namePart])
+      t.url(:proxy => [:location, :url], :index_as=>[:displayable])
+      t.author(:proxy => [:name, :namePart], :index_as=>[:stored_searchable, :facetable])
       t.description(:proxy => [:note],:index_as=>[:stored_searchable])
 
 
