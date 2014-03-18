@@ -10,7 +10,21 @@ class Book  < ActiveFedora::Base
   has_attributes :author, datastream: 'descMetadata', :at => [:name], :multiple => true
   has_attributes :description, datastream: 'descMetadata', :multiple => true
 
- # def get_display_title
- #   return self.titleNonsort + self.title+", "+self.subtitle
- # end
+  def get_display_title
+    if (self.titleNonSort.nil?)
+      self.title
+    end
+    if (self.title.nil?)
+      self.titleNonsort
+    end
+    self.titleNonSort + self.title
+  end
+
+
+  def to_solr(solr_doc = {})
+    super
+    Solrizer.insert_field(solr_doc,'title',self.get_display_title,:stored_searchable, :displayable)
+    solr_doc
+  end
+
 end

@@ -3,7 +3,7 @@ class EBook < ActiveFedora::Base
   has_metadata :name => 'rightsMetadata', :type => Hydra::Datastream::RightsMetadata
   has_metadata :name => 'descMetadata', :type=>Datastreams::EBookMods
 
-  has_attributes :uuid, :titleNonSort, :title, :subTitle, :publisher, :originPlace, :dateIssued, :languageISO, :languageText,
+  has_attributes :uuid, :titleNonSort, :title, :subtitle, :publisher, :originPlace, :dateIssued, :languageISO, :languageText,
                 :subjectTopic, :physicalExtent, :physicalLocation,  datastream: 'descMetadata', multiple: false
 
   has_attributes :person, datastream: 'descMetadata', :at => [:name], :multiple => true
@@ -18,6 +18,10 @@ class EBook < ActiveFedora::Base
       self.titleNonsort
     end
     self.titleNonSort + self.title
+  end
+
+  def get display_description
+
   end
 
 
