@@ -2,8 +2,9 @@ module Datastreams
   class EBookMods  < ActiveFedora::OmDatastream
     set_terminology do |t|
       t.root(:path=>'mods', :xmlns=>"http://www.loc.gov/mods/v3")
-      t.uuid(:path=>"identifier[@type='uri']")
-      t.genre(:path=>"genre")
+      t.uuid(:path=>"identifier[@type='uri']", :index_as=>[:displayable])
+      t.barcode(:path=>"identifier[@type='barcode']",  :index_as=>[:displayable])
+      t.genre(:path=>"genre[@type='Matrialetype']",  :index_as=>[:displayable])
 
       t.typeOfResource()
       t.location do
@@ -22,6 +23,7 @@ module Datastreams
           t.placeTerm()
         end
         t.dateIssued()
+        t.edition()
       end
 
       t.language do
@@ -49,23 +51,23 @@ module Datastreams
       t.publisher(:proxy => [:originInfo, :publisher],:index_as=>[:stored_searchable, :facetable])
       t.originPlace(:proxy => [:originInfo, :place, :placeTerm],:index_as=>[:stored_searchable, :facetable])
       t.dateIssued(:proxy => [:originInfo, :dateIssued],:index_as=>[:stored_searchable,  :facetable])
+      t.edition(:proxy => [:originInfo, :edition], :index_as=>[:displayable])
       t.languageISO(:proxy => [:language, :languageISO],:index_as=>[:stored_searchable, :facetable])
       t.languageText(:proxy => [:language, :languageText],:index_as=>[:stored_searchable, :facetable])
       #t.topic(:proxy => [:subject, :topic])
       t.subjectTopic(:proxy => [:subject, :topic],:index_as=>[:stored_searchable, :facetable])
-      t.physicalExtent(:proxy => [:physicalDescription, :extent])
-      t.physicalLocation(:proxy => [:location, :physicalLocation])
+      t.physicalExtent(:proxy => [:physicalDescription, :extent],:index_as=>[:displayable])
+      t.physicalLocation(:proxy => [:location, :physicalLocation],:index_as=>[:displayable])
       t.url(:proxy => [:location, :url], :index_as=>[:displayable])
       t.author(:proxy => [:name, :namePart], :index_as=>[:stored_searchable, :facetable])
       t.description(:proxy => [:note],:index_as=>[:stored_searchable])
-
-
     end
 
     def self.xml_template
       Nokogiri::XML.parse '<mods:mods xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xlink="http://www.w3.org.1999/xlink" version="3.4" xsi:schemaLocation="http://www.loc.gov/mods/v3 http://www.loc.gov/standards/mods/v3/mods-3-4.xsd" xmlns:mods="http://www.loc.gov/mods/v3">
         <mods:genre type="Materialetype"/>
         <mods:identifier type="uri"/>
+        <mods:identifier type="barcode"/>
         <mods:location>
           <mods:url/>
           <mods:shelfLocator/>
@@ -93,6 +95,7 @@ module Datastreams
           </mods:place>
           <mods:publisher></mods:publisher>
           <mods:dateIssued keyDate="yes" encoding="w3cdtf"/>
+          <mods:edition/>
         </mods:originInfo>
         <mods:language>
             <mods:languageTerm authority="iso639-2b"></mods:languageTerm>
