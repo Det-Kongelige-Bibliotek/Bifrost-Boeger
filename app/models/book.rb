@@ -12,12 +12,12 @@ class Book  < ActiveFedora::Base
 
   def get_display_title
     if (self.titleNonSort.nil?)
-      self.title
+      return self.title
     end
     if (self.title.nil?)
-      self.titleNonsort
+      return self.titleNonsort
     end
-    self.titleNonSort + self.title
+    return self.titleNonSort + self.title
   end
 
 
