@@ -3,30 +3,21 @@ require 'spec_helper'
 describe "books/edit" do
   before(:each) do
     @book = assign(:book, stub_model(Book,
-      :booktype => "MyString",
-      :filetype => "MyString",
-      :bookid => "MyString",
-      :identifier => "MyString",
-      :identifiertype => "MyString",
+      :uuid => "MyString",
       :title => "MyString",
-      :publicationdate => "MyString",
-      :publishername => "MyString",
-      :maindescription => "MyString",
-      :digitalprotection => "MyString",
-      :price => "MyString",
-      :contributor_id => "MyString",
-      :contributor_content => "MyString",
-      :contributorrolecode => "MyString",
-      :namesbeforekey => "MyString",
-      :keynames => "MyString",
-      :contributorrolename => "MyString",
-      :numberofpages => "MyString",
-      :filesize => "MyString",
-      :authors => "MyString",
-      :rightlist => "MyString",
-      :subjects => "MyString",
-      :images => "MyString",
-      :authorpid => "MyString"
+      :subtitle => "MyString",
+      :publisher => "MyString",
+      :originPlace => "MyString",
+      :dateIssued => "MyString",
+      :languageISO => "MyString",
+      :languageText => "MyString",
+      :subject => "MyString",
+      :physicalExtent => "MyString",
+      :physicalLocation => "MyString",
+      :url => "MyString",
+      :author => "MyString",
+      :category => "MyString",
+      :description => "MyText"
     ))
   end
 
@@ -35,30 +26,21 @@ describe "books/edit" do
 
     # Run the generator again with the --webrat flag if you want to use webrat matchers
     assert_select "form[action=?][method=?]", book_path(@book), "post" do
-      assert_select "input#book_booktype[name=?]", "book[booktype]"
-      assert_select "input#book_filetype[name=?]", "book[filetype]"
-      assert_select "input#book_bookid[name=?]", "book[bookid]"
-      assert_select "input#book_identifier[name=?]", "book[identifier]"
-      assert_select "input#book_identifiertype[name=?]", "book[identifiertype]"
+      assert_select "input#book_uuid[name=?]", "book[uuid]"
       assert_select "input#book_title[name=?]", "book[title]"
-      assert_select "input#book_publicationdate[name=?]", "book[publicationdate]"
-      assert_select "input#book_publishername[name=?]", "book[publishername]"
-      assert_select "input#book_maindescription[name=?]", "book[maindescription]"
-      assert_select "input#book_digitalprotection[name=?]", "book[digitalprotection]"
-      assert_select "input#book_price[name=?]", "book[price]"
-      assert_select "input#book_contributor_id[name=?]", "book[contributor_id]"
-      assert_select "input#book_contributor_content[name=?]", "book[contributor_content]"
-      assert_select "input#book_contributorrolecode[name=?]", "book[contributorrolecode]"
-      assert_select "input#book_namesbeforekey[name=?]", "book[namesbeforekey]"
-      assert_select "input#book_keynames[name=?]", "book[keynames]"
-      assert_select "input#book_contributorrolename[name=?]", "book[contributorrolename]"
-      assert_select "input#book_numberofpages[name=?]", "book[numberofpages]"
-      assert_select "input#book_filesize[name=?]", "book[filesize]"
-      assert_select "input#book_authors[name=?]", "book[authors]"
-      assert_select "input#book_rightlist[name=?]", "book[rightlist]"
-      assert_select "input#book_subjects[name=?]", "book[subjects]"
-      assert_select "input#book_images[name=?]", "book[images]"
-      assert_select "input#book_authorpid[name=?]", "book[authorpid]"
+      assert_select "input#book_subtitle[name=?]", "book[subtitle]"
+      assert_select "input#book_publisher[name=?]", "book[publisher]"
+      assert_select "input#book_originPlace[name=?]", "book[originPlace]"
+      assert_select "input#book_dateIssued[name=?]", "book[dateIssued]"
+      assert_select "input#book_languageISO[name=?]", "book[languageISO]"
+      assert_select "input#book_languageText[name=?]", "book[languageText]"
+      assert_select "input#book_subject[name=?]", "book[subject]"
+      assert_select "input#book_physicalExtent[name=?]", "book[physicalExtent]"
+      assert_select "input#book_physicalLocation[name=?]", "book[physicalLocation]"
+      assert_select "input#book_url[name=?]", "book[url]"
+      assert_select "input#book_author[name=?]", "book[author]"
+      assert_select "input#book_category[name=?]", "book[category]"
+      assert_select "textarea#book_description[name=?]", "book[description]"
     end
   end
 end

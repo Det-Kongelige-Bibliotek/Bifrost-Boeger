@@ -6,31 +6,22 @@
   <thead>
     <tr>
       <th><%= model_class.human_attribute_name(:id) %></th>
-      <th><%= model_class.human_attribute_name(:booktype) %></th>
-      <th><%= model_class.human_attribute_name(:filetype) %></th>
-      <th><%= model_class.human_attribute_name(:bookid) %></th>
-      <th><%= model_class.human_attribute_name(:identifier) %></th>
-      <th><%= model_class.human_attribute_name(:identifiertype) %></th>
+      <th><%= model_class.human_attribute_name(:uuid) %></th>
       <th><%= model_class.human_attribute_name(:title) %></th>
-      <th><%= model_class.human_attribute_name(:publicationdate) %></th>
-      <th><%= model_class.human_attribute_name(:publishername) %></th>
-      <th><%= model_class.human_attribute_name(:maindescription) %></th>
-      <th><%= model_class.human_attribute_name(:digitalprotection) %></th>
-      <th><%= model_class.human_attribute_name(:price) %></th>
-      <th><%= model_class.human_attribute_name(:contributor_id) %></th>
-      <th><%= model_class.human_attribute_name(:contributor_content) %></th>
-      <th><%= model_class.human_attribute_name(:contributorrolecode) %></th>
-      <th><%= model_class.human_attribute_name(:namesbeforekey) %></th>
-      <th><%= model_class.human_attribute_name(:keynames) %></th>
-      <th><%= model_class.human_attribute_name(:contributorrolename) %></th>
-      <th><%= model_class.human_attribute_name(:numberofpages) %></th>
-      <th><%= model_class.human_attribute_name(:filesize) %></th>
-      <th><%= model_class.human_attribute_name(:authors) %></th>
-      <th><%= model_class.human_attribute_name(:rightlist) %></th>
-      <th><%= model_class.human_attribute_name(:subjects) %></th>
-      <th><%= model_class.human_attribute_name(:images) %></th>
-      <th><%= model_class.human_attribute_name(:authorpid) %></th>
-      <th><%= model_class.human_attribute_name(:creationdate) %></th>
+      <th><%= model_class.human_attribute_name(:subtitle) %></th>
+      <th><%= model_class.human_attribute_name(:publisher) %></th>
+      <th><%= model_class.human_attribute_name(:originPlace) %></th>
+      <th><%= model_class.human_attribute_name(:dateIssued) %></th>
+      <th><%= model_class.human_attribute_name(:languageISO) %></th>
+      <th><%= model_class.human_attribute_name(:languageText) %></th>
+      <th><%= model_class.human_attribute_name(:subject) %></th>
+      <th><%= model_class.human_attribute_name(:physicalExtent) %></th>
+      <th><%= model_class.human_attribute_name(:physicalLocation) %></th>
+      <th><%= model_class.human_attribute_name(:url) %></th>
+      <th><%= model_class.human_attribute_name(:author) %></th>
+      <th><%= model_class.human_attribute_name(:category) %></th>
+      <th><%= model_class.human_attribute_name(:description) %></th>
+
       <th><%= model_class.human_attribute_name(:created_at) %></th>
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
@@ -39,32 +30,22 @@
     <% @books.each do |book| %>
       <tr>
         <td><%= link_to book.id, book_path(book) %></td>
-        <td><%= book.booktype %></td>
-        <td><%= book.filetype %></td>
-        <td><%= book.bookid %></td>
-        <td><%= book.identifier %></td>
-        <td><%= book.identifiertype %></td>
+        <td><%= book.uuid %></td>
         <td><%= book.title %></td>
-        <td><%= book.publicationdate %></td>
-        <td><%= book.publishername %></td>
-        <td><%= book.maindescription %></td>
-        <td><%= book.digitalprotection %></td>
-        <td><%= book.price %></td>
-        <td><%= book.contributor_id %></td>
-        <td><%= book.contributor_content %></td>
-        <td><%= book.contributorrolecode %></td>
-        <td><%= book.namesbeforekey %></td>
-        <td><%= book.keynames %></td>
-        <td><%= book.contributorrolename %></td>
-        <td><%= book.numberofpages %></td>
-        <td><%= book.filesize %></td>
-        <td><%= book.authors %></td>
-        <td><%= book.rightlist %></td>
-        <td><%= book.subjects %></td>
-        <td><%= book.images %></td>
-        <td><%= book.authorpid %></td>
-        <td><%= book.creationdate %></td>
-        <td><%=l book.created_at %></td>
+        <td><%= book.subtitle %></td>
+        <td><%= book.publisher %></td>
+        <td><%= book.originPlace %></td>
+        <td><%= book.dateIssued %></td>
+        <td><%= book.languageISO %></td>
+        <td><%= book.languageText %></td>
+        <td><%= book.subject %></td>
+        <td><%= book.physicalExtent %></td>
+        <td><%= book.physicalLocation %></td>
+        <td><%= book.url %></td>
+        <td><%= book.author %></td>
+        <td><%= book.category %></td>
+        <td><%= book.description %></td>
+
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
                       edit_book_path(book), :class => 'btn btn-mini' %>

@@ -1,32 +1,8 @@
 <%= form_for @book, :html => { :class => 'form-horizontal' } do |f| %>
   <div class="control-group">
-    <%= f.label :booktype, :class => 'control-label' %>
+    <%= f.label :uuid, :class => 'control-label' %>
     <div class="controls">
-      <%= f.text_field :booktype, :class => 'text_field' %>
-    </div>
-  </div>
-  <div class="control-group">
-    <%= f.label :filetype, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.text_field :filetype, :class => 'text_field' %>
-    </div>
-  </div>
-  <div class="control-group">
-    <%= f.label :bookid, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.text_field :bookid, :class => 'text_field' %>
-    </div>
-  </div>
-  <div class="control-group">
-    <%= f.label :identifier, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.text_field :identifier, :class => 'text_field' %>
-    </div>
-  </div>
-  <div class="control-group">
-    <%= f.label :identifiertype, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.text_field :identifiertype, :class => 'text_field' %>
+      <%= f.text_field :uuid, :class => 'text_field' %>
     </div>
   </div>
   <div class="control-group">
@@ -36,117 +12,81 @@
     </div>
   </div>
   <div class="control-group">
-    <%= f.label :publicationdate, :class => 'control-label' %>
+    <%= f.label :subtitle, :class => 'control-label' %>
     <div class="controls">
-      <%= f.text_field :publicationdate, :class => 'text_field' %>
+      <%= f.text_field :subtitle, :class => 'text_field' %>
     </div>
   </div>
   <div class="control-group">
-    <%= f.label :publishername, :class => 'control-label' %>
+    <%= f.label :publisher, :class => 'control-label' %>
     <div class="controls">
-      <%= f.text_field :publishername, :class => 'text_field' %>
+      <%= f.text_field :publisher, :class => 'text_field' %>
     </div>
   </div>
   <div class="control-group">
-    <%= f.label :maindescription, :class => 'control-label' %>
+    <%= f.label :originPlace, :class => 'control-label' %>
     <div class="controls">
-      <%= f.text_field :maindescription, :class => 'text_field' %>
+      <%= f.text_field :originPlace, :class => 'text_field' %>
     </div>
   </div>
   <div class="control-group">
-    <%= f.label :digitalprotection, :class => 'control-label' %>
+    <%= f.label :dateIssued, :class => 'control-label' %>
     <div class="controls">
-      <%= f.text_field :digitalprotection, :class => 'text_field' %>
+      <%= f.text_field :dateIssued, :class => 'text_field' %>
     </div>
   </div>
   <div class="control-group">
-    <%= f.label :price, :class => 'control-label' %>
+    <%= f.label :languageISO, :class => 'control-label' %>
     <div class="controls">
-      <%= f.text_field :price, :class => 'text_field' %>
+      <%= f.text_field :languageISO, :class => 'text_field' %>
     </div>
   </div>
   <div class="control-group">
-    <%= f.label :contributor_id, :class => 'control-label' %>
+    <%= f.label :languageText, :class => 'control-label' %>
     <div class="controls">
-      <%= f.text_field :contributor_id, :class => 'text_field' %>
+      <%= f.text_field :languageText, :class => 'text_field' %>
     </div>
   </div>
   <div class="control-group">
-    <%= f.label :contributor_content, :class => 'control-label' %>
+    <%= f.label :subject, :class => 'control-label' %>
     <div class="controls">
-      <%= f.text_field :contributor_content, :class => 'text_field' %>
+      <%= f.text_field :subject, :class => 'text_field' %>
     </div>
   </div>
   <div class="control-group">
-    <%= f.label :contributorrolecode, :class => 'control-label' %>
+    <%= f.label :physicalExtent, :class => 'control-label' %>
     <div class="controls">
-      <%= f.text_field :contributorrolecode, :class => 'text_field' %>
+      <%= f.text_field :physicalExtent, :class => 'text_field' %>
     </div>
   </div>
   <div class="control-group">
-    <%= f.label :namesbeforekey, :class => 'control-label' %>
+    <%= f.label :physicalLocation, :class => 'control-label' %>
     <div class="controls">
-      <%= f.text_field :namesbeforekey, :class => 'text_field' %>
+      <%= f.text_field :physicalLocation, :class => 'text_field' %>
     </div>
   </div>
   <div class="control-group">
-    <%= f.label :keynames, :class => 'control-label' %>
+    <%= f.label :url, :class => 'control-label' %>
     <div class="controls">
-      <%= f.text_field :keynames, :class => 'text_field' %>
+      <%= f.text_field :url, :class => 'text_field' %>
     </div>
   </div>
   <div class="control-group">
-    <%= f.label :contributorrolename, :class => 'control-label' %>
+    <%= f.label :author, :class => 'control-label' %>
     <div class="controls">
-      <%= f.text_field :contributorrolename, :class => 'text_field' %>
+      <%= f.text_field :author, :class => 'text_field' %>
     </div>
   </div>
   <div class="control-group">
-    <%= f.label :numberofpages, :class => 'control-label' %>
+    <%= f.label :category, :class => 'control-label' %>
     <div class="controls">
-      <%= f.text_field :numberofpages, :class => 'text_field' %>
+      <%= f.text_field :category, :class => 'text_field' %>
     </div>
   </div>
   <div class="control-group">
-    <%= f.label :filesize, :class => 'control-label' %>
+    <%= f.label :description, :class => 'control-label' %>
     <div class="controls">
-      <%= f.text_field :filesize, :class => 'text_field' %>
-    </div>
-  </div>
-  <div class="control-group">
-    <%= f.label :authors, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.text_field :authors, :class => 'text_field' %>
-    </div>
-  </div>
-  <div class="control-group">
-    <%= f.label :rightlist, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.text_field :rightlist, :class => 'text_field' %>
-    </div>
-  </div>
-  <div class="control-group">
-    <%= f.label :subjects, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.text_field :subjects, :class => 'text_field' %>
-    </div>
-  </div>
-  <div class="control-group">
-    <%= f.label :images, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.text_field :images, :class => 'text_field' %>
-    </div>
-  </div>
-  <div class="control-group">
-    <%= f.label :authorpid, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.text_field :authorpid, :class => 'text_field' %>
-    </div>
-  </div>
-  <div class="control-group">
-    <%= f.label :creationdate, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.datetime_select :creationdate, :class => 'datetime_select' %>
+      <%= f.text_field :description, :class => 'text_field' %>
     </div>
   </div>
 

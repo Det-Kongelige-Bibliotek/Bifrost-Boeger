@@ -3,7 +3,8 @@ module Datastreams
     set_terminology do |t|
       t.root(:path=>'mods', :xmlns=>"http://www.loc.gov/mods/v3")
       t.uuid(:path=>"identifier[@type='uri']")
-      t.genre()
+      t.genre(:path=>"genre")
+
       t.typeOfResource()
       t.location do
         t.physicalLocation()
@@ -40,19 +41,25 @@ module Datastreams
 
       t.note()
 
+
       t.titleNonSort(:proxy => [:titleInfo, :nonSort])
       t.title(:proxy => [:titleInfo, :title])
-      t.subTitle(:proxy => [:titleInfo, :subTitle])
+      t.subtitle(:proxy => [:titleInfo, :subTitle])
+      t.category(:proxy => [:genre])
       t.publisher(:proxy => [:originInfo, :publisher])
       t.originPlace(:proxy => [:originInfo, :place, :placeTerm])
       t.dateIssued(:proxy => [:originInfo, :dateIssued])
       t.languageISO(:proxy => [:language, :languageISO])
       t.languageText(:proxy => [:language, :languageText])
+      #t.topic(:proxy => [:subject, :topic])
       t.subjectTopic(:proxy => [:subject, :topic])
       t.physicalExtent(:proxy => [:physicalDescription, :extent])
       t.physicalLocation(:proxy => [:location, :physicalLocation])
       t.url(:proxy => [:location, :url])
       t.author(:proxy => [:name, :namePart])
+      t.description(:proxy => [:note])
+
+
     end
 
     def self.xml_template
@@ -101,6 +108,7 @@ module Datastreams
         <mods:name>
             <mods:namePart/>
         </mods:name>
+        <mods:note></mods:note>
       </mods:mods>'
     end
   end
