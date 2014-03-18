@@ -87,6 +87,7 @@ class CatalogController < ApplicationController
     config.add_show_field solr_name('subtitle', :stored_searchable, type: :string), :label => 'Subtitle'
     config.add_show_field solr_name('author', :stored_searchable, type: :string), :label => 'Creator'
     config.add_show_field solr_name('edition', :displayable, type: :string), :label => 'Edition'
+    config.add_show_field solr_name('subjectTopic', :stored_searchable, type: :string), :label => 'Edition'
     config.add_show_field solr_name('dateIssued', :stored_searchable, type: :string), :label => 'Creationdate'
     config.add_show_field solr_name('description', :stored_searchable, type: :string), :label => 'Description'
     config.add_show_field solr_name('languageISO', :stored_searchable, type: :string), :label => 'Language'
