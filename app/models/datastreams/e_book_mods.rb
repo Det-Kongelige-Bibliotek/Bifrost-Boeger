@@ -2,9 +2,9 @@ module Datastreams
   class EBookMods  < ActiveFedora::OmDatastream
     set_terminology do |t|
       t.root(:path=>'mods', :xmlns=>"http://www.loc.gov/mods/v3")
-      t.uuid(:path=>"identifier[@type='uri']", :index_as=>[:displayable])
-      t.barcode(:path=>"identifier[@type='barcode']",  :index_as=>[:displayable])
-      t.genre(:path=>"genre[@type='Materialetype']",  :index_as=>[:displayable])
+      t.uuid(:path=>"identifier[@type='uri']", :index_as=>[:displayable, :stored_searchable])
+      t.barcode(:path=>"identifier[@type='barcode']",  :index_as=>[:displayable, :stored_searchable])
+      t.genre(:path=>"genre[@type='Materialetype']",  :index_as=>[:displayable, :stored_searchable])
 
       t.typeOfResource()
       t.location do
