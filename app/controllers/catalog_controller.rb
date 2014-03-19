@@ -7,10 +7,10 @@ class CatalogController < ApplicationController
   include Hydra::Controller::ControllerBehavior
   # These before_filters apply the hydra access controls
 
-  # ABWE NO RIGHTSMETADATA before_filter :enforce_show_permissions, :only=>:show
+   before_filter :enforce_show_permissions, :only=>:show
 
   # This applies appropriate access controls to all solr queries
-  # ABWE NO RIGHTSMETADATA CatalogController.solr_search_params_logic += [:add_access_controls_to_solr_params]
+  CatalogController.solr_search_params_logic += [:add_access_controls_to_solr_params]
   # This filters out objects that you want to exclude from search results, like FileAssets
   CatalogController.solr_search_params_logic += [:exclude_unwanted_models]
 
