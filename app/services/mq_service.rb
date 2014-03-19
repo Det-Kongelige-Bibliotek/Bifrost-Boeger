@@ -32,7 +32,7 @@ module MQService
 
     source = MQ_CONFIG['dissemination']['source']
     q = channel.queue(source, :durable => true)
-    logger.info "Listening to dissemination source queue: #{source}"
+    #logger.info "Listening to dissemination source queue: #{source}"
 
     q.subscribe do |delivery_info, metadata, payload|
       begin
