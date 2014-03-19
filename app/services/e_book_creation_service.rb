@@ -5,7 +5,7 @@ class EBookCreationService
     book = Book.new
     ## adding CC license
     book.add_default_license
-    book.add_user_to_rights_meta_data_stream('IMPORTER', 2)
+    book.add_user_to_rights_meta_data_stream
 
     book.datastreams['descMetadata'].content = message_h['MODS']
     book.uuid = message_h['UUID']
