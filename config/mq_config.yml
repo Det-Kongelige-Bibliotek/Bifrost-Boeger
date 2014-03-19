@@ -1,7 +1,7 @@
 development:
   mq_uri: "amqp://dia-prod-udv-01.kb.dk:5673"
   dissemination:
-    source: "bifrost-ingest-dev-queue"
+    source: "bifrost-ingest-andreas-queue"
     polling_interval_in_minutes: 1
 
 test:
@@ -11,7 +11,7 @@ test:
       polling_interval_in_minutes: 1
 
 production:
-  mq_uri: "amqp://localhost:5672"
+  mq_uri: "amqp://dia-prod-udv-01.kb.dk:5673"
   dissemination:
       source: "bifrost-ingest-prod-queue"
       polling_interval_in_minutes: 1

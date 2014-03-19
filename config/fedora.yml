@@ -9,6 +9,7 @@ test: &TEST
 production:
   user: fedoraAdmin
   password: fedoraAdmin
-  url: http://your.production.server:8080/fedora
+  #url: http://127.0.0.1:8983/fedora
+  url: http://bifrost-dev-fedora.kb.dk:8080/fedora
 cucumber:
   <<: *TEST

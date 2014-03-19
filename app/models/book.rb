@@ -5,9 +5,9 @@ class Book  < ActiveFedora::Base
   has_metadata :name => 'descMetadata', :type=>Datastreams::EBookMods
   #:, :, :, :, :, :, :, :, :subject, :, :, :, :author, :category, :description, :date_start, :date_end
   has_attributes :uuid, :barcode, :titleNonSort, :title, :subtitle,  :publisher, :originPlace, :edition, :dateIssued, :languageISO, :languageText, :subject, :category,
-                 :subjectTopic, :physicalExtent, :physicalLocation, :copyright, :url, datastream: 'descMetadata', multiple: false
+                 :subjectTopic, :physicalExtent, :physicalLocation, :url, datastream: 'descMetadata', multiple: false
 
-  has_attributes :author, datastream: 'descMetadata', :at => [:name], :multiple => true
+  has_attributes :author, datastream: 'descMetadata', :multiple => true
   has_attributes :description, datastream: 'descMetadata', :multiple => true
 
   def get_display_title
@@ -35,13 +35,13 @@ class Book  < ActiveFedora::Base
     solr_doc
   end
 
-  delegate :license_title, :to=>'rightsMetadata', :at=>[:license, :title], :index_as=>[:stored_searchable, :displayable, :sortable], :unique=>true
-  delegate :license_description, :to=>'rightsMetadata', :at=>[:license, :description], :unique=>true
-  delegate :license_url, :to=>'rightsMetadata', :at=>[:license, :url], :unique=>true
+  delegate :license_title, :to=>'rightsMetadata', :at=>[:license, :title], :index_as=>[:stored_searchable, :displayable, :sortable]
+  delegate :license_description, :to=>'rightsMetadata', :at=>[:license, :description]
+  delegate :license_url, :to=>'rightsMetadata', :at=>[:license, :url]
 
-  delegate :read_access_human_text, :to=>'rightsMetadata', :at=>[:read_access, :human_readable] , :unique=>true
-  delegate :discover_access_human_text, :to=>'rightsMetadata', :at=>[:discover_access, :human_readable] , :unique=>true
-  delegate :edit_access_human_text, :to=>'rightsMetadata', :at=>[:edit_access, :human_readable] , :unique=>true
+  delegate :read_access_human_text, :to=>'rightsMetadata', :at=>[:read_access, :human_readable]
+  delegate :discover_access_human_text, :to=>'rightsMetadata', :at=>[:discover_access, :human_readable]
+  delegate :edit_access_human_text, :to=>'rightsMetadata', :at=>[:edit_access, :human_readable]
 
 
 
