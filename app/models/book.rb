@@ -7,7 +7,7 @@ class Book  < ActiveFedora::Base
   has_attributes :uuid, :barcode, :titleNonSort, :title, :subtitle,  :publisher, :originPlace, :edition, :dateIssued, :languageISO, :languageText, :subject, :category,
                  :subjectTopic, :physicalExtent, :physicalLocation, :copyright, :url, datastream: 'descMetadata', multiple: false
 
-  has_attributes :author, datastream: 'descMetadata', :at => [:name], :multiple => true
+  has_attributes :author, datastream: 'descMetadata', :multiple => true
   has_attributes :description, datastream: 'descMetadata', :multiple => true
 
   def get_display_title
