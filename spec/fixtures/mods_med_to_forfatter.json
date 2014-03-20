@@ -1,0 +1,40 @@
+{
+    "UUID":"58e56210-9239-0131-6849-101f744d4172",
+    "Dissemination_type":"BifrostBøger",
+    "Type":"valhal:15865",
+    "Files":{
+        "1":"http://www.kb.dk/e-mat/dod/404.pdf"},
+    "MODS":{
+        "mods":{
+            "xmlns:xsi":"http://www.w3.org/2001/XMLSchema-instance",
+            "xmlns":"http://www.loc.gov/mods/v3",
+            "version":"3.4",
+            "xsi:schemaLocation":"http://www.loc.gov/mods/v3 http://www.loc.gov/standards/mods/v3/mods-3-4.xsd",
+            "titleInfo":{
+                "title":"Er Danmark i Fare? Nej!",
+                "subTitle":": skrevet den 19. marts 2014"},
+            "name":[{
+                "type":"personal",
+                "usage":"primary",
+                "namePart":"Klee, Frederik"},{
+                "type":"personal",
+                "usage":"primary",
+                "namePart":"Laudrup, Henrik"}],
+            "typeOfResource":null,
+            "originInfo":{
+                "place":{
+                    "placeTerm":"Kbh"},
+                "dateIssued":"1848"},
+            "physicalDescription":{
+                "extent":"15 s."},
+            "note":{
+                "type":"statement of responsibility",
+                "altRepGroup":"00"},
+            "location":[{
+                "physicalLocation":"37,-376 8°"},{
+                "url":"http://aleph-00.kb.dk/X/130019448593.pdf"}],
+            "recordInfo":{
+                "recordOrigin":"Converted from MARCXML to MODS version 3.4 using MARC21slim2MODS3-4.xsl\n\t\t\t\t(Revision 1.94 2014/02/21)"}
+        }
+    }
+}
