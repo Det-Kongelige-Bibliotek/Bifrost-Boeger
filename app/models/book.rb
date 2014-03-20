@@ -1,7 +1,7 @@
 class Book  < ActiveFedora::Base
-  include Hydra::ModelMixins::RightsMetadata
+  include Hydra::AccessControls::Permissions
 
-  has_metadata :name => 'rightsMetadata', :type => Hydra::Datastream::RightsMetadata
+
   has_metadata :name => 'descMetadata', :type=>Datastreams::EBookMods
   #:, :, :, :, :, :, :, :, :subject, :, :, :, :author, :category, :description, :date_start, :date_end
   has_attributes :uuid, :barcode, :titleNonSort, :title, :subtitle,  :publisher, :originPlace, :edition, :dateIssued, :languageISO, :languageText, :subject, :category,
@@ -26,23 +26,8 @@ class Book  < ActiveFedora::Base
     # The title field contains both of title, subtitle and Non sortable title.
     Solrizer.insert_field(solr_doc,'title',self.get_display_title,:stored_searchable, :displayable)
 
-
-    Solrizer.insert_field(solr_doc, 'licens', self.license_url, :stored_searchable, :displayable, :facetable)
-    Solrizer.insert_field(solr_doc, 'licens_url', self.license_url, :stored_searchable, :displayable, :facetable)
-    Solrizer.insert_field(solr_doc, 'licens_title', self.license_title, :stored_searchable, :displayable, :facetable)
-    Solrizer.insert_field(solr_doc, 'licens_description', self.license_description, :stored_searchable, :displayable)
-
     solr_doc
   end
-
-  delegate :license_title, :to=>'rightsMetadata', :at=>[:license, :title], :index_as=>[:stored_searchable, :displayable, :sortable]
-  delegate :license_description, :to=>'rightsMetadata', :at=>[:license, :description]
-  delegate :license_url, :to=>'rightsMetadata', :at=>[:license, :url]
-
-  delegate :read_access_human_text, :to=>'rightsMetadata', :at=>[:read_access, :human_readable]
-  delegate :discover_access_human_text, :to=>'rightsMetadata', :at=>[:discover_access, :human_readable]
-  delegate :edit_access_human_text, :to=>'rightsMetadata', :at=>[:edit_access, :human_readable]
-
 
 
 
@@ -54,9 +39,12 @@ class Book  < ActiveFedora::Base
   end
 
   def add_user_to_rights_meta_data_stream
-    self.edit_access_human_text = "Administrators can edit this object"
+    #self.edit_access_human_text = "Administrators can edit this object"
     #self.rightsMetadata.update_permissions({ "person"=>{pid=>"edit"}})
-    self.rightsMetadata.update_permissions({"group"=>{"public"=>"read","admin"=>"edit"}})
+    self.set_read_groups( ["public"], [])
+    #self.set_discover_groups( ["public"], [])
+    self.set_edit_groups( ["admin"], [])
+    #self.rightsMetadata.update_permissions({"group"=>{"public"=>"edit","public"=>"read","admin"=>"edit"}})
   end
 
 end
