@@ -59,8 +59,42 @@ module Datastreams
       t.physicalExtent(:proxy => [:physicalDescription, :extent],:index_as=>[:displayable])
       t.physicalLocation(:proxy => [:location, :physicalLocation],:index_as=>[:displayable])
       t.url(:proxy => [:location, :url], :index_as=>[:displayable])
-      t.author(:proxy => [:name, :namePart], :index_as=>[:stored_searchable, :facetable])
+      #t.author(:proxy => [:name, :namePart], :index_as=>[:stored_searchable, :facetable])
       t.description(:proxy => [:note],:index_as=>[:stored_searchable])
+    end
+
+    define_template :author do |xml, name|
+      xml.name() {
+        xml.namePart { xml.text(name) }
+      }
+    end
+
+    def insert_author(name)
+      sibling = find_by_terms(:name).last
+      node = sibling ? add_next_sibling_node(sibling, :author, name) :
+          add_child_node(ng_xml.root, :author, name)
+      content_will_change!
+      return node
+
+    end
+
+    def get_authors
+      authors = []
+      nodes = find_by_terms(:name)
+      nodes.each do |n|
+        n.children.each do |c|
+          authors << c.text unless c.name != 'namePart'
+        end
+      end
+      authors
+    end
+    
+    def remove_authors
+      nodes = find_by_terms(:name)
+      if (nodes.size>0)
+        nodes.each { |n| n.remove }
+        content_will_change!
+      end
     end
 
     def self.xml_template
