@@ -20,11 +20,29 @@ class Book  < ActiveFedora::Base
     return self.titleNonSort + self.title
   end
 
+  def author(*arg)
+    self.descMetadata.get_authors
+  end
+
+  def author=(val)
+    self.descMetadata.remove_authors
+    val.each do |v|
+      unless v.blank?
+        self.descMetadata.insert_author(v)
+      end
+    end
+  end
 
   def to_solr(solr_doc = {})
     super
     # The title field contains both of title, subtitle and Non sortable title.
     Solrizer.insert_field(solr_doc,'title',self.get_display_title,:stored_searchable, :displayable)
+
+    unless self.author.nil?
+      self.author.each do |a|
+        Solrizer.insert_field(solr_doc,'author',a,:stored_searchable,:facetable)
+      end
+    end
 
     solr_doc
   end

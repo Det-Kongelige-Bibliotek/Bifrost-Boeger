@@ -6,16 +6,16 @@ module MQService
   def initialize_listener
     begin
       uri = MQ_CONFIG["mq_uri"]
-      logger.debug "Using MQ URI #{uri}"
+  #    logger.debug "Using MQ URI #{uri}"
       conn = Bunny.new(uri)
       conn.start
       ch = conn.create_channel
 
-      logger.debug 'Subscription to MQ successfully started'
+  #    logger.debug 'Subscription to MQ successfully started'
       subscribe_to_dod_digitisation(ch)
-      logger.debug 'Closing MQ connection...'
+  #    logger.debug 'Closing MQ connection...'
       conn.close
-      logger.debug 'MQ Connection closed'
+  #    logger.debug 'MQ Connection closed'
     rescue Bunny::TCPConnectionFailed => e
       logger.error 'Connection to RabbitMQ failed'
       logger.error e.to_s
@@ -23,7 +23,7 @@ module MQService
   end
 
   #Subscribe to the DOD Digitisation Workflow queue
-  #@param channel The channel to the message broker.
+  #@param channel The channel to the message broker.d
   def subscribe_to_dod_digitisation(channel)
     if MQ_CONFIG['dissemination']['source'].blank?
       logger.warn 'No dissemination source queue defined -> Not listening'
@@ -32,7 +32,7 @@ module MQService
 
     source = MQ_CONFIG['dissemination']['source']
     q = channel.queue(source, :durable => true)
-    #logger.info "Listening to dissemination source queue: #{source}"
+  #  logger.info "Listening to dissemination source queue: #{source}"
 
     q.subscribe do |delivery_info, metadata, payload|
       begin
