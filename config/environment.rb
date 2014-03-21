@@ -17,13 +17,13 @@ include MQService
 
 #This function starts the listener thread which will poll RabbitMQ at regular intervals set by the polling_interval
 def start_listener_thread
-  polling_interval = MQ_CONFIG['dissemination']['polling_interval_in_minutes']
+  polling_interval = MQ_CONFIG['dissemination']['polling_interval_in_seconds']
   t = Thread.new do
     while true
       logger.debug 'Started listener thread...'
       initialize_listener
-      #logger.debug "Going to sleep for #{polling_interval} minutes..."
-      #sleep polling_interval.minutes
+      logger.debug "Going to sleep for #{polling_interval} minutes..."
+      sleep polling_interval.seconds
     end
   end
   logger.debug "num_of_threads = #{t.group.list.size}"
