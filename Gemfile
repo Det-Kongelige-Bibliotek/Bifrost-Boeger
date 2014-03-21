@@ -6,6 +6,7 @@ gem 'rails', '~> 4.0.3'
 gem "devise", "~> 3.2.3"
 gem "blacklight", '~> 4.7.0'
 gem 'hydra-head', '6.5.0'
+gem 'bootswatch-rails'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
