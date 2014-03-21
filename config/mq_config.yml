@@ -3,15 +3,18 @@ development:
   dissemination:
     source: "bifrost-ingest-andreas-queue"
     polling_interval_in_minutes: 1
+    polling_interval_in_seconds: 30
 
 test:
   mq_uri: "amqp://localhost:5672"
   dissemination:
       source: "bifrost-ingest-test-queue"
       polling_interval_in_minutes: 1
+      polling_interval_in_seconds: 30
 
 production:
   mq_uri: "amqp://dia-prod-udv-01.kb.dk:5673"
   dissemination:
       source: "bifrost-ingest-prod-queue"
       polling_interval_in_minutes: 1
+      polling_interval_in_seconds: 30
