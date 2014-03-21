@@ -33,7 +33,7 @@ class EBookCreationService
         set_value(md,'category',doc.css("mods>genre[@type='Materialetype']"))
         set_value(md,'title',doc.css('mods>titleInfo>title').text)
         set_value(md,'subtitle',doc.css('mods>titleInfo>subTitle').text)
-        set_value(md,'titleNonsort',doc.css('mods>titleInfo>titleNonsort').text)
+        set_value(md,'titleNonSort',doc.css('mods>titleInfo>nonSort').text)
         set_value(md,'dateIssued',doc.css('mods>originInfo>dateIssued').text)
         set_value(md,'originPlace',doc.css('mods>originInfo>place>placeTerm').text)
         set_value(md,'publisher',doc.css('mods>originInfo>publisher').text)
