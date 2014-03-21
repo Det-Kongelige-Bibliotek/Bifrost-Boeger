@@ -29,28 +29,29 @@ class EBookCreationService
         logger.debug "parsing mods #{mods.inspect}"
         doc = Nokogiri::XML(mods)
         logger.debug "setting values"
-        set_value(md,'barcode',doc.css("mods identifier[@type='barcode']").text)
-        set_value(md,'category',doc.css("mods genre[@type='Materialetype']"))
-        set_value(md,'title',doc.css('mods titleInfo title').text)
-        set_value(md,'subtitle',doc.css('mods titleInfo subTitle').text)
-        set_value(md,'titleNonsort',doc.css('mods titleInfo titleNonsort').text)
-        set_value(md,'dateIssued',doc.css('mods originInfo dateIssued').text)
-        set_value(md,'originPlace',doc.css('mods originInfo place placeTerm').text)
-        set_value(md,'publisher',doc.css('mods originInfo publisher').text)
-        set_value(md,'edition',doc.css('mods originInfo edition').text)
-        set_value(md,'languageISO',doc.css("mods language languageTerm[@authority='iso639-2b']"))
-        set_value(md,'languageText',doc.css("mods language languageTerm[@authority='text']"))
-        set_value(md,'subjectTopic',doc.css("mods subject topic").text)
-        set_value(md,'physicalExtent',doc.css("mods physicalDescription extent").text)
-        set_value(md,'physicalLocation',doc.css("mods location physicalLocation").text)
+        set_value(md,'barcode',doc.css("mods>identifier[@type='barcode']").text)
+        set_value(md,'category',doc.css("mods>genre[@type='Materialetype']"))
+        set_value(md,'title',doc.css('mods>titleInfo>title').text)
+        set_value(md,'subtitle',doc.css('mods>titleInfo>subTitle').text)
+        set_value(md,'titleNonSort',doc.css('mods>titleInfo>nonSort').text)
+        set_value(md,'dateIssued',doc.css('mods>originInfo>dateIssued').text)
+        set_value(md,'originPlace',doc.css('mods>originInfo>place>placeTerm').text)
+        set_value(md,'publisher',doc.css('mods>originInfo>publisher').text)
+        set_value(md,'edition',doc.css('mods>originInfo>edition').text)
+        set_value(md,'languageISO',doc.css("mods>language>languageTerm[@authority='iso639-2b']"))
+        set_value(md,'languageText',doc.css("mods>language>languageTerm[@authority='text']"))
+        set_value(md,'subjectTopic',doc.css("mods>subject>topic").text)
+        set_value(md,'physicalExtent',doc.css("mods>physicalDescription>extent").text)
+        set_value(md,'physicalLocation',doc.css("mods>location>physicalLocation").text)
 
         md['author'] = []
-        doc.css('mods name namePart').each do |e|
+        doc.css('mods>name>namePart').each do |e|
+          logger.debug "setting author #{e.text}"
           md['author'] << e.text unless e.text.blank?
         end
 
         md['description'] = []
-        doc.css('mods note').each {|e| md['description'] << e.text unless e.text.blank?}
+        doc.css('mods>note').each {|e| md['description'] << e.text unless e.text.blank?}
       rescue => e
         logger.error "Ebook creation service: Caught error while parsing mods: #{e}"
       end
