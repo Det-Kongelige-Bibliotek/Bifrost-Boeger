@@ -1,4 +1,10 @@
-@import 'bootstrap';
-@import 'bootstrap-responsive';
+// Set link color
+$linkColor: #007FFF !default;
+
+@import "bootswatch/cosmo/variables";
+@import "bootstrap";
+@import "bootstrap-responsive";
+
+@import "bootswatch/cosmo/bootswatch";
 
 @import 'blacklight/blacklight';
