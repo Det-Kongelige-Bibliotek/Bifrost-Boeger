@@ -4,10 +4,8 @@
 require "bunny"
 
 
-def send_message_to_queue(message_payload)
-  uri = "amqp://bifrost:bifrost@dia-prod-udv-01.kb.dk:5673"
+def send_message_to_queue(uri,queue,message_payload)
 
-  queue = 'Bifrost-ingest-dev-queue'
   conn = Bunny.new(uri)
   conn.start
 

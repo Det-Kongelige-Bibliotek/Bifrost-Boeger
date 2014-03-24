@@ -20,7 +20,7 @@ def start_listener_thread
   polling_interval = MQ_CONFIG['dissemination']['polling_interval_in_seconds']
   t = Thread.new do
     while true
-      logger.debug 'Started listener thread...'
+#      logger.debug 'Started listener thread...'
       initialize_listener
       logger.debug "Going to sleep for #{polling_interval} minutes..."
       sleep polling_interval.seconds
