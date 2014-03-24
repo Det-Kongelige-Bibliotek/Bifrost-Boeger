@@ -2,23 +2,34 @@ class EBookCreationService
 
   def create_from_message(message_string)
     message_h = JSON.parse(message_string)
+    logger.debug message_h.inspect
+
     logger.debug "creating book from modes #{message_h['MODS']}"
     md = mods_to_hash(message_h['MODS']);
     md['uuid'] = message_h['UUID']
-    md['url'] = message_h['Files']
     logger.debug "got hash"
     logger.debug md.inspect
-    book = Book.new(md)
+    # check if book exist. retrieve and update it if true
+   book = Book.find({uuid: message_h['UUID'] } ).first
+
+    if book.nil?
+      book = Book.new(md)
+      logger.debug "saving ebook"
+      if book.save
+        book
+      else
+        logger.debug "saving ebook failed"
+        nil
+      end
+
+    else         #Sholud do an update!
+      logger.debug "Doing an update of existing ebook"
+      book.update(md)
+    end
     ## adding CC license
  #   book.add_default_license
  #   book.add_user_to_rights_meta_data_stream
-    logger.debug "saving ebook"
-    if book.save
-      book
-    else
-      logger.debug "saving ebook failed"
-      nil
-    end
+
   end
 
 
