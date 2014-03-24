@@ -56,6 +56,7 @@ class CatalogController < ApplicationController
     config.add_facet_field solr_name('author', :facetable), :label => 'Author'
     config.add_facet_field solr_name('languageISO', :facetable), :label => 'Languange'
     config.add_facet_field solr_name('dateIssued', :facetable), :label => 'Creationdate'
+    config.add_facet_field solr_name('originPlace', :facetable), :label => 'Origin Place'
     #config.add_facet_field solr_name('object_type', :facetable), :label => 'Format'
     #config.add_facet_field solr_name('pub_date', :facetable), :label => 'Publication Year'
     #config.add_facet_field solr_name('subject_topic', :facetable), :label => 'Topic', :limit => 20
