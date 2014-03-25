@@ -8,30 +8,21 @@ class EBookCreationService
     md = mods_to_hash(message_h['MODS']);
     md['uuid'] = message_h['UUID']
     md['url'] = message_h['Files']
+    md[:pid] = "uuid:#{message_h['UUID']}"
+
     
     logger.debug "got hash"
     logger.debug md.inspect
     # check if book exist. retrieve and update it if true
-   book = Book.find({uuid: message_h['UUID'] } ).first
 
-    if book.nil?
-      book = Book.new(md)
-      logger.debug "saving ebook"
-      if book.save
-        book
-      else
-        logger.debug "saving ebook failed"
-        nil
-      end
-
-    else         #Sholud do an update!
-      logger.debug "Doing an update of existing ebook"
-      book.update(md)
+    logger.debug "saving ebook"
+    book = Book.new(md)
+    if book.save
+      book
+    else
+      logger.debug "saving ebook failed"
+      nil
     end
-    ## adding CC license
- #   book.add_default_license
- #   book.add_user_to_rights_meta_data_stream
-
   end
 
 
