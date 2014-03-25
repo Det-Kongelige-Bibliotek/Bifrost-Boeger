@@ -14,7 +14,6 @@ class EBookCreationService
 
     logger.debug "got hash"
     logger.debug md.inspect
-    # check if book exist. retrieve and update it if true
 
     logger.debug "saving ebook"
     book = Book.new(md)
