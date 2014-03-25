@@ -7,6 +7,7 @@ class EBookCreationService
     logger.debug "creating book from modes #{message_h['MODS']}"
     md = mods_to_hash(message_h['MODS']);
     md['uuid'] = message_h['UUID']
+    md['url'] = message_h['Files']
     logger.debug "got hash"
     logger.debug md.inspect
     # check if book exist. retrieve and update it if true
