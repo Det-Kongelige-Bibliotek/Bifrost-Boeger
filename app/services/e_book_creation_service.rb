@@ -8,7 +8,7 @@ class EBookCreationService
     md = mods_to_hash(message_h['MODS']);
     md['uuid'] = message_h['UUID']
     md['url'] = message_h['Files']
-    
+
     logger.debug "got hash"
     logger.debug md.inspect
     # check if book exist. retrieve and update it if true
@@ -51,8 +51,8 @@ class EBookCreationService
         set_value(md,'originPlace',doc.css('mods>originInfo>place>placeTerm').text)
         set_value(md,'publisher',doc.css('mods>originInfo>publisher').text)
         set_value(md,'edition',doc.css('mods>originInfo>edition').text)
-        set_value(md,'languageISO',doc.css("mods>language>languageTerm[@authority='iso639-2b']"))
-        set_value(md,'languageText',doc.css("mods>language>languageTerm[@authority='text']"))
+        set_value(md,'languageISO',doc.css("mods>language>languageTerm[@authority='iso639-2b']").text)
+        set_value(md,'languageText',doc.css("mods>language>languageTerm[@authority='text']").text)
         set_value(md,'subjectTopic',doc.css("mods>subject>topic").text)
         set_value(md,'physicalExtent',doc.css("mods>physicalDescription>extent").text)
         set_value(md,'physicalLocation',doc.css("mods>location>physicalLocation").text)
