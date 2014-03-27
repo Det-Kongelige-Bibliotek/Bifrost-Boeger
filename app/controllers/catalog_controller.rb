@@ -85,7 +85,7 @@ class CatalogController < ApplicationController
     #config.add_index_field solr_name('description', :stored_searchable, type: :string), :label => 'Beskrivelse:'
     config.add_index_field solr_name('imagetype', :stored_searchable, type: :string), :label => 'Type:'
     config.add_index_field solr_name('copyright', :stored_searchable, type: :string), :label => 'License:'
-    config.add_index_field solr_name('dateIssued', :stored_searchable, type: :string), :label => 'Creationdate:'
+    config.add_index_field solr_name('dateIssued', :stored_searchable, type: :string), :label => 'Udgivelsesår:'
 
     # solr fields to be displayed in the show (single result) view
     #   The ordering of the field names is the order of the display
