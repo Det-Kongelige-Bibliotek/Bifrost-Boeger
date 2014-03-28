@@ -23,12 +23,13 @@ require "bundler/capistrano"
                # If you are using Passenger mod_rails uncomment this:
 namespace :deploy do
   task :symlink_shared do
+     run "ln -s#{shared_apth}/jetty #{release_path}/jetty"
 #    run "ln -s #{shared_path}/application.local.yml #{release_path}/config/"
   end
   task :clean do
     rake = fetch(:rake, 'rake')
     rails_env = fetch(:rails_env, 'production')
-    run "cd '#{current_path}' && #{rake} bifrost:clean RAILS_ENV=#{rails_env}"
+  #  run "cd '#{current_path}' && #{rake} bifrost:clean RAILS_ENV=#{rails_env}"
   end
   task :start do
     ;
@@ -37,12 +38,17 @@ namespace :deploy do
     ;
   end
   task :restart, :roles => :app, :except => {:no_release => true} do
+    rake = fetch(:rake, 'rake')
+    run "cd '#{current_path}' && #{rake} jetty:stop RAILS_ENV=#{rails_env}"
+    run "#{rake} jetty:config RAILS_ENV=#{rails_env}"
+    run "#{rake} jetty:start RAILS_ENV=#{rails_env}"
+    run "sleep 30"
     run "#{try_sudo} touch #{File.join(current_path, 'tmp', 'restart.txt')}"
   end
 end
 
-before "deploy:restart", "deploy:symlink_shared"
+after :deploy, "deploy:symlink_shared", "deploy:restart"
 
-after :deploy, "deploy:clean"
+
 
 
