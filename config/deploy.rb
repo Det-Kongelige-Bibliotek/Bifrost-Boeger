@@ -29,7 +29,6 @@ namespace :deploy do
   task :clean do
     rake = fetch(:rake, 'rake')
     rails_env = fetch(:rails_env, 'production')
-  #  run "cd '#{current_path}' && #{rake} bifrost:clean RAILS_ENV=#{rails_env}"
   end
   task :start do
     ;
