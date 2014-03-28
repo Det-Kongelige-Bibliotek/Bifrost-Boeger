@@ -42,7 +42,7 @@ namespace :deploy do
     run "cd '#{current_path}' && #{rake} jetty:stop RAILS_ENV=#{rails_env}"
     run "sleep 10"
     run "cd '#{current_path}' && #{rake} jetty:config RAILS_ENV=#{rails_env}"
-   # run "cd '#{current_path}' && #{rake} jetty:start RAILS_ENV=#{rails_env}"
+    run "cd '#{current_path}' && #{rake} jetty:start RAILS_ENV=#{rails_env}"
     run "sleep 30"
     run "#{try_sudo} touch #{File.join(current_path, 'tmp', 'restart.txt')}"
   end
