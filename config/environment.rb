@@ -22,7 +22,7 @@ def start_listener_thread
     while true
 #      logger.debug 'Started listener thread...'
       initialize_listener
-      logger.debug "Going to sleep for #{polling_interval} minutes..."
+      logger.debug "Going to sleep for #{polling_interval} seconds..."
       sleep polling_interval.seconds
     end
   end

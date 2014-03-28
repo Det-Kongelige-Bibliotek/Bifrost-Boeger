@@ -53,10 +53,10 @@ class CatalogController < ApplicationController
     #
     # :show may be set to false if you don't want the facet to be drawn in the
     # facet bar
-    config.add_facet_field solr_name('author', :facetable), :label => 'Author'
-    config.add_facet_field solr_name('languageISO', :facetable), :label => 'Languange'
-    config.add_facet_field solr_name('dateIssued', :facetable), :label => 'Creationdate'
-    config.add_facet_field solr_name('originPlace', :facetable), :label => 'Origin Place'
+    config.add_facet_field solr_name('author', :facetable), :label => 'Forfatter'
+    config.add_facet_field solr_name('languageISO', :facetable), :label => 'Sprog'
+    config.add_facet_field solr_name('dateIssued', :facetable), :label => 'Udgivelsesår'
+    config.add_facet_field solr_name('originPlace', :facetable), :label => 'Origin'
     #config.add_facet_field solr_name('object_type', :facetable), :label => 'Format'
     #config.add_facet_field solr_name('pub_date', :facetable), :label => 'Publication Year'
     #config.add_facet_field solr_name('subject_topic', :facetable), :label => 'Topic', :limit => 20
@@ -82,9 +82,10 @@ class CatalogController < ApplicationController
     config.add_index_field solr_name('category', :stored_searchable, type: :string), :label => 'Kategori:'
     config.add_index_field solr_name('genre', :stored_searchable, type: :string), :label => 'Genre:'
     config.add_index_field solr_name('local', :stored_searchable, type: :string), :label => 'Område:'
-    config.add_index_field solr_name('description', :stored_searchable, type: :string), :label => 'Beskrivelse:'
+    #config.add_index_field solr_name('description', :stored_searchable, type: :string), :label => 'Beskrivelse:'
     config.add_index_field solr_name('imagetype', :stored_searchable, type: :string), :label => 'Type:'
     config.add_index_field solr_name('copyright', :stored_searchable, type: :string), :label => 'License:'
+    config.add_index_field solr_name('dateIssued', :stored_searchable, type: :string), :label => 'Udgivelsesår:'
 
     # solr fields to be displayed in the show (single result) view
     #   The ordering of the field names is the order of the display
