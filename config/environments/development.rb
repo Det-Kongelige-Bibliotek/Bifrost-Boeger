@@ -37,4 +37,8 @@ BifrostBoeger::Application.configure do
 
   # Expands the lines which load the assets
   config.assets.debug = true
+
+  #Disable action view logging (cleans op log-files)
+  config.action_view.logger = nil
+
 end
