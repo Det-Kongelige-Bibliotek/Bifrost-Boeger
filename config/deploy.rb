@@ -40,8 +40,8 @@ namespace :deploy do
     rake = fetch(:rake, 'rake')
     run "ln -s #{shared_path}/jetty #{current_path}/jetty"
     run "cd '#{current_path}' && #{rake} jetty:stop RAILS_ENV=#{rails_env}"
-    run "#{rake} jetty:config RAILS_ENV=#{rails_env}"
-    run "#{rake} jetty:start RAILS_ENV=#{rails_env}"
+    run "cd '#{current_path}' && #{rake} jetty:config RAILS_ENV=#{rails_env}"
+    run "cd '#{current_path}' && #{rake} jetty:start RAILS_ENV=#{rails_env}"
     run "sleep 30"
     run "#{try_sudo} touch #{File.join(current_path, 'tmp', 'restart.txt')}"
   end
