@@ -23,7 +23,7 @@ require "bundler/capistrano"
                # If you are using Passenger mod_rails uncomment this:
 namespace :deploy do
   task :symlink_shared do
-     run "ln -s #{shared_path}/jetty #{release_path}/jetty"
+
 #    run "ln -s #{shared_path}/application.local.yml #{release_path}/config/"
   end
   task :clean do
@@ -38,6 +38,7 @@ namespace :deploy do
   end
   task :restart, :roles => :app, :except => {:no_release => true} do
     rake = fetch(:rake, 'rake')
+    run "ln -s #{shared_path}/jetty #{current_path}/jetty"
     run "cd '#{current_path}' && #{rake} jetty:stop RAILS_ENV=#{rails_env}"
     run "#{rake} jetty:config RAILS_ENV=#{rails_env}"
     run "#{rake} jetty:start RAILS_ENV=#{rails_env}"
@@ -46,7 +47,7 @@ namespace :deploy do
   end
 end
 
-before :deploy, "deploy:symlink_shared"
+
 after :deploy, "deploy:restart"
 
 
