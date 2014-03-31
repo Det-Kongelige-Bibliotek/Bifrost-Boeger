@@ -22,14 +22,10 @@ require "bundler/capistrano"
 
                # If you are using Passenger mod_rails uncomment this:
 namespace :deploy do
-  task :stop_hydra do
-    run "echo #{current_path}"
-    if File.directory?(current_path)
-      run "cd '#{current_path}' && #{rake} jetty:stop RAILS_ENV=#{rails_env}"
-      run "sleep 10"
-    end
-  end
 
+  task :link_jetty do
+    run "ln -s #{shared_path}/jetty #{current_path}/jetty"
+  end
 
   task :symlink_shared do
 #    run "ln -s #{shared_path}/application.local.yml #{release_path}/config/"
@@ -45,13 +41,12 @@ namespace :deploy do
 
   end
   task :restart, :roles => :app, :except => {:no_release => true} do
-    rake = fetch(:rake, 'rake')
-    run "ln -s #{shared_path}/jetty #{current_path}/jetty"
-    run "#{try_sudo} touch #{File.join(current_path, 'tmp', 'restart.txt')}"
+   # rake = fetch(:rake, 'rake')
+   run "#{try_sudo} touch #{File.join(current_path, 'tmp', 'restart.txt')}"
   end
 end
 
-after :deploy, "deploy:restart"
+after :deploy, 'deploy:link_jetty'
 
 
 
