@@ -21,7 +21,7 @@ module CatalogHelper
     content_tag(:dl, class: 'dl-horizontal dl-invert') do
       METADATA_CONFIG.each_pair do |key, value|
         unless @document[value].nil? || @document[value].empty?
-          concat(content_tag(:dt, class: "blacklight-#{value}") { t key})
+          concat(content_tag(:dt, class: "blacklight-show-#{key}") { t key})
           concat(content_tag(:dd) { @document[value].to_sentence.html_safe })
         end
       end
