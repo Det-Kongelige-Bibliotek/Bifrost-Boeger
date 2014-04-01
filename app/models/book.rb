@@ -5,7 +5,7 @@ class Book  < ActiveFedora::Base
   has_metadata :name => 'descMetadata', :type=>Datastreams::EBookMods
   #:, :, :, :, :, :, :, :, :subject, :, :, :, :author, :category, :description, :date_start, :date_end
   has_attributes :uuid, :barcode, :titleNonSort, :title, :subtitle,  :publisher, :originPlace, :edition, :dateIssued, :languageISO, :languageText, :subject, :category,
-                 :subjectTopic, :physicalExtent, :physicalLocation, datastream: 'descMetadata', multiple: false
+                 :subjectTopic, :physicalExtent, :physicalLocation, :recordIdentifier, datastream: 'descMetadata', multiple: false
 
   has_attributes :author, datastream: 'descMetadata', :multiple => true
   has_attributes :description, datastream: 'descMetadata', :multiple => true

@@ -33,7 +33,7 @@ class EBookCreationService
         logger.debug "parsing mods #{mods.inspect}"
         doc = Nokogiri::XML(mods)
         logger.debug "setting values"
-        set_value(md,'barcode',doc.css("mods>identifier[@type='barcode']").text)
+        set_value(md,'recordIdentifier',doc.css("mods>recordInfo>recordIdentifier[@source='kb-aleph']").text)
         set_value(md,'category',doc.css("mods>genre[@type='Materialetype']"))
         set_value(md,'title',doc.css('mods>titleInfo>title').text)
         set_value(md,'subtitle',doc.css('mods>titleInfo>subTitle').text)

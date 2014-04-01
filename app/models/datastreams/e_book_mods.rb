@@ -41,6 +41,10 @@ module Datastreams
         t.namePart()
       end
 
+      t.recordInfo do
+        t.recordIdentifier()
+      end
+
       t.note()
 
 
@@ -61,6 +65,7 @@ module Datastreams
       t.urls(:proxy => [:location, :urls], :index_as=>[:displayable])
       #t.author(:proxy => [:name, :namePart], :index_as=>[:stored_searchable, :facetable])
       t.description(:proxy => [:note],:index_as=>[:stored_searchable])
+      t.recordIdentifier(:index_as => [:displayable])
     end
 
     define_template :author do |xml, name|

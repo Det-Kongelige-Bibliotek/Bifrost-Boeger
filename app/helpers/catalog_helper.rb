@@ -7,11 +7,11 @@ module CatalogHelper
   REX_CONFIG = YAML.load_file("#{Rails.root}/config/rex.yml")[Rails.env]
   METADATA_CONFIG = YAML.load_file("#{Rails.root}/config/metadata.yml")
 
-  #Function to create a REX search link for the digital book using the barcode
-  # @param [String] barcode
+  #Function to create a REX search link for the digital book using the Aleph SYS num
+  # @param [String] sys_num
   # @return [String] URL for REX book search
-  def create_rex_physical_book_search_link(barcode)
-    REX_CONFIG['rex_book_search_template_uri'].gsub('BARCODE', barcode.to_sentence.html_safe)
+  def create_rex_physical_book_search_link(sys_num)
+    REX_CONFIG['rex_book_search_template_uri'].gsub('SYS_NUM', "KGL01#{sys_num.to_sentence.html_safe}")
   end
 
   # this helper function allows us to configure the metadata display
