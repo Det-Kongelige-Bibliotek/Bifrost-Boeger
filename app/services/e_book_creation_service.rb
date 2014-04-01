@@ -7,7 +7,7 @@ class EBookCreationService
     logger.debug "creating book from modes #{message_h['MODS']}"
     md = mods_to_hash(message_h['MODS']);
     md['uuid'] = message_h['UUID']
-    md['url'] = message_h['Files']
+    md['urls'] = message_h['files']
     md[:pid] = "uuid:#{message_h['UUID']}"  # Crucial, use the uuid as Fedora PID's. Ensures duplicate detection
 
     
@@ -33,7 +33,7 @@ class EBookCreationService
         logger.debug "parsing mods #{mods.inspect}"
         doc = Nokogiri::XML(mods)
         logger.debug "setting values"
-        set_value(md,'barcode',doc.css("mods>identifier[@type='barcode']").text)
+        set_value(md,'recordIdentifier',doc.css("mods>recordInfo>recordIdentifier[@source='kb-aleph']").text)
         set_value(md,'category',doc.css("mods>genre[@type='Materialetype']"))
         set_value(md,'title',doc.css('mods>titleInfo>title').text)
         set_value(md,'subtitle',doc.css('mods>titleInfo>subTitle').text)

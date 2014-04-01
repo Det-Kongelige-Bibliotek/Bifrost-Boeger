@@ -9,7 +9,7 @@ module Datastreams
       t.typeOfResource()
       t.location do
         t.physicalLocation()
-        t.url()
+        t.urls()
       end
       t.titleInfo do
         t.nonSort()
@@ -41,6 +41,10 @@ module Datastreams
         t.namePart()
       end
 
+      t.recordInfo do
+        t.recordIdentifier()
+      end
+
       t.note()
 
 
@@ -58,9 +62,10 @@ module Datastreams
       t.subjectTopic(:proxy => [:subject, :topic],:index_as=>[:stored_searchable, :facetable])
       t.physicalExtent(:proxy => [:physicalDescription, :extent],:index_as=>[:displayable])
       t.physicalLocation(:proxy => [:location, :physicalLocation],:index_as=>[:displayable])
-      t.url(:proxy => [:location, :url], :index_as=>[:displayable])
+      t.urls(:proxy => [:location, :urls], :index_as=>[:displayable])
       #t.author(:proxy => [:name, :namePart], :index_as=>[:stored_searchable, :facetable])
       t.description(:proxy => [:note],:index_as=>[:stored_searchable])
+      t.recordIdentifier(:index_as => [:displayable])
     end
 
     define_template :author do |xml, name|

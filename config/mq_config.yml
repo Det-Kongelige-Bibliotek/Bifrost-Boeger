@@ -1,7 +1,7 @@
 development:
   mq_uri: "amqp://localhost:5672"
   dissemination:
-    source: "bifrost-ingest-dev-queue"
+    source: "dissemination-bifrost-books-dev-queue"
     polling_interval_in_minutes: 1
     polling_interval_in_seconds: 30
 
