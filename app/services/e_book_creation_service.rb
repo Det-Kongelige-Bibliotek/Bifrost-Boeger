@@ -7,7 +7,7 @@ class EBookCreationService
     logger.debug "creating book from modes #{message_h['MODS']}"
     md = mods_to_hash(message_h['MODS']);
     md['uuid'] = message_h['UUID']
-    md['url'] = message_h['Files']
+    md['urls'] = message_h['files']
     md[:pid] = "uuid:#{message_h['UUID']}"  # Crucial, use the uuid as Fedora PID's. Ensures duplicate detection
 
     
