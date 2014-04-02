@@ -6,14 +6,15 @@
       <div class="btn-group">
         <form action="/" method="get" accept-charset="utf-8">
           <%= render_hash_as_hidden_fields(params_for_search().except(:q, :search_field, :qt, :page, :utf8)) %>
-          <input type="text" name="search_field" id="js_search_field" class="hidden"/>
+          <input type="text" name="search_field" id="js_search_field" value="<%= params[:search_field] || 'all_fields'%>" class="hidden"/>
           <div class="input-prepend input-append">
             <div class="btn-group">
-              <button class="btn dropdown-toggle" data-toggle="dropdown" id="js_search_type_button"><%= t params[:search_field] || 'Action' %> <span class="caret"></span></button>
+              <button class="btn dropdown-toggle" data-toggle="dropdown" id="js_search_type_button">
+                <%=t (params[:search_field] || 'Action') %> <span class="caret"></span></button>
               <%= render_search_dropdown(search_fields) %>
             </div><!-- /btn-group -->
             <label for="appendedPrependedDropdownButton" class="hide-text"><%= t('blacklight.search.form.q') %></label>
-            <input class="span2" id="appendedPrependedDropdownButton" type="text" autofocus="<%= should_autofocus_on_search_box? %>">
+            <input class="span2" id="appendedPrependedDropdownButton" name='q' type="text" autofocus="<%= should_autofocus_on_search_box? %>">
             <div class="btn-group">
               <button class="btn" type="submit">
                 <i class="icon-search icon-white"></i>
