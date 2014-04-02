@@ -32,7 +32,7 @@ class CatalogController < ApplicationController
     config.show.html_title = 'title_ssm'
     config.show.heading = 'title_ssm'
     config.show.display_type = 'has_model_ssim'
-    config.show.subtitle = 'subtitle_ssm'
+    config.show.subtitle = 'subtitle_tesim'
 
     # solr fields that will be treated as facets by the blacklight application
     #   The ordering of the field names is the order of the display
@@ -75,7 +75,6 @@ class CatalogController < ApplicationController
 
     # solr fields to be displayed in the index (search results) view
     #   The ordering of the field names is the order of the display
-    config.add_index_field solr_name('title', :stored_searchable, type: :string), :label => 'Titel:'
     config.add_index_field solr_name('author', :stored_searchable, type: :string), :label => 'Forfatter'
     config.add_index_field solr_name('person', :stored_searchable, type: :string), :label => 'Person'
     config.add_index_field solr_name('fileidentifier', :stored_searchable, type: :string), :label => 'Fileidentifier'

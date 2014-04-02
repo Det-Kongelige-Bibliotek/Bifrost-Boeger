@@ -27,4 +27,38 @@ module CatalogHelper
       end
     end
   end
+
+  # given a hash of search_fields, render a ul with search fields
+  # as list elements within links
+  def render_search_dropdown(search_fields)
+    content_tag(:ul, class: 'dropdown-menu', id: 'js_search_type') do
+      search_fields.each do |key, value|
+        concat(content_tag(:li,  content_tag(:a, key, {href: '#'}), {id: value}))
+      end
+    end
+  end
+
+  def render_bifrost_header
+
+    title = @document['title_tesim'].to_sentence.html_safe if @document['title_tesim']
+    titleExtended = @document['titleExtended_tesim'].to_sentence.html_safe if @document['titleExtended_tesim']
+    subtitle = @document['subtitle_tesim'].to_sentence.html_safe if @document['subtitle_tesim']
+
+    if title and titleExtended and subtitle
+      content_tag(:h1, title) + content_tag(:h2, titleExtended) + content_tag(:h3, subtitle)
+    elsif title and titleExtended
+      content_tag(:h1, title) + content_tag(:h2, titleExtended)
+    elsif title and subtitle
+      content_tag(:h1, title) + content_tag(:h3, subtitle)
+    elsif titleExtended and subtitle
+      content_tag(:h1, titleExtended) + content_tag(:h3, subtitle)
+    elsif title
+      content_tag(:h1, title)
+    elsif titleExtended
+      content_tag(:h2, titleExtended)
+    elsif subtitle
+      content_tag(:h3, subtitle)
+    end
+
+  end
 end

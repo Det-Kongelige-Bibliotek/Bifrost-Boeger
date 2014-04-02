@@ -4,10 +4,6 @@
 @import 'blacklight/blacklight';
 
 
-
-
-
-
 /* GLOBAL
 ***************************************************/
 body{
@@ -21,6 +17,7 @@ a:hover, a:focus {
   color: #1c2a2f;
   text-decoration: underline;
 }
+
 /* HEADER
 ***************************************************/
 #header.navbar{
@@ -55,15 +52,53 @@ a:hover, a:focus {
 /* SECTION SEARCH
 ***************************************************/
 #search{
-  padding: 30px;
+  padding: 15px;
   background: #4b727f;
   color: #fff;
-  margin-bottom: 30px;
+  margin-bottom: 12px;
+  form{
+    margin:0px;
+  }
+  input.input-xl{
+    @extend .btn-large;
+    border-radius: 0px;
+  }
 }
 /* SECTION (content)
 ***************************************************/
 #mainContent{
   background: #FFF;
+}
+
+  /* FACETS
+  ***************************************************/
+
+  .facets{
+    .accordion-inner{
+      padding: 0px;
+    }
+    .unstyled{
+      padding: 0px;
+      margin: 0px;
+      li{
+        position: relative;
+        padding: 10px 40px 10px 15px ;
+        a{
+          display:block;
+        }
+        .count{
+          position: absolute;
+          @extend .badge;
+          right: 10px;
+          top: 12px;
+        }
+      }
+      li:hover{
+        background-color: #eee;
+      }
+
+    }
+
 }
 
 /* FOOTER

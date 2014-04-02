@@ -1,15 +1,22 @@
 <% # main container for facets/limits menu -%>
 <% if has_facet_values?  %>
-<div id="facets" class="facets sidenav">
-  <button type="button" class="btn btn-primary btn-large btn-block" data-toggle="collapse" data-target="#demo">
-    <i class="icon-search icon-white"></i>
-    <%= t('blacklight.search.facets.title') %>
-  </button>
+<div class="facets">
+  <div class="visible-phone hidden-tablet hidden-desktop">
+      <button class="btn btn-block " data-toggle="collapse" data-target="#facetsCollapse">
+        <i class="icon-filter"></i>
+        <%= t('blacklight.search.facets.title') %>
+      </button>
+      <div id="facetsCollapse" class="collapse">
+        <%= render_facet_partials %>
+      </div>
+  </div>
 
+  <div class="hidden-phone visible-tablet visible-desktop">
+      <h4 class="lead"><%= t('blacklight.search.facets.title') %></h4>
+      <div>
+        <%= render_facet_partials %>
+      </div>
+  </div>
 
-
-<div class="collapse in" id="demo">
-  <%= render_facet_partials %>
-</div>
 </div>
 <% end %>
