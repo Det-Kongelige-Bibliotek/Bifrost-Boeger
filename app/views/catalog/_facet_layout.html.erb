@@ -1,4 +1,14 @@
-<div class="facet_limit blacklight-<%= facet_field.field.parameterize %>">
-  <h5><%= link_to facet_field.label, "#", "data-no-turbolink" => true -%> <i class="icon-chevron"></i></h5>
-  <%= yield %>
-</div>
+
+  <div class="accordion-group">
+    <div class="accordion-heading">
+      <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapse<%= facet_field.field.parameterize %>">
+        <%=facet_field.label%>
+      </a>
+    </div>
+    <div id="collapse<%= facet_field.field.parameterize %>" class="accordion-body collapse ">
+      <div class="accordion-inner">
+        <%= yield %>
+      </div>
+    </div>
+  </div>
+
