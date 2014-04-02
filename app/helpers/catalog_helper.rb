@@ -27,4 +27,14 @@ module CatalogHelper
       end
     end
   end
+
+  # given a hash of search_fields, render a ul with search fields
+  # as list elements within links
+  def render_search_dropdown(search_fields)
+    content_tag(:ul, class: 'dropdown-menu', id: 'js_search_type') do
+      search_fields.each do |key, value|
+        concat(content_tag(:li,  content_tag(:a, key, {href: '#'}), {id: value}))
+      end
+    end
+  end
 end
