@@ -57,6 +57,9 @@ group :development, :test do
   gem "rspec-rails"
   gem "jettywrapper"
   gem 'thin'
+  gem 'cucumber-rails', :require => false
+  gem 'database_cleaner'
+
   #gem 'passenger', '~> 4.0.38' #uncomment if want to run passenger as your rails server locally
   #gem 'passenger-rails', '~> 0.0.2'
 end
