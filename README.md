@@ -11,5 +11,7 @@ To install and start type:
 * rake db:migrate
 * rake jetty:start
 * rails s
+
+To load test data into Fedora type:
 * rake bifrost:clean  
 * rake bifrost:superloader 
