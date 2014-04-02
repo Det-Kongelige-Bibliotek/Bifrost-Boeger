@@ -14,7 +14,9 @@
 
 
     <% # bookmark/folder functions -%>
-    <%= render_document_heading(:h1).html_safe %>
+    <%#= render_document_heading(:h1).html_safe %>
+    <%= render_bifrost_header().html_safe %>
+
     <div class="document">
       <%= render_document_metadata %>
       <dl class="dl-horizontal dl-invert">
