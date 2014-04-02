@@ -10,7 +10,7 @@
 <div id="document" class="<%= render_document_class %>">
   <div id="doc_<%= @document.id.to_s.parameterize %>">
 
-  <%= link_to(image_tag("Adobe_CreatePDF_icon.png", :border => 0 ), @document["urls_ssm"].to_sentence.html_safe ) %>
+  <%= link_to(image_tag("Adobe_CreatePDF_icon.png", :border => 0 ), @document["urls_ssm"].to_sentence.html_safe ) rescue nil %>
 
 
     <% # bookmark/folder functions -%>
