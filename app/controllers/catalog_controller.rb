@@ -21,6 +21,7 @@ class CatalogController < ApplicationController
     config.default_solr_params = {
         :qf => 'title_tesim title_ssm author_tesim description_tesim uuid_tesim local_tesim imagetype_tesim category_tesim fileidentifier_tesim keywords_tesim id copyright_tesim dateIssued_sim',
         :qt => 'search',
+        :fq => 'active_fedora_model_ssi:Book',
         :rows => 10
     }
 
