@@ -20,7 +20,7 @@ da:
       next: 'Næste &raquo;'
 
   blacklight:
-    application_name: 'Bifrost - Billeder'
+    application_name: 'Bifrost Bøger'
 
     header_links:
       login: 'Log ind'
