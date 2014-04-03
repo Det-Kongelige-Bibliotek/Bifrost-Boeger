@@ -27,7 +27,7 @@ module Datastreams
       end
 
       t.language do
-        t.languageISO(:path=>"languageTerm[@authority='iso639-2b']")
+       # t.languageISO(:path=>"languageTerm[@authority='iso639-2b']")
         t.languageText(:path=>"languageTerm[@type='text']")
       end
 
@@ -56,7 +56,7 @@ module Datastreams
       t.originPlace(:proxy => [:originInfo, :place, :placeTerm],:index_as=>[:stored_searchable, :facetable])
       t.dateIssued(:proxy => [:originInfo, :dateIssued],:index_as=>[:stored_searchable,  :facetable, :displayable])
       t.edition(:proxy => [:originInfo, :edition], :index_as=>[:displayable])
-      t.languageISO(:proxy => [:language, :languageISO],:index_as=>[:stored_searchable, :facetable])
+      #t.languageISO(:proxy => [:language, :languageISO],:index_as=>[:stored_searchable, :facetable])
       t.languageText(:proxy => [:language, :languageText],:index_as=>[:stored_searchable, :facetable])
       #t.topic(:proxy => [:subject, :topic])
       t.subjectTopic(:proxy => [:subject, :topic],:index_as=>[:stored_searchable, :facetable])
@@ -71,6 +71,12 @@ module Datastreams
     define_template :author do |xml, name|
       xml.name() {
         xml.namePart { xml.text(name) }
+      }
+    end
+
+    define_template :languageISO do |xml, name|
+      xml.language() {
+        xml.languageISO { xml.text(name) }
       }
     end
 
@@ -93,9 +99,38 @@ module Datastreams
       end
       authors
     end
-    
+
+    def insert_languageISO(name)
+      sibling = find_by_terms(:language).last
+      node = sibling ? add_next_sibling_node(sibling, :languageISO, name) :
+          add_child_node(ng_xml.root, :languageISO, name)
+      content_will_change!
+      return node
+
+    end
+
+    def get_languageISO
+      codes = []
+      nodes = find_by_terms(:language)
+      nodes.each do |n|
+        n.children.each do |c|
+          codes << c.text if c.text.strip.length > 0
+        end
+      end
+      codes
+    end
+
     def remove_authors
       nodes = find_by_terms(:name)
+      if (nodes.size>0)
+        nodes.each { |n| n.remove }
+        content_will_change!
+      end
+    end
+
+
+    def remove_languageISO
+      nodes = find_by_terms(:language)
       if (nodes.size>0)
         nodes.each { |n| n.remove }
         content_will_change!

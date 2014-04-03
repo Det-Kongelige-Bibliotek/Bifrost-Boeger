@@ -42,7 +42,7 @@ class EBookCreationService
         set_value(md,'originPlace',doc.css('mods>originInfo>place>placeTerm').text)
         set_value(md,'publisher',doc.css('mods>originInfo>publisher').text)
         set_value(md,'edition',doc.css('mods>originInfo>edition').text)
-        set_value(md,'languageISO',doc.css("mods>language>languageTerm[@authority='iso639-2b']").text)
+        #set_value(md,'languageISO',doc.css("mods>language>languageTerm[@authority='iso639-2b']").text)
         set_value(md,'languageText',doc.css("mods>language>languageTerm[@authority='text']").text)
         set_value(md,'subjectTopic',doc.css("mods>subject>topic").text)
         set_value(md,'physicalExtent',doc.css("mods>physicalDescription>extent").text)
@@ -56,6 +56,11 @@ class EBookCreationService
 
         md['description'] = []
         doc.css('mods>note').each {|e| md['description'] << e.text unless e.text.blank?}
+
+        md['languageISO'] = []
+        doc.css('mods>language>languageTerm[@authority="iso639-2b"]').each do |e|
+          md['languageISO'] << e.text.strip unless e.text.blank?
+        end
       rescue => e
         logger.error "Ebook creation service: Caught error while parsing mods: #{e}"
       end

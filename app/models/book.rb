@@ -4,9 +4,10 @@ class Book  < ActiveFedora::Base
 
   has_metadata :name => 'descMetadata', :type=>Datastreams::EBookMods
   #:, :, :, :, :, :, :, :, :subject, :, :, :, :author, :category, :description, :date_start, :date_end
-  has_attributes :uuid, :barcode, :titleNonSort, :title, :subtitle,  :publisher, :originPlace, :edition, :dateIssued, :languageISO, :languageText, :subject, :category,
+  has_attributes :uuid, :barcode, :titleNonSort, :title, :subtitle,  :publisher, :originPlace, :edition, :dateIssued, :languageText, :subject, :category,
                  :subjectTopic, :physicalExtent, :physicalLocation, :recordIdentifier, datastream: 'descMetadata', multiple: false
 
+  has_attributes :languageISO, datastream: 'descMetadata', :multiple => true
   has_attributes :author, datastream: 'descMetadata', :multiple => true
   has_attributes :description, datastream: 'descMetadata', :multiple => true
   has_attributes :urls, datastream: 'descMetadata', :multiple => true
@@ -34,14 +35,33 @@ class Book  < ActiveFedora::Base
     end
   end
 
+  def languageISO
+    self.descMetadata.get_languageISO
+  end
+
+  def languageISO=(val)
+    self.descMetadata.remove_languageISO
+    val.each do |v|
+      unless v.blank?
+        self.descMetadata.insert_languageISO(v)
+      end
+    end
+  end
+
   def to_solr(solr_doc = {})
     super
     # The title field contains both of title, subtitle and Non sortable title.
-    Solrizer.insert_field(solr_doc,'title',self.get_display_title,:stored_searchable, :displayable)
+    Solrizer.insert_field(solr_doc,'title',self.get_display_title,:stored_searchable, :displayable, :sortable)
 
     unless self.author.nil?
       self.author.each do |a|
         Solrizer.insert_field(solr_doc,'author',a,:stored_searchable,:facetable)
+      end
+    end
+
+    unless self.languageISO.nil?
+      self.languageISO.each do |lang|
+        Solrizer.insert_field(solr_doc, 'languageISO', lang, :stored_searchable, :facetable)
       end
     end
 
