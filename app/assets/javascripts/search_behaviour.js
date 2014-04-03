@@ -12,6 +12,9 @@ $(document).ready(function(){
         $('input#js_search_field').val(name);
     });
 
+    /*
+     * Prevents an enter pressed in the search input from opening the search type dropdown
+     */
     $('#appendedPrependedDropdownButton').on('keydown', function(e) {
         if (e.keyCode === 13) {
             e.preventDefault();
