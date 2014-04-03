@@ -36,4 +36,21 @@ describe 'Create e-book' do
     fed_book.recordIdentifier.should eql '001467242'
   end
 
+   it 'should save multiple language codes' do
+     mods = File.read("#{Rails.root}/spec/fixtures/multi_lang.xml")
+     hash = @service.mods_to_hash(mods)
+     hash['languageISO'].should be_a Array
+     hash['languageISO'].include?('dan').should be_true
+
+     hash['uuid'] = 'someblablafancypantsnonexistentuuid'
+     hash[:pid] = 'uuid:someblablafancypantsnonexistentuuid'
+     hash['urls'] = 'notreallyaurl.url.com'
+     book = Book.new(hash)
+     book.save.should be_true
+     book.languageISO.should be_a Array
+     puts book.languageISO.inspect
+     book.languageISO.should include('kal')
+     book.destroy
+   end
+
 end

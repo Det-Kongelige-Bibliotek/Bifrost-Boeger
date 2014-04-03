@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mods xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.loc.gov/mods/v3" version="3.5" xsi:schemaLocation="http://www.loc.gov/mods/v3 http://www.loc.gov/standards/mods/v3/mods-3-5.xsd">
+  <titleInfo>
+    <title>ABC</title>
+    <subTitle/>
+  </titleInfo>
+  <typeOfResource/>
+  <originInfo>
+    <place>
+      <placeTerm type="text">Kjøbenhavn</placeTerm>
+    </place>
+    <dateIssued>1757</dateIssued>
+    <publisher>trykt udi det kongelige Waysenhuus</publisher>
+  </originInfo>
+  <language>
+    <languageTerm authority="iso639-2b" type="code">mul</languageTerm>
+  </language>
+  <language>
+    <languageTerm authority="iso639-2b" type="code">dan</languageTerm>
+  </language>
+  <language>
+    <languageTerm authority="iso639-2b" type="code">kal</languageTerm>
+  </language>
+  <physicalDescription>
+    <extent>[56] s.</extent>
+  </physicalDescription>
+  <note type="statement of responsibility" altRepGroup="00"/>
+  <location>
+    <physicalLocation>47,-539 8°</physicalLocation>
+  </location>
+  <location>
+    <url displayLabel="electronic resource" usage="primary display">somebullshit.pdf</url>
+  </location>
+  <recordInfo>
+    <recordOrigin>Converted from MARCXML to MODS version 3.4 using MARC21slim2MODS3-4.xsl
+				(Revision 1.94 2014/02/21)</recordOrigin>
+  </recordInfo>
+</mods>
