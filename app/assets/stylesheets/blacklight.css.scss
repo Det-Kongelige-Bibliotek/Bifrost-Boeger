@@ -1,10 +1,112 @@
-// Set link color
-$linkColor: #007FFF !default;
-
-@import "bootswatch/cosmo/variables";
-@import "bootstrap";
-@import "bootstrap-responsive";
-
-@import "bootswatch/cosmo/bootswatch";
-
+/* BOOTSTRAP STYLE */
+@import 'bootstrap';
+@import 'bootstrap-responsive';
 @import 'blacklight/blacklight';
+
+
+/* GLOBAL
+***************************************************/
+body{
+  background: #eee;
+  padding: 0;
+}
+a{
+  color: #38555f;
+}
+a:hover, a:focus {
+  color: #1c2a2f;
+  text-decoration: underline;
+}
+
+/* HEADER
+***************************************************/
+#header.navbar{
+  box-shadow: 0 0 0  rgba(0, 0, 0, 0.0);
+  margin-bottom: 0px;
+  .navbar-inner{
+    background: none;
+    background-image:none;
+    border: 0px;
+    border-radius: 0px;
+  }
+}
+/* BREADCRUMB
+***************************************************/
+#breadcrumb {
+  background-color: #38555f;
+  li.active, li{
+    text-shadow: none;
+    color:#fff;
+    a, .divider{
+      color:#fff;
+    }
+  }
+}
+#breadcrumb .breadcrumb {
+  margin: 0px;
+  background-color: transparent;
+  border-radius: 0px;
+  padding: 8px 15px;
+}
+
+/* SECTION SEARCH
+***************************************************/
+#search{
+  padding: 15px;
+  background: #4b727f;
+  color: #fff;
+  margin-bottom: 12px;
+  form{
+    margin:0px;
+  }
+  input.input-xl{
+    @extend .btn-large;
+    border-radius: 0px;
+  }
+}
+/* SECTION (content)
+***************************************************/
+#mainContent{
+  background: #FFF;
+}
+
+  /* FACETS
+  ***************************************************/
+
+  .facets{
+    .accordion-inner{
+      padding: 0px;
+    }
+    .unstyled{
+      padding: 0px;
+      margin: 0px;
+      li{
+        position: relative;
+        padding: 10px 40px 10px 15px ;
+        a{
+          display:block;
+        }
+        .count{
+          position: absolute;
+          @extend .badge;
+          right: 10px;
+          top: 12px;
+        }
+      }
+      li:hover{
+        background-color: #eee;
+      }
+
+    }
+
+}
+
+/* FOOTER
+***************************************************/
+#footer{
+  padding: 30px;
+  border-top: 20px solid #38555f;
+  hr{
+    border-top: 1px solid #bed2d8;
+  }
+  }

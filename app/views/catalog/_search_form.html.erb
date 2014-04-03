@@ -1,21 +1,33 @@
-  <%= form_tag search_action_url, :method => :get, :class => 'search-query-form form-inline clearfix' do %>
-    <%= render_hash_as_hidden_fields(params_for_search().except(:q, :search_field, :qt, :page, :utf8)) %> 
+<!-- SEARCH
+---------------------------------------------------------------------------->
+<div class="container">
+  <div class="row">
+    <div class="span8 offset2">
 
-    <% unless search_fields.empty? %>
-      <div class="pull-left">
-        <label for="search_field" class="hide-text"><%= t('blacklight.search.form.search_field.label') %></label>
-        <%= select_tag(:search_field, options_for_select(search_fields, h(params[:search_field])), :title => t('blacklight.search.form.search_field.title'), :class=>"search_field input-small") %>
-        <span class="hide-text"><%= t('blacklight.search.form.search_field.post_label') %></span>
-      </div>
-      <% end %>
-       <div class="input-append pull-left">
-        <label for="q" class="hide-text"><%= t('blacklight.search.form.q') %></label>
-         <%= text_field_tag :q, params[:q], :placeholder => t('blacklight.search.form.q'), :class => "search_q q", :id => "q", :autofocus => should_autofocus_on_search_box? %>
-        <button type="submit" class="btn btn-primary search-btn" id="search">
-          <span class="submit-search-text"><%=t('blacklight.search.form.submit')%></span>
-          <i class="icon-search icon-white"></i>
-        </button>
+        <form action="/" method="get" accept-charset="utf-8" class="text-center">
+          <%= render_hash_as_hidden_fields(params_for_search().except(:q, :search_field, :qt, :page, :utf8)) %>
+          <input type="text" name="search_field" id="js_search_field" value="<%= params[:search_field] || 'all_fields'%>" class="hidden"/>
+          <div class="input-prepend input-append">
+            <div class="btn-group">
+              <button class="btn dropdown-toggle" data-toggle="dropdown" id="js_search_type_button">
+                <%=t (params[:search_field] || 'Action') %> <span class="caret"></span></button>
+              <%= render_search_dropdown(search_fields) %>
+            </div>
 
-       </div>
+            <label for="appendedPrependedDropdownButton" class="hide-text"><%= t('blacklight.search.form.q') %></label>
+            <input class="span2" id="appendedPrependedDropdownButton" name='q' type="text" autofocus="<%= should_autofocus_on_search_box? %>">
+            <div class="btn-group">
+              <button class="btn" type="submit">
+                <i class="icon-search"></i>
+                <span class="submit-search-text hide"><%=t('blacklight.search.form.submit')%></span>
+              </button>
+            </div>
 
-  <% end %>
+
+          </div>
+        </form>
+
+    </div>
+  </div>
+</div>
+</div>

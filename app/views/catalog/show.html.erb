@@ -10,29 +10,23 @@
 <div id="document" class="<%= render_document_class %>">
   <div id="doc_<%= @document.id.to_s.parameterize %>">
 
-  <%= link_to(image_tag("Adobe_CreatePDF_icon.png", :border => 0 ), @document["url_ssm"].to_sentence.html_safe ) %>
+  <%= link_to(image_tag("Adobe_CreatePDF_icon.png", :border => 0 ), @document["urls_ssm"].to_sentence.html_safe ) rescue nil %>
 
 
     <% # bookmark/folder functions -%>
-    <%= render_document_heading(:h1).html_safe %>
+    <%#= render_document_heading(:h1).html_safe %>
+    <%= render_bifrost_header().html_safe %>
+
     <div class="document">
-      <dl class="dl-horizontal  dl-invert">
-        <dt class="blacklight-title_tesim">Title:</dt>
-        <dd class="blacklight-title_tesim"><%= @document["title_tesim"].to_sentence.html_safe rescue nil %></dd>
-        <dt class="blacklight-subtitle_tesim">Subtitle:</dt>
-        <dd class="blacklight-subtitle_tesim"><%= @document["subtitle_tesim"].to_sentence.html_safe rescue nil %></dd>
-        <dt class="blacklight-author_tesim">Creator:</dt>
-        <dd class="blacklight-author_tesim"><%= @document["author_tesim"].to_sentence.html_safe rescue nil %></dd>
-        <dt class="blacklight-dateissued_tesim">Creation date:</dt>
-        <dd class="blacklight-dateissued_tesim"><%= @document["dateIssued_tesim"].to_sentence.html_safe rescue nil %></dd>
-        <dt class="blacklight-description_tesim">Description:</dt>
-        <dd class="blacklight-description_tesim"><%= @document["description_tesim"].to_sentence.html_safe rescue nil %> </dd>
+      <%= render_document_metadata %>
+      <dl class="dl-horizontal dl-invert">
         <dt class="blacklight-url_ssm">PDF:</dt>
-        <dd class="blacklight-url_ssm"> <%= link_to("Download pdf version " +@document["title_tesim"].to_sentence.html_safe ,@document["url_ssm"].to_sentence.html_safe  ) rescue nil %></dd>
+        <dd class="blacklight-urls_ssm"> <%= link_to("Download pdf version " + @document["title_tesim"].to_sentence.html_safe, @document["urls_ssm"].to_sentence.html_safe) rescue nil %></dd>
         <dt class="blacklight-barcode_ssm">Physical version:</dt>
-        <dd class="blacklight-barcode_ssm"><%= link_to("Find the original physical version in Rex", "http://primo-97.kb.dk/primo_library/libweb/action/dlSearch.do?institution=KGL&vid=preview&search_scope=KGL&query=lsr06,exact," + @document["barcode_tesim"].to_sentence.html_safe) rescue nil %></dd>
-        <dt class="blacklight-uuid_tesim">UUID:</dt>
-        <dd class="blacklight-uuid_tesim"><%= @document["uuid_tesim"].to_sentence.html_safe rescue nil %></dd>
+        <dd class="blacklight-barcode_ssm">
+          <%= link_to("Find the original physical version in Rex",
+           create_rex_physical_book_search_link(@document['recordIdentifier_ssm'])) rescue nil %>
+        </dd>
       </dl>
     </div>
 
@@ -53,6 +47,6 @@
 
 </div>
 
-<div id="sidebar" class="span3">
+<div id="sidebar" class="span3">  hest
    <%= render_document_sidebar_partial %>
 </div>

@@ -19,7 +19,7 @@ class CatalogController < ApplicationController
 
   configure_blacklight do |config|
     config.default_solr_params = {
-        :qf => 'title_tesim title_ssm author_tesim description_tesim uuid_tesim local_tesim imagetype_tesim category_tesim fileidentifier_tesim keywords_tesim id copyright_tesim',
+        :qf => 'title_tesim title_ssm author_tesim description_tesim uuid_tesim local_tesim imagetype_tesim category_tesim fileidentifier_tesim keywords_tesim id copyright_tesim dateIssued_sim',
         :qt => 'search',
         :fq => 'active_fedora_model_ssi:Book',
         :rows => 10
@@ -33,7 +33,7 @@ class CatalogController < ApplicationController
     config.show.html_title = 'title_ssm'
     config.show.heading = 'title_ssm'
     config.show.display_type = 'has_model_ssim'
-    config.show.subtitle = 'subtitle_ssm'
+    config.show.subtitle = 'subtitle_tesim'
 
     # solr fields that will be treated as facets by the blacklight application
     #   The ordering of the field names is the order of the display
@@ -54,10 +54,10 @@ class CatalogController < ApplicationController
     #
     # :show may be set to false if you don't want the facet to be drawn in the
     # facet bar
-    config.add_facet_field solr_name('author', :facetable), :label => 'Author'
-    config.add_facet_field solr_name('languageISO', :facetable), :label => 'Languange'
-    config.add_facet_field solr_name('dateIssued', :facetable), :label => 'Creationdate'
-    config.add_facet_field solr_name('originPlace', :facetable), :label => 'Origin Place'
+    config.add_facet_field solr_name('author', :facetable), :label => 'Forfatter'
+    config.add_facet_field solr_name('languageISO', :facetable), :label => 'Sprog'
+    config.add_facet_field solr_name('dateIssued', :facetable), :label => 'Udgivelsesår'
+    config.add_facet_field solr_name('originPlace', :facetable), :label => 'Origin'
     #config.add_facet_field solr_name('object_type', :facetable), :label => 'Format'
     #config.add_facet_field solr_name('pub_date', :facetable), :label => 'Publication Year'
     #config.add_facet_field solr_name('subject_topic', :facetable), :label => 'Topic', :limit => 20
@@ -76,16 +76,16 @@ class CatalogController < ApplicationController
 
     # solr fields to be displayed in the index (search results) view
     #   The ordering of the field names is the order of the display
-    config.add_index_field solr_name('title', :stored_searchable, type: :string), :label => 'Titel:'
     config.add_index_field solr_name('author', :stored_searchable, type: :string), :label => 'Forfatter'
     config.add_index_field solr_name('person', :stored_searchable, type: :string), :label => 'Person'
     config.add_index_field solr_name('fileidentifier', :stored_searchable, type: :string), :label => 'Fileidentifier'
     config.add_index_field solr_name('category', :stored_searchable, type: :string), :label => 'Kategori:'
     config.add_index_field solr_name('genre', :stored_searchable, type: :string), :label => 'Genre:'
     config.add_index_field solr_name('local', :stored_searchable, type: :string), :label => 'Område:'
-    config.add_index_field solr_name('description', :stored_searchable, type: :string), :label => 'Beskrivelse:'
+    #config.add_index_field solr_name('description', :stored_searchable, type: :string), :label => 'Beskrivelse:'
     config.add_index_field solr_name('imagetype', :stored_searchable, type: :string), :label => 'Type:'
     config.add_index_field solr_name('copyright', :stored_searchable, type: :string), :label => 'License:'
+    config.add_index_field solr_name('dateIssued', :stored_searchable, type: :string), :label => 'Udgivelsesår:'
 
     # solr fields to be displayed in the show (single result) view
     #   The ordering of the field names is the order of the display

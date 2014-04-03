@@ -9,7 +9,7 @@ module Datastreams
       t.typeOfResource()
       t.location do
         t.physicalLocation()
-        t.url()
+        t.urls()
       end
       t.titleInfo do
         t.nonSort()
@@ -41,6 +41,10 @@ module Datastreams
         t.namePart()
       end
 
+      t.recordInfo do
+        t.recordIdentifier()
+      end
+
       t.note()
 
 
@@ -50,7 +54,7 @@ module Datastreams
       t.category(:proxy => [:genre], :index_as=>[:stored_searchable, :facetable])
       t.publisher(:proxy => [:originInfo, :publisher],:index_as=>[:stored_searchable, :facetable])
       t.originPlace(:proxy => [:originInfo, :place, :placeTerm],:index_as=>[:stored_searchable, :facetable])
-      t.dateIssued(:proxy => [:originInfo, :dateIssued],:index_as=>[:stored_searchable,  :facetable])
+      t.dateIssued(:proxy => [:originInfo, :dateIssued],:index_as=>[:stored_searchable,  :facetable, :displayable])
       t.edition(:proxy => [:originInfo, :edition], :index_as=>[:displayable])
       t.languageISO(:proxy => [:language, :languageISO],:index_as=>[:stored_searchable, :facetable])
       t.languageText(:proxy => [:language, :languageText],:index_as=>[:stored_searchable, :facetable])
@@ -58,9 +62,10 @@ module Datastreams
       t.subjectTopic(:proxy => [:subject, :topic],:index_as=>[:stored_searchable, :facetable])
       t.physicalExtent(:proxy => [:physicalDescription, :extent],:index_as=>[:displayable])
       t.physicalLocation(:proxy => [:location, :physicalLocation],:index_as=>[:displayable])
-      t.url(:proxy => [:location, :url], :index_as=>[:displayable])
+      t.urls(:proxy => [:location, :urls], :index_as=>[:displayable])
       #t.author(:proxy => [:name, :namePart], :index_as=>[:stored_searchable, :facetable])
       t.description(:proxy => [:note],:index_as=>[:stored_searchable])
+      t.recordIdentifier(:index_as => [:displayable])
     end
 
     define_template :author do |xml, name|

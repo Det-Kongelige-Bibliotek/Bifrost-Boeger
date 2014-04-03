@@ -3,3 +3,6 @@
 
 en:
   hello: "Hello world"
+  title: Title
+  author: Author
+  subject: Subject

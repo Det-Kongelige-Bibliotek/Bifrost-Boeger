@@ -1,0 +1,24 @@
+<!-- HEADER
+---------------------------------------------------------------------------->
+<header id="header" class="navbar">
+    <div class="navbar-inner">
+        <div class="container">
+            <%= link_to root_path, :class => "brand" do %>
+                <img src="/assets/kb/logo.png" alt="Det Kongelige Bibliotek" class="visible-phone">
+                <img src="/assets/kb/logoDa.png" alt="Det Kongelige Bibliotek" class="hidden-phone">
+            <%end%>
+            <%#= render :partial=>'/user_util_links' %>
+        </div>
+    </div>
+</header>
+
+<!-- BREADCRUMB
+---------------------------------------------------------------------------->
+<nav id="breadcrumb">
+    <div class="container">
+        <ol class="breadcrumb">
+          <li><a href="http://bifrost.kb.dk">Bifrost</a> <span class="divider">/</span></li>
+          <li><a href="<%= root_url %>">Bifrost Boeger</a> </li>
+        </ol>
+    </div>
+</nav>

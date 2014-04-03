@@ -1,7 +1,7 @@
 <% if @response.total_pages > 1 %>
- <div class="row record-padding">
-  <div class="span9"> 
-    <div class="pagination">
+ <div class="row">
+  <div class="span9">
+    <div class="pagination pagination-centered ">
       <%= paginate @response, :outer_window => 2, :theme => 'blacklight' %>
     </div>
   </div>
