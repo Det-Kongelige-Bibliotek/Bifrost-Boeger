@@ -20,6 +20,14 @@ a:hover, a:focus {
 
 /* HEADER
 ***************************************************/
+#header{
+  img.hidden-phone{
+    height: 48px;
+  }
+  img.visible-phone{
+    height: 28px;
+  }
+}
 #header.navbar{
   box-shadow: 0 0 0  rgba(0, 0, 0, 0.0);
   margin-bottom: 0px;
