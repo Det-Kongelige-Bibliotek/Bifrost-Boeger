@@ -3,29 +3,12 @@ module CatalogHelper
   #Don't remove this, when we over-ride Blacklights CatalogHelper we need to include all its behaviour manually
   # otherwise the default Blacklight behaviour goes missing
   include Blacklight::CatalogHelperBehavior
-
   REX_CONFIG = YAML.load_file("#{Rails.root}/config/rex.yml")[Rails.env]
-  METADATA_CONFIG = YAML.load_file("#{Rails.root}/config/metadata.yml")
-
   #Function to create a REX search link for the digital book using the Aleph SYS num
   # @param [String] sys_num
   # @return [String] URL for REX book search
   def create_rex_physical_book_search_link(sys_num)
-    REX_CONFIG['rex_book_search_template_uri'].gsub('SYS_NUM', "KGL01#{sys_num.to_sentence.html_safe}")
-  end
-
-  # this helper function allows us to configure the metadata display
-  # via a YAML file consisting of key (field label), value (solr field name)
-  # @return [String] dl consisting of metadata labels and values
-  def render_document_metadata
-    content_tag(:dl, class: 'dl-horizontal dl-invert') do
-      METADATA_CONFIG.each_pair do |key, value|
-        unless @document[value].nil? || @document[value].empty?
-          concat(content_tag(:dt, class: "blacklight-show-#{key}") { t key})
-          concat(content_tag(:dd) { @document[value].to_sentence.html_safe })
-        end
-      end
-    end
+    REX_CONFIG['rex_book_search_template_uri'].gsub('SYS_NUM', "KGL01#{sys_num.first}")
   end
 
   # given a hash of search_fields, render a ul with search fields
@@ -60,5 +43,51 @@ module CatalogHelper
       content_tag(:h3, subtitle)
     end
 
+  end
+
+  ##
+  # Render the index field label for a document
+  #
+  # KB rewrite of render_index_field_label
+  # handle translations better
+  #
+  # @overload render_index_field_label(options)
+  #   Use the default, document-agnostic configuration
+  #   @param [Hash] opts
+  #   @options opts [String] :field
+  # @overload render_index_field_label(document, options)
+  #   Allow an extention point where information in the document
+  #   may drive the value of the field
+  #   @param [SolrDocument] doc
+  #   @param [Hash] opts
+  #   @options opts [String] :field
+  def render_bifrost_index_field_label *args
+    options = args.extract_options!
+    document = args.first
+
+    field = options[:field]
+    html_escape t(index_fields(document)[field].label, default: t('kb.search.index.label'))
+  end
+
+  ##
+  # Render the show field label for a document
+  #
+  # @overload render_document_show_field_label(options)
+  #   Use the default, document-agnostic configuration
+  #   @param [Hash] opts
+  #   @options opts [String] :field
+  # @overload render_document_show_field_label(document, options)
+  #   Allow an extention point where information in the document
+  #   may drive the value of the field
+  #   @param [SolrDocument] doc
+  #   @param [Hash] opts
+  #   @options opts [String] :field
+  def render_bifrost_show_field_label *args
+    options = args.extract_options!
+    document = args.first
+
+    field = options[:field]
+
+    html_escape t(document_show_fields(document)[field].label, default: t('kb.search.index.label'))
   end
 end

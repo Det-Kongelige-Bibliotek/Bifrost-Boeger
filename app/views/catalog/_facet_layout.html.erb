@@ -1,11 +1,16 @@
 
   <div class="accordion-group">
     <div class="accordion-heading">
-      <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapse<%= facet_field.field.parameterize %>">
+      <%# we'll create a random var to prevent facet id clashing - facets comes in two flavors: mobile and tablet/desktops.
+      We use Blacklights render_facet_partials to render both, but they have to have different ids. This is a
+      quick'n'dirty hack that saves us from overriding a lot of Blacklight code at the cost of the 1:10000000 random
+      risk of id clashing TODO: The right way to do this would be to pass an identifier prefix through render_facet_partials %>
+      <% num = (rand * 10000000).floor %>
+      <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapse_<%= facet_field.field.parameterize %>_<%= num %>">
         <%=facet_field.label%>
       </a>
     </div>
-    <div id="collapse<%= facet_field.field.parameterize %>" class="accordion-body collapse ">
+    <div id="collapse_<%= facet_field.field.parameterize %>_<%= num %>" class="accordion-body collapse">
       <div class="accordion-inner">
         <%= yield %>
       </div>

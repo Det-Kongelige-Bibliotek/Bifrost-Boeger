@@ -33,10 +33,10 @@
       <%= link_to t('blacklight.tools.email'), email_catalog_path(:id => @document), {:id => 'emailLink', :class => 'lightboxLink'} %>
       </li>
     <%- end -%>
-    <%- if @document.respond_to?( :to_sms_text ) -%>
-      <li class="sms">
+    <%#- if @document.respond_to?( :to_sms_text ) -%>
+      <%#li class="sms">
       <%= link_to t('blacklight.tools.sms'), sms_catalog_path(:id => @document), {:id => 'smsLink', :class => 'lightboxLink'} %>
-      </li>
+      <%#/li>
     <%- end -%>
     
     <% if @document.respond_to?(:to_marc) %>

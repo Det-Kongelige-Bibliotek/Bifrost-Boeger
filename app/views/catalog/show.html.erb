@@ -10,24 +10,12 @@
 <div id="document" class="<%= render_document_class %>">
   <div id="doc_<%= @document.id.to_s.parameterize %>">
 
-  <%= link_to(image_tag("Adobe_CreatePDF_icon.png", :border => 0 ), @document["urls_ssm"].to_sentence.html_safe ) rescue nil %>
-
-
-    <% # bookmark/folder functions -%>
+   <% # bookmark/folder functions -%>
     <%#= render_document_heading(:h1).html_safe %>
     <%= render_bifrost_header().html_safe %>
 
     <div class="document">
-      <%= render_document_metadata %>
-      <dl class="dl-horizontal dl-invert">
-        <dt class="blacklight-url_ssm">PDF:</dt>
-        <dd class="blacklight-urls_ssm"> <%= link_to("Download pdf version " + @document["title_tesim"].to_sentence.html_safe, @document["urls_ssm"].to_sentence.html_safe) rescue nil %></dd>
-        <dt class="blacklight-barcode_ssm">Physical version:</dt>
-        <dd class="blacklight-barcode_ssm">
-          <%= link_to("Find the original physical version in Rex",
-           create_rex_physical_book_search_link(@document['recordIdentifier_ssm'])) rescue nil %>
-        </dd>
-      </dl>
+        <%= render_document_partial @document, :show %>
     </div>
 
    
@@ -47,6 +35,6 @@
 
 </div>
 
-<div id="sidebar" class="span3">  hest
+<div id="sidebar" class="span3">
    <%= render_document_sidebar_partial %>
 </div>

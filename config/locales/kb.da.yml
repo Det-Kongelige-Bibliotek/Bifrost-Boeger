@@ -1,0 +1,17 @@
+da:
+  kb:
+    search:
+      index:
+        author: Forfatter
+        label: Label
+        date_issued: Udgivelsesår
+      sort:
+        relevance: relevans
+        date_issued: udgivelsesår
+        author: forfatter
+        title: titel
+    show:
+      description: Beskrivelse
+      language: Sprog
+      title: Titel
+      subtitle: Undertitel

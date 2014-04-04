@@ -75,7 +75,7 @@ class CatalogController < ApplicationController
 
     # solr fields to be displayed in the index (search results) view
     #   The ordering of the field names is the order of the display
-    config.add_index_field solr_name('author', :stored_searchable, type: :string), :label => 'Forfatter'
+    config.add_index_field solr_name('author', :stored_searchable, type: :string), :label => 'kb.search.index.author'
     config.add_index_field solr_name('person', :stored_searchable, type: :string), :label => 'Person'
     config.add_index_field solr_name('fileidentifier', :stored_searchable, type: :string), :label => 'Fileidentifier'
     config.add_index_field solr_name('category', :stored_searchable, type: :string), :label => 'Kategori:'
@@ -84,20 +84,20 @@ class CatalogController < ApplicationController
     #config.add_index_field solr_name('description', :stored_searchable, type: :string), :label => 'Beskrivelse:'
     config.add_index_field solr_name('imagetype', :stored_searchable, type: :string), :label => 'Type:'
     config.add_index_field solr_name('copyright', :stored_searchable, type: :string), :label => 'License:'
-    config.add_index_field solr_name('dateIssued', :stored_searchable, type: :string), :label => 'Udgivelsesår:'
+    config.add_index_field solr_name('dateIssued', :stored_searchable, type: :string), :label => 'kb.search.index.date_issued'
 
     # solr fields to be displayed in the show (single result) view
     #   The ordering of the field names is the order of the display
-    config.add_show_field solr_name('title', :stored_searchable, type: :string), :label => 'Title:'
-    config.add_show_field solr_name('subtitle', :stored_searchable, type: :string), :label => 'Subtitle'
-    config.add_show_field solr_name('author', :stored_searchable, type: :string), :label => 'Creator'
+    #config.add_show_field solr_name('title', :stored_searchable, type: :string), :label => 'kb.show.title'
+    config.add_show_field solr_name('subtitle', :stored_searchable, type: :string), :label => 'kb.show.subtitle'
+    config.add_show_field solr_name('author', :stored_searchable, type: :string), :label => 'kb.search.index.author'
     config.add_show_field solr_name('edition', :displayable, type: :string), :label => 'Edition'
     config.add_show_field solr_name('subjectTopic', :stored_searchable, type: :string), :label => 'Subject'
-    config.add_show_field solr_name('dateIssued', :stored_searchable, type: :string), :label => 'Creationdate'
-    config.add_show_field solr_name('description', :stored_searchable, type: :string), :label => 'Description'
-    config.add_show_field solr_name('languageISO', :stored_searchable, type: :string), :label => 'Language'
-    config.add_show_field solr_name('url', :displayable, type: :string), :label => 'PDF'
-    config.add_show_field solr_name('barcode', :displayable, type: :string), :label => 'Barcode'
+    config.add_show_field solr_name('dateIssued', :stored_searchable, type: :string), :label => 'kb.search.index.date_issued'
+    config.add_show_field solr_name('description', :stored_searchable, type: :string), :label => 'kb.show.description'
+    config.add_show_field solr_name('languageISO', :stored_searchable, type: :string), :label => 'kb.show.language'
+    #config.add_show_field solr_name('url', :displayable, type: :string), :label => 'PDF'
+    #config.add_show_field solr_name('barcode', :displayable, type: :string), :label => 'Barcode'
     #config.add_show_field solr_name('title_vern', :stored_searchable, type: :string), :label => 'Title:'
     #config.add_show_field solr_name('subtitle', :stored_searchable, type: :string), :label => 'Subtitle:'
     #config.add_show_field solr_name('subtitle_vern', :stored_searchable, type: :string), :label => 'Subtitle:'

@@ -15,7 +15,7 @@
             </div>
 
             <label for="appendedPrependedDropdownButton" class="hide-text"><%= t('blacklight.search.form.q') %></label>
-            <input class="span2" id="appendedPrependedDropdownButton" name='q' type="text" autofocus="<%= should_autofocus_on_search_box? %>">
+            <input class="span2" id="appendedPrependedDropdownButton" name='q' type="text" value="<%= params[:q] rescue nil %>" autofocus="<%= should_autofocus_on_search_box? %>">
             <div class="btn-group">
               <button class="btn" type="submit">
                 <i class="icon-search"></i>
