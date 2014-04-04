@@ -51,7 +51,9 @@ class Book  < ActiveFedora::Base
   def to_solr(solr_doc = {})
     super
     # The title field contains both of title, subtitle and Non sortable title.
-    Solrizer.insert_field(solr_doc,'title',self.get_display_title,:stored_searchable, :displayable, :sortable)
+    Solrizer.insert_field(solr_doc,'title',self.get_display_title,:stored_searchable, :displayable)
+    Solrizer.insert_field(solr_doc,'title_sort',self.title,:sortable)
+    Solrizer.insert_field(solr_doc,'author_sort',self.author.join(' '),:sortable)
 
     unless self.author.nil?
       self.author.each do |a|
