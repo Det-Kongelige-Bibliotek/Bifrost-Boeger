@@ -158,6 +158,7 @@ class CatalogController < ApplicationController
     # Specifying a :qt only to show it's possible, and so our internal automated
     # tests can test it. In this case it's the same as
     # config[:default_solr_parameters][:qt], so isn't actually neccesary.
+=begin
     config.add_search_field('subject') do |field|
       field.qt = 'search'
       field.solr_local_parameters = {
@@ -165,6 +166,7 @@ class CatalogController < ApplicationController
         :pf => '$subject_pf'
       }
     end
+=end
 
     # "sort results by" select (pulldown)
     # label in pulldown is followed by the name of the SOLR field to sort by and
