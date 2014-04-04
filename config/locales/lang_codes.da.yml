@@ -1,0 +1,416 @@
+da:
+  AAR: Afar
+  ABK: Abkhaziansk
+  ACE: Akinesisk
+  ACH: Acoli
+  ADA: Adangme
+  AFA: Afro-Asiatisk (Andre)
+  AFH: Afrihili (Kunstsprog)
+  AFR: Afrikaans
+  AJM: Aljamia (udgået)
+  AKA: Akan
+  AKK: Akkadiansk
+  ALE: Aleutisk
+  ALG: Algonquianske sprog
+  AMH: Amharisk
+  ANG: Engelsk, Gammel (Anglo-Saxisk ca. 450-1100)
+  APA: Apache sprog
+  ARA: Arabisk
+  ARC: Aramæisk
+  ARN: Araucaniansk
+  ARP: Arapaho
+  ART: Kunstsprog (Andre)
+  ARW: Arawak
+  ASM: Assamesisk
+  ATH: Athapascanske sprog
+  AVA: Avarisk
+  AVE: Avestansk
+  AWA: Awandhi
+  AYM: Aymara
+  AZE: Azerbaijansk
+  BAD: Banda
+  BAI: Bamileke sprog
+  BAK: Bashkir
+  BAL: Baluchi
+  BAM: Bambara
+  BAN: Balinesisk
+  BAS: Basa
+  BAT: Baltisk (Andre)
+  BEJ: Beja
+  BEL: Byelorussisk
+  BEM: Bemba
+  BEN: Bengalsk (Bangla)
+  BER: Berber sprog
+  BHO: Bhojpuri
+  BIH: Bihari
+  BIK: Bikol
+  BIN: Bini
+  BIS: Bislama
+  BLA: Siksika (Blackfoot)
+  BNT: Bantu (Andre)
+  BOD/TIB: Tibetansk
+  BRA: Braj
+  BRE: Bretonsk
+  BTK: Batak
+  BUG: Buginesisk
+  BUL: Bulgarsk
+  CAD: Caddo
+  CAI: Centralamerikansk Indiansk (Andre)
+  CAM: Cambodiansk
+  CAR: Caribisk
+  CAT: Catalansk
+  CAU: Kaukasisk (Andre)
+  CEB: Cebuano
+  CEL: Keltisk (Andre)
+  CES/CZE: Tjekkisk
+  CHA: Chamorro
+  CHB: Chibcha
+  CHE: Chechen
+  CHG: Chagatai
+  CHN: Chinook jargon
+  CHO: Choctaw
+  CHR: Cherokee
+  CHU: Kirkelig Slavisk
+  CHV: Chuvash
+  CHY: Cheyenne
+  CMC: Chamiske sprog
+  COP: Koptisk
+  COR: Cornisk
+  COS: Korsikansk
+  CPE: Creolsk og pidgin, engelsk baseret (Andre)
+  CPF: Creolsk og pidgin, fransk baseret (Andre)
+  CPP: Creolsk og pidgin, portugisisk baseret (Andre)
+  CRE: Cree
+  CRP: Creolsk og pidgin (Andre)
+  CUS: Cushitisk (Andre)
+  CYM/WEL: Walisisk
+  DAK: Dakota
+  DAN: Dansk
+  DAY: Dayak
+  DEL: Delaware
+  DEU/GER: Tysk
+  DIN: Dinka
+  DIV: Divehi
+  DOI: Dogri
+  DRA: Dravidiansk (Andre)
+  DUA: Duala
+  DUM: Hollandsk, Middelalder (ca. 1050-1350)
+  DYU: Dyula
+  DZO: Dzongkha
+  EFI: Efik
+  EGY: Egyptisk (Oldtids)
+  EKA: Ekajuk
+  ELL/GRE: Græsk, Moderne (fra 1453)
+  ELX: Elamitisk
+  ENG: Engelsk
+  ENM: Engelsk, Middelalder (1100-1500)
+  EPO/ESP: Esperanto
+  ESK: Eskimoisk (Andre)
+  ESL/SPA: Spansk (Castiliansk)
+  EST: Estisk
+  ETH: Ethiopisk
+  EUS/BAQ: Baskisk
+  EWE: Ewe
+  EWO: Ewondo
+  FAN: Fang
+  FAO/FAR: Færøsk
+  FAS/PER: Persisk (Farsi)
+  FAT: Fanti
+  FIJ: Fiji
+  FIN: Finsk
+  FIU: Finno-Ugrisk (Andre)
+  FON: Fon
+  FRE/FRA: Fransk
+  FRM: Fransk, Middelalder (ca. 1400-1600)
+  FRO: Fransk, Gammel (ca. 842-1400)
+  FRY/FRI: Frisisk
+  FUL: Fulah
+  GAA: Ga (Gþ)
+  GAG/GLG: Gallegan
+  GAI/IRI: Irsk
+  GAY: Gayo
+  GBA: Gbaya
+  GDH/GAE: Gælisk, Skotsk
+  GER: Tysk
+  GEM: Germansk (Andre)
+  GIL: Gilbertesisk
+  GMH: Tysk, Middelalder Høj (ca. 1050-1500)
+  GOH: Tysk, Gammel Høj (ca. 750-1050)
+  GON: Gondi
+  GOR: Gorontalo
+  GOT: Gothisk
+  GRB: Grebo
+  GRC: Græsk, Oldtids (til 1453)
+  GRN/GUA: Guarani
+  GUJ: Gujarati
+  HAI: Haida
+  HAU: Hausa
+  HAW: Hawaiiansk
+  HEB: Hebraisk
+  HER: Herero
+  HIL: Hiligaynon
+  HIM: Himachali
+  HIN: Hindi
+  HMN: Hmong
+  HMO: Hiri Motu
+  HUN: Ungarsk
+  HUP: Hupa
+  HYE/ARM: Armensk
+  IBA: Iban
+  IBO: Igbo
+  IJO: Ijo
+  IKU: Inuktitut (Eskimoisk)
+  ILE: Interlingue
+  ILO: Iloko
+  INA/INT: Interlingua (Internat. Auxilary Language Assoc.)
+  INC: Indisk (Andre)
+  IND: Indonesisk
+  INE: Indo-Europæisk (Andre)
+  IPK: Inupiak
+  IRA: Iransk (Andre)
+  IRO: Irokesiske sprog
+  ISL/ICE: Islandsk
+  ITA: Italiensk
+  JAW/JAV: Javanesisk
+  JPN: Japansk
+  JPR: Judeo-Persisk
+  JRB: Judeo-Arabisk
+  KAA: Kara-Kalpak
+  KAB: Kabyle
+  KAC: Kachin
+  KAL: Grønlandsk
+  KAM: Kamba
+  KAN: Kannada
+  KAR: Karen
+  KAS: Kashmirsk
+  KAT/GEO: Georgisk
+  KAU: Kanuri
+  KAW: Kawi
+  KAZ: Kazakh
+  KHA: Khasi
+  KHI: Khoisan (Andre)
+  KHM: Khmer
+  KHO: Khotanesisk
+  KIK: Kikuyu
+  KIN: Kinyarwanda
+  KIR: Kirghisisk
+  KMB: Kimbundu
+  KOK: Konkani
+  KON: Kongo
+  KOR: Koreansk
+  KPE: Kpelle
+  KRO: Kru
+  KRU: Kurukh
+  KUA: Kuanyama
+  KUR: Kurdisk
+  KUS: Kusaie
+  KUT: Kutenai
+  LAD: Ladino
+  LAH: Lahnda
+  LAM: Lamba (Sprog brugt i TV-serien Star Trek)
+  LAO: Laothisk (Lao)
+  LAP: Lappiske sprog
+  LAT: Latin
+  LAV: Lettisk)
+  LIN: Lingala
+  LIT: Lithauisk
+  LOL: Mongo (Lolo, Bantu)
+  LOZ: Lozi
+  LUA: Luba-Lulua
+  LUB: Luba-Katanga
+  LUG: Ganda (Luganda)
+  LUI: Luiseno
+  LUN: Lunda
+  LUO: Luo (Kenya og Tanzania)
+  LUS: Lushai
+  MAD: Maduresisk
+  MAG: Magahi
+  MAH: Marshall
+  MAI: Maithili
+  MAK: Makasar
+  MAL: Malayalam
+  MAN: Mandingo
+  MAP: Austronesisk (Malayo-Polynesisk)
+  MAR: Marathi
+  MAS: Masai
+  MAX: Manx
+  MDR: Mandar
+  MEN: Mende
+  MIC: Micmac
+  MIN: Minangkabau
+  MIS: Blandede (Andre)
+  MKE/MAC: Makedonisk
+  MKH: Mon-Khmer (Andre)
+  MLG/MLA: Malagasy
+  MLT: Maltesisk
+  MNI: Manipuri
+  MNO: Manobo srog
+  MOH: Mohawk
+  MOL: Moldavisk
+  MON: Mongolsk
+  MOS: Mossi
+  MRI/MAO: Maori
+  MSA/MAY: Malaysisk
+  MUL: Multiple sprog
+  MUN: Munda (Andre)
+  MUS: Creek (Muskogee)
+  MWR: Marwari
+  MYA/BUR: Burmesisk
+  MYN: Maya sprog
+  NAH: Aztekisk (Nahuatlan)
+  NAI: Nordamerikansk Indiansk (Andre)
+  NAU: Nauru
+  NAV: Navajo
+  NDE: Ndebele (Zimbabwe)
+  NDO: Ndonga
+  NEP: Nepalesisk
+  NEW: Newari
+  NIA: Nias
+  NIC: Niger-Kordofaniansk (Niger-Congo)
+  NIU: Niuean
+  NLD/DUT: Hollandsk
+  NON: Norse, Gammel
+  NOR: Norsk
+  NSO: Nordlig Sotho
+  NUB: Nubiske sprog
+  NYA: Nyanja
+  NYM: Nyamwezi
+  NYN: Nyankole
+  NYO: Nyoro
+  NZI: Nzima
+  OCI/LAN: Occitan, Langue d'oc (efter 1500)
+  OJI: Ojibwa
+  ORI: Oriya
+  ORM/GAL: Oromo (Afan, Galla)
+  OSA: Osage
+  OSS: Ossetisk
+  OTA: Tyrkisk, Osmannisk
+  OTO: Otomianske sprog
+  PAA: Papuan-Australsk (Andre)
+  PAG: Pangasinsk
+  PAL: Pahlavi
+  PAM: Pampanga
+  PAN: Panjabi (Punjabi)
+  PAP: Papiamento
+  PAU: Palauansk
+  PEO: Persisk, Gammel (ca. 600-400 F.K.)
+  PHI: Philippinsk (Andre)
+  PLI: Pali
+  POL: Polsk
+  PON: Ponape
+  POR: Portugisisk
+  PRA: Prakrit sprog
+  PRO: Provencalsk, Gammel (til 1500)
+  PUS: Pushto (Pashto)
+  QUE: Quechua
+  RAJ: Rajasthansk
+  RAP: Rapanui
+  RAR: Rarotongan
+  ROA: Romansk (Andre)
+  ROH: Rhaeto-Romansk
+  ROM: Romani
+  RON/RUM: Rumænsk
+  RUN: Kirundi (Rundi)
+  RUS: Russisk
+  SAD: Sandawe
+  SAG: Sango
+  SAI: Sydamerikansk Indiansk (Andre)
+  SAL: Salishanske sprog
+  SAM: Samaritansk Aramæisk
+  SAN: Sanskrit
+  SAS: Sasak
+  SAT: Santali
+  SCC: Serbo-Kroatisk (Cyrillisk)
+  SCO: Skotsk
+  SCR: Serbo-Kroatisk (Romansk)
+  SEL: Selkup
+  SEM: Semitisk (Andre)
+  SGN: Tegnsprog
+  SHN: Shan
+  SID: Sidamo
+  SIN/SNH: Singhalesisk
+  SIO: Sioux sprog
+  SIT: Sino-Tibetansk (Andre)
+  SLA: Slavisk (Andre)
+  SLK/SLO: Slovakisk
+  SLV: Slovensk
+  SMO/SAO: Samoansk
+  SNA/SHO: Shona
+  SND: Sindhi
+  SNK: Soninke
+  SOG: Sogdiansk
+  SOM: Somalisk
+  SON: Songhai
+  SOT: Sotho
+  SQI/ALB: Albansk
+  SRR: Serer
+  SSA: Nilo-Saharansk (Sub-Saharansk Afrikansk)
+  SSO: Sydlig Sotho (Sesotho)
+  SSW/SWZ: Swazi
+  SUK: Sukuma
+  SUN: Sundanesisk
+  SUS: Susu
+  SUX: Sumerisk
+  SVE/SWE: Svensk
+  SWA: Swahili
+  SYR: Syrisk
+  TAH: Tahitiansk
+  TAI: Tai (Andre)
+  TAM: Tamilsk
+  TAT/TAR: Tatar
+  TEL: Telugu
+  TEM: Timne (Temne)
+  TER: Tereno
+  TET: Tetum
+  TGK/TAJ: Tajik
+  TGL/TAG: Tagalog
+  THA: Thai
+  TIG: Tigre
+  TIR: Tigrinya
+  TIV: Tivi
+  TKL: Tokelauisk
+  TLI: Tlingit
+  TMH: Tamashek
+  TOG: Tonga (Nyasa)
+  TON: Tonga (Tonga Islands)
+  TPI: Tok Pisin
+  TRU: Truk
+  TSI: Tsimshiansk
+  TSN/TSW: Tswana
+  TSO: Tsonga
+  TUK: Turkmenisk
+  TUM: Tumbuka
+  TUR: Tyrkisk
+  TUT: Altaisk (Turko-Tatarisk)
+  TVL: Tuvalu
+  TWI: Twi
+  UGA: Ugaritisk
+  UIG: Uigur
+  UKR: Ukrainisk
+  UMB: Umbundu
+  UND: Ubestemt
+  URD: Urdu
+  UZB: Uzbekisk
+  VAI: Vai
+  VEN: Venda
+  VIE: Vietnamesisk
+  VOL: Volapük
+  VOT: Votisk
+  WAK: Wakashanske sprog
+  WAL: Walamo
+  WAR: Waray
+  WAS: Washo
+  WEN: Sorbianske sprog (Wendisk)
+  WOL: Wolof
+  XHO: Xhosa
+  YAO: Yao (Bantu)
+  YAP: Yap
+  YID: Jiddisch
+  YOR: Yoruba
+  ZAP: Zapotec
+  ZEN: Zenaga
+  ZHA: Zhuang
+  ZHO/CHI: Kinesisk
+  ZND: Zande
+  ZUL: Zulu
+  ZUN: Zuni
