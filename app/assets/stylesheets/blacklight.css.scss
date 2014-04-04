@@ -89,6 +89,14 @@ a:hover, a:focus {
       line-height: 1.1em;
       margin-top:0;
     }
+    .downloadFileLink a > .thumb{
+      height: 32px;
+      float: left;
+      margin-right: 5px;
+      margin-down: 5px;
+      position: relative;
+      top: 4px;
+    }
   }
 
   /* FACETS

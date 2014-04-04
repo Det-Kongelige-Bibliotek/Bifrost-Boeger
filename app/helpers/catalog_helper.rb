@@ -48,6 +48,13 @@ module CatalogHelper
   end
 
   ##
+  # Render the download pdf links
+  # @options
+  def render_download_links(title = nil, link = nil, type = 'pdf')
+    ("<a href='" + link + "'>" + image_tag("icon_" + type + ".png", class: 'thumb') + " " + title + "</a>").html_safe
+  end
+
+  ##
   # Render the index field label for a document
   #
   # KB rewrite of render_index_field_label
