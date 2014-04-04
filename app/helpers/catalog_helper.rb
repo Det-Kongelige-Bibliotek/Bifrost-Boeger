@@ -26,21 +26,23 @@ module CatalogHelper
     title = @document['title_tesim'].to_sentence.html_safe if @document['title_tesim']
     titleExtended = @document['titleExtended_tesim'].to_sentence.html_safe if @document['titleExtended_tesim']
     subtitle = @document['subtitle_tesim'].to_sentence.html_safe if @document['subtitle_tesim']
+    # cut off any initial ": " if it is present. FIXME: This shouldn't be done here, but in Sigges script - it is here now solely for the presentation @ Easter
+    subtitle = subtitle.gsub(/^:\s(.*)/, '\1')
 
     if title and titleExtended and subtitle
-      content_tag(:h1, title) + content_tag(:h2, titleExtended) + content_tag(:h3, subtitle)
+      content_tag(:h1, title + titleExtended) + content_tag(:h2, subtitle)
     elsif title and titleExtended
-      content_tag(:h1, title) + content_tag(:h2, titleExtended)
+      content_tag(:h1, title + titleExtended)
     elsif title and subtitle
-      content_tag(:h1, title) + content_tag(:h3, subtitle)
+      content_tag(:h1, title) + content_tag(:h2, subtitle)
     elsif titleExtended and subtitle
-      content_tag(:h1, titleExtended) + content_tag(:h3, subtitle)
+      content_tag(:h1, titleExtended) + content_tag(:h2, subtitle)
     elsif title
       content_tag(:h1, title)
     elsif titleExtended
-      content_tag(:h2, titleExtended)
+      content_tag(:h1, titleExtended)
     elsif subtitle
-      content_tag(:h3, subtitle)
+      content_tag(:h2, subtitle)
     end
 
   end

@@ -89,7 +89,7 @@ class CatalogController < ApplicationController
     # solr fields to be displayed in the show (single result) view
     #   The ordering of the field names is the order of the display
     #config.add_show_field solr_name('title', :stored_searchable, type: :string), :label => 'kb.show.title'
-    config.add_show_field solr_name('subtitle', :stored_searchable, type: :string), :label => 'kb.show.subtitle'
+    #config.add_show_field solr_name('subtitle', :stored_searchable, type: :string), :label => 'kb.show.subtitle'
     config.add_show_field solr_name('author', :stored_searchable, type: :string), :label => 'kb.search.index.author'
     config.add_show_field solr_name('edition', :displayable, type: :string), :label => 'Edition'
     config.add_show_field solr_name('subjectTopic', :stored_searchable, type: :string), :label => 'Subject'
