@@ -8,3 +8,5 @@ da:
     show:
       description: Beskrivelse
       language: Sprog
+      title: Titel
+      subtitle: Undertitel
