@@ -54,7 +54,7 @@ module Datastreams
       t.category(:proxy => [:genre], :index_as=>[:stored_searchable, :facetable])
       t.publisher(:proxy => [:originInfo, :publisher],:index_as=>[:stored_searchable, :facetable])
       t.originPlace(:proxy => [:originInfo, :place, :placeTerm],:index_as=>[:stored_searchable, :facetable])
-      t.dateIssued(:proxy => [:originInfo, :dateIssued],:index_as=>[:stored_searchable,  :facetable, :displayable])
+      t.dateIssued(:proxy => [:originInfo, :dateIssued],:index_as=>[:stored_searchable,  :facetable, :displayable, :sortable])
       t.edition(:proxy => [:originInfo, :edition], :index_as=>[:displayable])
       #t.languageISO(:proxy => [:language, :languageISO],:index_as=>[:stored_searchable, :facetable])
       t.languageText(:proxy => [:language, :languageText],:index_as=>[:stored_searchable, :facetable])
