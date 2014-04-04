@@ -182,13 +182,13 @@ da:
         title: 'Results navigation'
       pagination_info:
         no_items_found: 'Ingen billeder fundet'
-        single_item_found: '<strong>1</strong> to <strong>1</strong> of <strong>1</strong>'
+        single_item_found: '<strong>1</strong> til <strong>1</strong> af <strong>1</strong>'
         pages:
-          one: '<strong>%{start_num}</strong> - <strong>%{end_num}</strong> of <strong>%{total_num}</strong>'
-          other: '<strong>%{start_num}</strong> - <strong>%{end_num}</strong> of <strong>%{total_num}</strong>'
+          one: '<strong>%{start_num}</strong> - <strong>%{end_num}</strong> af <strong>%{total_num}</strong>'
+          other: '<strong>%{start_num}</strong> - <strong>%{end_num}</strong> af <strong>%{total_num}</strong>'
       entry_pagination_info:
-        one: '<strong>1 of 1</strong>'
-        other: '<strong>%{current}</strong> of <strong>%{total}</strong>'
+        one: '<strong>1 af 1</strong>'
+        other: '<strong>%{current}</strong> af <strong>%{total}</strong>'
       documents:
         counter: '%{counter}. '
       facets:
