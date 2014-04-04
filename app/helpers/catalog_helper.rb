@@ -61,4 +61,28 @@ module CatalogHelper
     end
 
   end
+
+  ##
+  # Render the index field label for a document
+  #
+  # KB rewrite of render_index_field_label
+  # handle translations better
+  #
+  # @overload render_index_field_label(options)
+  #   Use the default, document-agnostic configuration
+  #   @param [Hash] opts
+  #   @options opts [String] :field
+  # @overload render_index_field_label(document, options)
+  #   Allow an extention point where information in the document
+  #   may drive the value of the field
+  #   @param [SolrDocument] doc
+  #   @param [Hash] opts
+  #   @options opts [String] :field
+  def render_bifrost_index_field_label *args
+    options = args.extract_options!
+    document = args.first
+
+    field = options[:field]
+    html_escape t(index_fields(document)[field].label, default: t('kb.search.index.label'))
+  end
 end
