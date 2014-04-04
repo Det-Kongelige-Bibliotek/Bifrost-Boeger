@@ -5,3 +5,6 @@ da:
         author: Forfatter
         label: Label
         date_issued: Udgivelsesår
+    show:
+      description: Beskrivelse
+      language: Sprog
