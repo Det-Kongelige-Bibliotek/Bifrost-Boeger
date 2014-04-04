@@ -158,7 +158,6 @@ class CatalogController < ApplicationController
     # Specifying a :qt only to show it's possible, and so our internal automated
     # tests can test it. In this case it's the same as
     # config[:default_solr_parameters][:qt], so isn't actually neccesary.
-=begin
     config.add_search_field('subject') do |field|
       field.qt = 'search'
       field.solr_local_parameters = {
@@ -166,16 +165,15 @@ class CatalogController < ApplicationController
         :pf => '$subject_pf'
       }
     end
-=end
 
     # "sort results by" select (pulldown)
     # label in pulldown is followed by the name of the SOLR field to sort by and
     # whether the sort is ascending or descending (it must be asc or desc
     # except in the relevancy case).
-    config.add_sort_field 'score desc, pub_date_dtsi desc, title_tesi asc', :label => I18n.t('kb.search.sort.relevance')
-    config.add_sort_field 'pub_date_dtsi desc, title_tesi asc', :label =>  I18n.t('kb.search.sort.date_issued')
-    config.add_sort_field 'author_tesi asc, title_tesi asc', :label => I18n.t('kb.search.sort.author')
-    config.add_sort_field 'title_tesi asc, pub_date_dtsi desc', :label =>  I18n.t('kb.search.sort.title')
+    config.add_sort_field 'score desc, dateIssued_si desc, title_sort_si asc', :label => 'relevance'
+    config.add_sort_field 'dateIssued_si desc, title_sort_si asc', :label => 'year'
+    config.add_sort_field 'author_sort_si asc, title_sort_si asc', :label => 'author'
+    config.add_sort_field 'title_sort_si asc, dateIssued_si desc', :label => 'title'
 
     # If there are more than this many search results, no spelling ("did you
     # mean") suggestion is offered.
