@@ -3,12 +3,12 @@ module CatalogHelper
   #Don't remove this, when we over-ride Blacklights CatalogHelper we need to include all its behaviour manually
   # otherwise the default Blacklight behaviour goes missing
   include Blacklight::CatalogHelperBehavior
-
+  REX_CONFIG = YAML.load_file("#{Rails.root}/config/rex.yml")[Rails.env]
   #Function to create a REX search link for the digital book using the Aleph SYS num
   # @param [String] sys_num
   # @return [String] URL for REX book search
   def create_rex_physical_book_search_link(sys_num)
-    REX_CONFIG['rex_book_search_template_uri'].gsub('SYS_NUM', "KGL01#{sys_num.to_sentence.html_safe}")
+    REX_CONFIG['rex_book_search_template_uri'].gsub('SYS_NUM', "KGL01#{sys_num.first}")
   end
 
   # given a hash of search_fields, render a ul with search fields
