@@ -77,6 +77,19 @@ a:hover, a:focus {
 #mainContent{
   background: #FFF;
 }
+  /* DOCUMENT
+  ***************************************************/
+  #document{
+    h1{
+      font-size: 1.2em;
+      line-height: 1.3em;
+    }
+    h2{
+      font-size: 1em;
+      line-height: 1.1em;
+      margin-top:0;
+    }
+  }
 
   /* FACETS
   ***************************************************/
