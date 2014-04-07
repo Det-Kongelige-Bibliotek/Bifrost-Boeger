@@ -51,7 +51,7 @@ module CatalogHelper
   # Render the download pdf links
   # @options
   def render_download_links(title = nil, link = nil, type = 'pdf')
-    ("<a href='" + link + "'>" + image_tag("icon_" + type + ".png", class: 'thumb') + " " + title + "</a>").html_safe
+    ("<a href='#{link} '>" + image_tag("icon_" + type + ".png", class: 'thumb') + " #{title}</a>").html_safe
   end
 
   ##
