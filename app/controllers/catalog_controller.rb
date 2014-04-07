@@ -95,7 +95,7 @@ class CatalogController < ApplicationController
     config.add_show_field solr_name('subjectTopic', :stored_searchable, type: :string), :label => 'Subject'
     config.add_show_field solr_name('dateIssued', :stored_searchable, type: :string), :label => 'kb.search.index.date_issued'
     config.add_show_field solr_name('description', :stored_searchable, type: :string), :label => 'kb.show.description'
-    config.add_show_field solr_name('languageISO', :stored_searchable, type: :string), :label => 'kb.show.language'
+    config.add_show_field solr_name('languageISO', :stored_searchable, type: :string), :label => 'kb.show.language', :helper_method => :translate_value
     #config.add_show_field solr_name('url', :displayable, type: :string), :label => 'PDF'
     #config.add_show_field solr_name('barcode', :displayable, type: :string), :label => 'Barcode'
     #config.add_show_field solr_name('title_vern', :stored_searchable, type: :string), :label => 'Title:'

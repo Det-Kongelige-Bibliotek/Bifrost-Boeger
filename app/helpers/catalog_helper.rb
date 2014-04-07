@@ -100,6 +100,15 @@ module CatalogHelper
     html_escape t(document_show_fields(document)[field].label, default: t('kb.search.index.label'))
   end
 
+  # Helper method called from CatalogController
+  # when we need to translate a field's value
+  # e.g. codes to proper names (dan -> Dansk | Danish)
+  def translate_value(args)
+    document = args[:document]
+    field = args[:field]
+    t(document[field].first.upcase)
+  end
+
 
   # Removing the [remove] link and label class from the default selected facet display
   def render_bifrost_selected_facet_value(facet_solr_field, item)
