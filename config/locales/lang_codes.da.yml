@@ -120,7 +120,8 @@ da:
   FIN: Finsk
   FIU: Finno-Ugrisk (Andre)
   FON: Fon
-  FRE/FRA: Fransk
+  FRE: Fransk
+  FRA: Fransk
   FRM: Fransk, Middelalder (ca. 1400-1600)
   FRO: Fransk, Gammel (ca. 842-1400)
   FRY/FRI: Frisisk
@@ -268,7 +269,8 @@ da:
   NIA: Nias
   NIC: Niger-Kordofaniansk (Niger-Congo)
   NIU: Niuean
-  NLD/DUT: Hollandsk
+  DUT: Hollandsk
+  NLD: Hollandsk
   NON: Norse, Gammel
   NOR: Norsk
   NSO: Nordlig Sotho
@@ -351,7 +353,8 @@ da:
   SUN: Sundanesisk
   SUS: Susu
   SUX: Sumerisk
-  SVE/SWE: Svensk
+  SVE: Svensk
+  SWE: Svensk
   SWA: Swahili
   SYR: Syrisk
   TAH: Tahitiansk
