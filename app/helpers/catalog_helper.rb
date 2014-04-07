@@ -106,23 +106,14 @@ module CatalogHelper
   def translate_value(args)
     document = args[:document]
     field = args[:field]
-    t(document[field].first.upcase)
+    translate_lang_code(document[field].first)
   end
 
-
-  # Removing the [remove] link and label class from the default selected facet display
-  def render_bifrost_selected_facet_value(facet_solr_field, item)
-    content_tag(:span, render_bifrost_facet_value(facet_solr_field, item, :suppress_link => true), :class => "selected")
-  end
-
-  # Override to remove the label class (easier integration with bootstrap)
-  # and handles arrays
-  def render_bifrost_facet_value(facet_solr_field, item, options ={})
-    if item.is_a? Array
-      render_array_facet_value(facet_solr_field, item, options)
-    end
-   display_val = I18n.t(facet_display_value(facet_solr_field, item).upcase, default: facet_display_value(facet_solr_field, item))
-    (link_to_unless(options[:suppress_link], display_val, add_facet_params_and_redirect(facet_solr_field, item.value), :class=>"facet_select") + " " + render_facet_count(item.hits)).html_safe
+  # Helper method to translate language code
+  # to a proper name (e.g. dan -> Dansk)
+  # Called from CatalogController languageISO facet
+  def translate_lang_code(val)
+    t(val.upcase)
   end
 
 end

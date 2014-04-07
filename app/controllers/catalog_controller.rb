@@ -55,7 +55,7 @@ class CatalogController < ApplicationController
     # :show may be set to false if you don't want the facet to be drawn in the
     # facet bar
     config.add_facet_field solr_name('author', :facetable), :label => 'Forfatter'
-    config.add_facet_field solr_name('languageISO', :facetable), :label => 'Sprog', :partial => 'facet_language'
+    config.add_facet_field solr_name('languageISO', :facetable), :label => 'Sprog', :helper_method => :translate_lang_code
     config.add_facet_field solr_name('dateIssued', :facetable), :label => 'Udgivelsesår'
     #config.add_facet_field solr_name('object_type', :facetable), :label => 'Format'
     #config.add_facet_field solr_name('pub_date', :facetable), :label => 'Publication Year'
