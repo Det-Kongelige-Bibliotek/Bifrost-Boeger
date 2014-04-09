@@ -216,6 +216,12 @@ da:
       atom_feed: 'Atom for resultaterne'
       fields:
         default: 'Keyword'
+      zero_results:
+        title: 'Din søgning gav ingen resultater'
+        modify_search: 'Prøv at ændre din søgning'
+        use_fewer_keywords: 'Brug færre søgetermer'
+        search_fields: 'Udvid søgningen til flere felter'
+        search_everything: 'Søg i alle felter.'
 
     entry_name:
       default: 'entry'
