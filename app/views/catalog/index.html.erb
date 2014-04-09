@@ -1,12 +1,14 @@
+<% if has_search_parameters? %><%# Only show facets in relation to a search %>
 <div id="sidebar" class="span3">
  <%= render 'search_sidebar' %>
 </div>
+<% end %>
 
 <div id="content" class="span9">
 
     <% unless has_search_parameters? %>
 	    <%# if there are no input/search related params, display the "home" partial -%>
-	    <%= render 'home' %>
+        <%= render 'home' %>
     <% else %>
 
       <h2 class="hide-text top-content-title"><%= t('blacklight.search.search_results_header') %></h2>
