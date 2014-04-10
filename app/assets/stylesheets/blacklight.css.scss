@@ -129,6 +129,24 @@ a:hover, a:focus {
     }
 
 }
+/* sortAndPerPage (previews and next list result)
+***************************************************/
+#sortAndPerPage {
+  .page_links{
+    a{
+      @extend .btn;
+    }
+  }
+
+}
+/* previews and next landingpage
+***************************************************/
+
+#previousNextDocument{
+  a{
+    @extend .btn;
+  }
+}
 
 /* FOOTER
 ***************************************************/
