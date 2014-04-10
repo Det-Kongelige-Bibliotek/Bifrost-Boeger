@@ -76,14 +76,14 @@ class CatalogController < ApplicationController
     # solr fields to be displayed in the index (search results) view
     #   The ordering of the field names is the order of the display
     config.add_index_field solr_name('author', :stored_searchable, type: :string), :label => 'kb.search.index.author'
-    config.add_index_field solr_name('person', :stored_searchable, type: :string), :label => 'Person'
-    config.add_index_field solr_name('fileidentifier', :stored_searchable, type: :string), :label => 'Fileidentifier'
-    config.add_index_field solr_name('category', :stored_searchable, type: :string), :label => 'Kategori:'
-    config.add_index_field solr_name('genre', :stored_searchable, type: :string), :label => 'Genre:'
-    config.add_index_field solr_name('local', :stored_searchable, type: :string), :label => 'Område:'
-    #config.add_index_field solr_name('description', :stored_searchable, type: :string), :label => 'Beskrivelse:'
-    config.add_index_field solr_name('imagetype', :stored_searchable, type: :string), :label => 'Type:'
-    config.add_index_field solr_name('copyright', :stored_searchable, type: :string), :label => 'License:'
+    config.add_index_field solr_name('person', :stored_searchable, type: :string), :label => 'kb.search.index.person'
+    config.add_index_field solr_name('fileidentifier', :stored_searchable, type: :string), :label => 'kb.search.index.fileidentifier'
+    config.add_index_field solr_name('category', :stored_searchable, type: :string), :label => 'kb.search.index.category'
+    config.add_index_field solr_name('genre', :stored_searchable, type: :string), :label => 'kb.search.index.genre'
+    config.add_index_field solr_name('local', :stored_searchable, type: :string), :label => 'kb.search.index.area'
+    #config.add_index_field solr_name('description', :stored_searchable, type: :string), :label => 'kb.search.index.description'
+    config.add_index_field solr_name('imagetype', :stored_searchable, type: :string), :label => 'kb.search.index.type'
+    config.add_index_field solr_name('copyright', :stored_searchable, type: :string), :label => 'kb.search.index.license'
     config.add_index_field solr_name('dateIssued', :stored_searchable, type: :string), :label => 'kb.search.index.date_issued'
 
     # solr fields to be displayed in the show (single result) view
@@ -91,10 +91,10 @@ class CatalogController < ApplicationController
     #config.add_show_field solr_name('title', :stored_searchable, type: :string), :label => 'kb.show.title'
     #config.add_show_field solr_name('subtitle', :stored_searchable, type: :string), :label => 'kb.show.subtitle'
     config.add_show_field solr_name('author', :stored_searchable, type: :string), :label => 'kb.search.index.author', :link_to_search => :author_sim
-    config.add_show_field solr_name('edition', :displayable, type: :string), :label => 'Edition'
-    config.add_show_field solr_name('subjectTopic', :stored_searchable, type: :string), :label => 'Subject'
+    config.add_show_field solr_name('edition', :displayable, type: :string), :label => 'kb.search.index.edition'
+    config.add_show_field solr_name('subjectTopic', :stored_searchable, type: :string), :label => 'kb.show.subject'
     config.add_show_field solr_name('dateIssued', :stored_searchable, type: :string), :label => 'kb.search.index.date_issued'
-    config.add_show_field solr_name('description', :stored_searchable, type: :string), :label => 'kb.show.description'
+    config.add_show_field solr_name('description', :stored_searchable, type: :string), :label => 'kb.search.index.description'
     config.add_show_field solr_name('languageISO', :stored_searchable, type: :string), :label => 'kb.show.language', :helper_method => :translate_value
     #config.add_show_field solr_name('url', :displayable, type: :string), :label => 'PDF'
     #config.add_show_field solr_name('barcode', :displayable, type: :string), :label => 'Barcode'

@@ -6,15 +6,24 @@ da:
     search:
       index:
         author: Forfatter
+        person: Person
+        fileidentifier: Filidentifikation
+        category: Kategori
+        genre: Genre
+        area: Område
+        description: Beskrivelse
+        type: Type
+        license: Licens
         label: Label
         date_issued: Udgivelsesår
+        edition: Udgave
       sort:
         relevance: relevans
         date_issued: udgivelsesår
         author: forfatter
         title: titel
     show:
-      description: Beskrivelse
+      subject: Emne
       language: Sprog
       title: Titel
       subtitle: Undertitel
