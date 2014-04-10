@@ -4,7 +4,7 @@
 </div>
 <% end %>
 
-<div id="content" class="span9">
+<div id="content" class="span<%= has_search_parameters? ? '9' : '12' %>">
 
     <% unless has_search_parameters? %>
 	    <%# if there are no input/search related params, display the "home" partial -%>
