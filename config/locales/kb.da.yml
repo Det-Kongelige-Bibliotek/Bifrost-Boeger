@@ -4,6 +4,11 @@ da:
       title: Velkommen!
       text: Her kan du søge i et udvalg af digitaliserede trykte værker fra Det Kongelige Biblioteks samlinger.
     search:
+      limit:
+        allFields: Alle Felter # FIXME: This is part of the uneven translation thing we need to look into
+        title: Titel
+        author: Forfatter
+        dateIssued: Udgivelsesår # FIXME: This is part of the uneven translation thing we need to look into
       index:
         author: Forfatter
         person: Person

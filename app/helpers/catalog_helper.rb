@@ -16,7 +16,9 @@ module CatalogHelper
   def render_search_dropdown(search_fields)
     content_tag(:ul, class: 'dropdown-menu', id: 'js_search_type') do
       search_fields.each do |key, value|
-        concat(content_tag(:li,  content_tag(:a, key, {href: '#'}), {id: value}))
+        # FIXME: It sould not be necessary to camelcase anything here, since the fieldname is all_fields and date_issued - but somewhere the keys gets translated/labeled
+        key = key.gsub(/\s+/, "").camelize(:lower) # FIXME: This is part of the uneven translation thing we need to look into
+        concat(content_tag(:li,  content_tag(:a, t('kb.search.limit.' + key), {href: '#'}), {id: value}))
       end
     end
   end

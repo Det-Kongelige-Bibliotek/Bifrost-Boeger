@@ -10,7 +10,7 @@
           <div class="input-prepend input-append">
             <div class="btn-group text-left">
               <button class="btn dropdown-toggle" data-toggle="dropdown" id="js_search_type_button">
-                <%=t (params[:search_field] || 'Action') %> <span class="caret"></span></button>
+                <%=t ('kb.search.limit.' + (params[:search_field] || 'allFields')) %> <span class="caret"></span></button><%# FIXME: This is part of the uneven translation thing we need to look into %>
               <%= render_search_dropdown(search_fields) %>
             </div>
 
