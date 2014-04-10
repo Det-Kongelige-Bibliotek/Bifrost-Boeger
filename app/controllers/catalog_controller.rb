@@ -155,11 +155,7 @@ class CatalogController < ApplicationController
       }
     end
 
-    # Specifying a :qt only to show it's possible, and so our internal automated
-    # tests can test it. In this case it's the same as
-    # config[:default_solr_parameters][:qt], so isn't actually neccesary.
-    config.add_search_field('Udgivelsesår') do |field|
-      field.qt = 'search'
+    config.add_search_field('dateIssued') do |field|
       field.solr_local_parameters = {
         :qf => '$dateIssued_qf',
         :pf => '$dateIssued_pf'

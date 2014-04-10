@@ -61,6 +61,14 @@
        </str>
        <str name="subject_pf">
        </str>
+
+       <str name="dateIssued_qf">
+         dateIssued_tesim
+       </str>
+       <str name="dateIssued_pf">
+         dateIssued_tesim
+       </str>
+
        
        <str name="fl">
          *, 
