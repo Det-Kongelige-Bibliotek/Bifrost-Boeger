@@ -1,9 +1,13 @@
-<div id="sortAndPerPage">
-   <div class="page_links">
-     <%= render :partial => "paginate_compact" %>
-   </div>
-    <%= render :partial => 'sort_widget' %>
-
-    <%= render :partial => 'per_page_widget' %>
-
+<div class="row">
+    <div class="span4 prevNext">
+        <%= render :partial => "paginate_compact" %>
+    </div>
+    <br class="visible-phone">
+    <div class="span5">
+        <div class="pull-right">
+            <%= render :partial => 'sort_widget' %>
+            <%= render :partial => 'per_page_widget' %>
+        </div>
+    </div>
 </div>
+<hr>

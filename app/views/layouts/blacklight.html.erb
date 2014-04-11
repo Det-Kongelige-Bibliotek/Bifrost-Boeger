@@ -44,7 +44,7 @@
       <section id="search">
         <%= render_search_bar  %>
       </section>
-        <div class="container">
+        <div class="container" style="padding-bottom: 30px">
 
             <div id="search-found" class="row hidden-phone">
                 <%= Deprecation.silence(Blacklight::BlacklightHelperBehavior) { topbar_items.join('').html_safe } %>

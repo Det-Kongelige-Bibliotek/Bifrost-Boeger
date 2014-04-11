@@ -1,4 +1,5 @@
 /* BOOTSTRAP STYLE */
+
 @import 'bootstrap';
 @import 'bootstrap-responsive';
 @import 'blacklight/blacklight';
@@ -103,6 +104,9 @@ a:hover, a:focus {
   ***************************************************/
 
   .facets{
+    .visible-phone{
+      margin-bottom: 10px;
+    }
     .accordion-inner{
       padding: 0px;
     }
@@ -131,13 +135,11 @@ a:hover, a:focus {
 }
 /* sortAndPerPage (previews and next list result)
 ***************************************************/
-#sortAndPerPage {
-  .page_links{
+
+.prevNext{
     a{
       @extend .btn;
     }
-  }
-
 }
 /* previews and next landingpage
 ***************************************************/

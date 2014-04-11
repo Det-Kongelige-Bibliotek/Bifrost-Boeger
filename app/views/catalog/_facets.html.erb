@@ -2,9 +2,9 @@
 <% if has_facet_values?  %>
 <div class="facets">
   <div class="visible-phone hidden-tablet hidden-desktop">
-      <button class="btn btn-block " data-toggle="collapse" data-target="#facetsCollapse">
-        <i class="icon-filter"></i>
-        <%= t('blacklight.search.facets.title') %>
+      <button class="btn btn-primary btn-large btn-block" data-toggle="collapse" data-target="#facetsCollapse">
+        <i class="icon-filter icon-white"></i>
+        <span><%= t('blacklight.search.facets.title') %> </span>
       </button>
       <div id="facetsCollapse" class="collapse">
         <%= render_facet_partials %>
