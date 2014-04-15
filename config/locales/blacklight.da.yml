@@ -157,6 +157,8 @@ da:
     back_to_bookmarks: 'Tilbage til Bookmarks'
 
     search:
+      index:
+        label: '%{label}'
       title: '%{application_name} Søgeresultater'
       search_results_header: 'Søgning'
       search_results: 'Søgeresultater'
