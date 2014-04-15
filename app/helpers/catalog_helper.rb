@@ -57,11 +57,26 @@ module CatalogHelper
 
   end
 
-  ##
-  # Render the download pdf links
-  # @options
-  def render_download_links(title = nil, link = nil, type = 'pdf')
-    ("<a href='#{link} '>" + image_tag("icon_" + type + ".png", class: 'thumb') + " #{title}</a>").html_safe
+  def create_download_link(args)
+    pdf_link = get_field_val(args)
+    title = get_field_val( {field: 'title_tesim', document: @document})
+    unless pdf_link.nil?
+      link_to(pdf_link) do
+        concat image_tag('icon_pdf.png', class: 'thumb')
+        concat title
+      end
+    end
+  end
+
+  # Extract value from a SolrDoc, given document and field as a hash
+  # @param [Hash] args { :field => fieldName, :document => SolrDoc }
+  def get_field_val(args)
+    field, doc = args.values
+    if doc[field].class == Array
+      doc[field].first
+    else
+      doc[field]
+    end
   end
 
   # Helper method called from CatalogController

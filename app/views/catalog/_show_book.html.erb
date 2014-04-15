@@ -6,9 +6,4 @@
           <dd class="blacklight-<%= solr_fname.parameterize %>"><%= render_document_show_field_value document, :field => solr_fname %></dd>
       <% end -%>
   <% end -%>
-
-  <dt><%= t('kb.show.download') %></dt>
-  <dd class="downloadFileLink">
-    <%= render_download_links(@document["title_tesim"].to_sentence, @document["urls_ssm"].to_sentence, 'pdf') rescue nil %>
-  </dd>
 </dl>
