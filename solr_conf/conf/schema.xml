@@ -234,6 +234,7 @@
     </fieldtype>
     
     <!-- A text field with defaults appropriate for English -->
+    <!-- KB - we have edited this to use Danish stemming instead -->
     <fieldType name="text_en" class="solr.TextField" positionIncrementGap="100">
       <analyzer>
         <tokenizer class="solr.ICUTokenizerFactory"/>
