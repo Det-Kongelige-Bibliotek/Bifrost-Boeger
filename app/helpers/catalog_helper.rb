@@ -56,28 +56,6 @@ module CatalogHelper
     ("<a href='#{link} '>" + image_tag("icon_" + type + ".png", class: 'thumb') + " #{title}</a>").html_safe
   end
 
-  ##
-  # Render the show field label for a document
-  #
-  # @overload render_document_show_field_label(options)
-  #   Use the default, document-agnostic configuration
-  #   @param [Hash] opts
-  #   @options opts [String] :field
-  # @overload render_document_show_field_label(document, options)
-  #   Allow an extention point where information in the document
-  #   may drive the value of the field
-  #   @param [SolrDocument] doc
-  #   @param [Hash] opts
-  #   @options opts [String] :field
-  def render_bifrost_show_field_label *args
-    options = args.extract_options!
-    document = args.first
-
-    field = options[:field]
-
-    html_escape t(document_show_fields(document)[field].label, default: t('kb.search.index.label'))
-  end
-
   # Helper method called from CatalogController
   # when we need to translate a field's value
   # e.g. codes to proper names (dan -> Dansk | Danish)

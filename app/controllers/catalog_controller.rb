@@ -90,12 +90,12 @@ class CatalogController < ApplicationController
     #   The ordering of the field names is the order of the display
     #config.add_show_field solr_name('title', :stored_searchable, type: :string), :label => 'kb.show.title'
     #config.add_show_field solr_name('subtitle', :stored_searchable, type: :string), :label => 'kb.show.subtitle'
-    config.add_show_field solr_name('author', :stored_searchable, type: :string), :label => 'kb.search.index.author', :link_to_search => :author_sim
-    config.add_show_field solr_name('edition', :displayable, type: :string), :label => 'kb.search.index.edition'
-    config.add_show_field solr_name('subjectTopic', :stored_searchable, type: :string), :label => 'kb.show.subject'
-    config.add_show_field solr_name('dateIssued', :stored_searchable, type: :string), :label => 'kb.search.index.date_issued'
-    config.add_show_field solr_name('description', :stored_searchable, type: :string), :label => 'kb.search.index.description'
-    config.add_show_field solr_name('languageISO', :stored_searchable, type: :string), :label => 'kb.show.language', :helper_method => :translate_value
+    config.add_show_field solr_name('author', :stored_searchable, type: :string), :label => I18n.t('kb.search.index.author'), :link_to_search => :author_sim
+    config.add_show_field solr_name('edition', :displayable, type: :string), :label => I18n.t('kb.search.index.edition')
+    config.add_show_field solr_name('subjectTopic', :stored_searchable, type: :string), :label => I18n.t('kb.show.subject')
+    config.add_show_field solr_name('dateIssued', :stored_searchable, type: :string), :label => I18n.t('kb.search.index.date_issued')
+    config.add_show_field solr_name('description', :stored_searchable, type: :string), :label => I18n.t('kb.search.index.description')
+    config.add_show_field solr_name('languageISO', :stored_searchable, type: :string), :label => I18n.t('kb.show.language'), :helper_method => :translate_value
     #config.add_show_field solr_name('url', :displayable, type: :string), :label => 'PDF'
     #config.add_show_field solr_name('barcode', :displayable, type: :string), :label => 'Barcode'
     #config.add_show_field solr_name('title_vern', :stored_searchable, type: :string), :label => 'Title:'

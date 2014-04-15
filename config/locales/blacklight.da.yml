@@ -214,6 +214,7 @@ da:
       start_over: 'Ny søgning'
       show:
         title: '%{document_title} - %{application_name}'
+        label: '%{label}'
       rss_feed: 'RSS for resultaterne'
       atom_feed: 'Atom for resultaterne'
       fields:
