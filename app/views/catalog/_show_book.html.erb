@@ -6,11 +6,7 @@
           <dd class="blacklight-<%= solr_fname.parameterize %>"><%= render_document_show_field_value document, :field => solr_fname %></dd>
       <% end -%>
   <% end -%>
-  <dt class="blacklight-barcode_ssm"><%= t('kb.show.physical_version') %></dt>
-  <dd class="findInRexLink">
-    <%= link_to(t('kb.show.find_in_rex'),
-                create_rex_physical_book_search_link(@document['recordIdentifier_ssm'])) rescue nil %>
-  </dd>
+
   <dt><%= t('kb.show.download') %></dt>
   <dd class="downloadFileLink">
     <%= render_download_links(@document["title_tesim"].to_sentence, @document["urls_ssm"].to_sentence, 'pdf') rescue nil %>

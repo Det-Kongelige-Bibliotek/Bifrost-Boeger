@@ -7,8 +7,14 @@ module CatalogHelper
   #Function to create a REX search link for the digital book using the Aleph SYS num
   # @param [String] sys_num
   # @return [String] URL for REX book search
-  def create_rex_physical_book_search_link(sys_num)
-    REX_CONFIG['rex_book_search_template_uri'].gsub('SYS_NUM', "KGL01#{sys_num.first}")
+  def create_rex_physical_book_search_link(args)
+    document = args[:document]
+    field = args[:field]
+    sys_num = document[field].first
+    unless sys_num.nil?
+      rex_link = REX_CONFIG['rex_book_search_template_uri'].gsub('SYS_NUM', "KGL01#{sys_num}")
+      link_to(t('kb.show.find_in_rex'), rex_link)
+    end
   end
 
   # given a hash of search_fields, render a ul with search fields

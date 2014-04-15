@@ -96,6 +96,7 @@ class CatalogController < ApplicationController
     config.add_show_field solr_name('dateIssued', :stored_searchable, type: :string), :label => I18n.t('kb.search.index.date_issued')
     config.add_show_field solr_name('description', :stored_searchable, type: :string), :label => I18n.t('kb.search.index.description')
     config.add_show_field solr_name('languageISO', :stored_searchable, type: :string), :label => I18n.t('kb.show.language'), :helper_method => :translate_value
+    config.add_show_field solr_name('recordIdentifier', :displayable), :label => I18n.t('kb.show.physical_version'), :helper_method => :create_rex_physical_book_search_link
     #config.add_show_field solr_name('url', :displayable, type: :string), :label => 'PDF'
     #config.add_show_field solr_name('barcode', :displayable, type: :string), :label => 'Barcode'
     #config.add_show_field solr_name('title_vern', :stored_searchable, type: :string), :label => 'Title:'
