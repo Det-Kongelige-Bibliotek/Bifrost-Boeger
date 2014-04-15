@@ -10,9 +10,7 @@ module CatalogHelper
   # @param [Hash] args { :field => fieldName, :document => SolrDoc }
   # @return [String] URL for REX book search
   def create_rex_physical_book_search_link(args)
-    document = args[:document]
-    field = args[:field]
-    sys_num = document[field].first
+    sys_num = get_field_val(args)
     unless sys_num.nil?
       rex_link = REX_CONFIG['rex_book_search_template_uri'].gsub('SYS_NUM', "KGL01#{sys_num}")
       link_to(t('kb.show.find_in_rex'), rex_link)
@@ -83,9 +81,8 @@ module CatalogHelper
   # when we need to translate a field's value
   # e.g. codes to proper names (dan -> Dansk | Danish)
   def translate_value(args)
-    document = args[:document]
-    field = args[:field]
-    translate_lang_code(document[field].first)
+    code = get_field_val(args)
+    translate_lang_code(code)
   end
 
   # Helper method to translate language code
