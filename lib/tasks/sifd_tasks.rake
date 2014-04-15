@@ -11,6 +11,13 @@ namespace :bifrost do
     puts "#{objects.length} objects deleted from #{Rails.env.titleize} environment"
   end
 
+  desc 'Update index for all objects in Fedora'
+  task :reindex => :environment do
+    objects = ActiveFedora::Base.all
+    objects.each {|af| af.update_index }
+    puts "#{objects.length} objects reindexed in #{Rails.env.titleize} environment"
+  end
+
   desc 'Load sample data into Bifrost Boger'
   task :superloader do
 
