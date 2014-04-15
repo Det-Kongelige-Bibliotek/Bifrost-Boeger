@@ -4,8 +4,10 @@ module CatalogHelper
   # otherwise the default Blacklight behaviour goes missing
   include Blacklight::CatalogHelperBehavior
   REX_CONFIG = YAML.load_file("#{Rails.root}/config/rex.yml")[Rails.env]
-  #Function to create a REX search link for the digital book using the Aleph SYS num
-  # @param [String] sys_num
+
+  # Function to create a REX search link for the digital book using the Aleph SYS num
+  # Called as helper in catalog controller for recordIdentifier_ssm field
+  # @param [Hash] args { :field => fieldName, :document => SolrDoc }
   # @return [String] URL for REX book search
   def create_rex_physical_book_search_link(args)
     document = args[:document]
