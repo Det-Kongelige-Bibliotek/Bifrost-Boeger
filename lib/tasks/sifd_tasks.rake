@@ -8,7 +8,8 @@ namespace :bifrost do
   task :clean => :environment do
     objects = ActiveFedora::Base.all
     objects.each {|af| af.delete }
-    puts "#{objects.length} objects deleted from #{Rails.env.titleize} environment"
+    puts "#{objects.length} Fedora objects deleted from #{Rails.env.titleize} environment"
+    User.destroy_all
   end
 
   desc 'Update index for all objects in Fedora'
