@@ -16,4 +16,6 @@
 //
 // Required by Blacklight
 //= require blacklight/blacklight
+//= require hydra/batch_select
+//= require hydra_collections
 //= require_tree .

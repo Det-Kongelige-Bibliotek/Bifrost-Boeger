@@ -1,5 +1,6 @@
 class Book  < ActiveFedora::Base
   include Hydra::AccessControls::Permissions
+  include Hydra::Collections::Collectible
 
 
   has_metadata :name => 'descMetadata', :type=>Datastreams::EBookMods
@@ -66,7 +67,7 @@ class Book  < ActiveFedora::Base
         Solrizer.insert_field(solr_doc, 'languageISO', lang, :stored_searchable, :facetable)
       end
     end
-
+    index_collection_pids(solr_doc)
     solr_doc
   end
 

@@ -119,6 +119,9 @@ GEM
       blacklight (~> 4.7)
       cancan
       deprecation
+    hydra-collections (1.1.0)
+      blacklight
+      hydra-head
     hydra-core (6.5.0)
       active-fedora (~> 6.7)
       blacklight (~> 4.7)
@@ -304,6 +307,7 @@ DEPENDENCIES
   database_cleaner
   devise (~> 3.2.3)
   factory_girl_rails (~> 4.0)
+  hydra-collections
   hydra-head (= 6.5.0)
   jettywrapper
   jquery-rails

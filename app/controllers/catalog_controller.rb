@@ -5,6 +5,7 @@ class CatalogController < ApplicationController
 
   include Blacklight::Catalog
   include Hydra::Controller::ControllerBehavior
+  helper :collections
   # These before_filters apply the hydra access controls
 
   # before_filter :enforce_show_permissions, :only=>:show
@@ -24,6 +25,8 @@ class CatalogController < ApplicationController
         :fq => 'active_fedora_model_ssi:Book',
         :rows => 10
     }
+
+    config.add_facet_field solr_name("collection", :facetable), label: "Collection", helper_method: :collection_name
 
     # solr field configuration for search results/index views
     config.index.show_link = 'title_ssm'

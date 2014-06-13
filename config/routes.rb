@@ -1,6 +1,7 @@
 BifrostBoeger::Application.routes.draw do
   resources :books
 
+  mount Hydra::Collections::Engine => '/'
 
   root :to => "catalog#index"
 

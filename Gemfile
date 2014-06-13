@@ -12,7 +12,7 @@ gem 'bootswatch-rails'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'sqlite3'
-
+gem 'hydra-collections'
 
 
 gem 'sass-rails'
