@@ -6,10 +6,15 @@ test: &TEST
   user: fedoraAdmin
   password: fedoraAdmin
   url: <%= "http://127.0.0.1:#{ENV['TEST_JETTY_PORT'] || 8983}/fedora-test" %>
-production:
+staging:
   user: fedoraAdmin
   password: fedoraAdmin
   #url: http://127.0.0.1:8983/fedora
-  url: http://bifrost-dev-fedora.kb.dk:8080/fedora
+  url: http://bifrost-staging-fedora.kb.dk:8080/fedora
+production:
+  user: fedoraAdmin
+  password: fedoraAdmin
+  # THERE IS NO PRODUCTION SERVERS, YET. JULY 2014.
+  url: http://bifrost-production-fedora.kb.dk:8080/fedora
 cucumber:
   <<: *TEST

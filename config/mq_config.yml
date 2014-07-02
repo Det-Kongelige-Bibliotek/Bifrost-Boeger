@@ -12,6 +12,13 @@ test:
       polling_interval_in_minutes: 1
       polling_interval_in_seconds: 30
 
+staging:
+  mq_uri: "amqp://sifd-staging-03.kb.dk:5672"
+  dissemination:
+      source: "bifrost-ingest-staging-queue"
+      polling_interval_in_minutes: 1
+      polling_interval_in_seconds: 30
+
 production:
   mq_uri: "amqp://sifd-staging-03.kb.dk:5672"
   dissemination:

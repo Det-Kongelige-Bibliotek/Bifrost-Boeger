@@ -4,5 +4,8 @@ development:
 test:
   rex_book_search_template_uri: "http://rex.kb.dk/primo_library/libweb/action/search.do?fn=search&ct=search&initialSearch=true&mode=Basic&tab=default_tab&indx=1&dum=true&srt=rank&vid=KGL&frbg=&tb=t&vl%28freeText0%29=SYS_NUM&vl%28764319501UI1%29=all_items&vl%281UIStartWith0%29=contains&vl%28747109341UI0%29=any&vl%28747109341UI0%29=title&vl%28747109341UI0%29=any&scp.scps=scope%3A%28KGL%29"
 
+staging:
+  rex_book_search_template_uri: "http://rex.kb.dk/primo_library/libweb/action/search.do?fn=search&ct=search&initialSearch=true&mode=Basic&tab=default_tab&indx=1&dum=true&srt=rank&vid=KGL&frbg=&tb=t&vl%28freeText0%29=SYS_NUM&vl%28764319501UI1%29=all_items&vl%281UIStartWith0%29=contains&vl%28747109341UI0%29=any&vl%28747109341UI0%29=title&vl%28747109341UI0%29=any&scp.scps=scope%3A%28KGL%29"
+
 production:
   rex_book_search_template_uri: "http://rex.kb.dk/primo_library/libweb/action/search.do?fn=search&ct=search&initialSearch=true&mode=Basic&tab=default_tab&indx=1&dum=true&srt=rank&vid=KGL&frbg=&tb=t&vl%28freeText0%29=SYS_NUM&vl%28764319501UI1%29=all_items&vl%281UIStartWith0%29=contains&vl%28747109341UI0%29=any&vl%28747109341UI0%29=title&vl%28747109341UI0%29=any&scp.scps=scope%3A%28KGL%29"

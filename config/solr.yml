@@ -6,8 +6,10 @@ test: &TEST
   url: <%= "http://127.0.0.1:#{ENV['TEST_JETTY_PORT'] || 8983}/solr/test" %>
 cucumber:
   <<: *TEST
-production:
+staging:
   # url: http://bifrost-dev-solr.kb.dk:8080/solr/test-bifrost
-  url: http://bifrost-dev-solr.kb.dk:8080/solr/bifrost
-  #url: http://your.production.server:8080/bl_solr/core0
+  url: http://bifrost-staging-solr.kb.dk:8080/solr/bifrost
+production:
+  # # THERE IS NO PRODUCTION SERVERS, YET. JULY 2014.
+  url: http://bifrost-production-solr.kb.dk:8080/solr/bifrost
 
